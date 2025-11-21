@@ -1,9 +1,9 @@
-# 📘 README – Etapa 3: Analiza și Pregătirea Setului de Date pentru Rețele Neuronale
+# 📘 README
 
 **Disciplina:** Rețele Neuronale  
 **Instituție:** POLITEHNICA București – FIIR  
-**Student:** [Nume Prenume]  
-**Data:** [Data]  
+**Student:** Ilies Eduard Cosmin
+**Data:** 21.11.2025
 
 ---
 
@@ -33,35 +33,6 @@ project-name/
 ├── config/                # fișiere de configurare
 └── requirements.txt       # dependențe Python (dacă aplicabil)
 ```
-
----
-
-##  2. Descrierea Setului de Date
-
-### 2.1 Sursa datelor
-
-* **Origine:** [Descriere sursă date - ex: senzori robot, dataset public, simulare]
-* **Modul de achiziție:** ☐ Senzori reali / ☐ Simulare / ☐ Fișier extern / ☐ Generare programatică
-* **Perioada / condițiile colectării:** [Ex: Noiembrie 2024 - Ianuarie 2025, condiții experimentale specifice]
-
-### 2.2 Caracteristicile dataset-ului
-
-* **Număr total de observații:** [Ex: 15,000]
-* **Număr de caracteristici (features):** [Ex: 12]
-* **Tipuri de date:** ☐ Numerice / ☐ Categoriale / ☐ Temporale / ☐ Imagini
-* **Format fișiere:** ☐ CSV / ☐ TXT / ☐ JSON / ☐ PNG / ☐ Altele: [...]
-
-### 2.3 Descrierea fiecărei caracteristici
-
-| **Caracteristică** | **Tip** | **Unitate** | **Descriere** | **Domeniu valori** |
-|-------------------|---------|-------------|---------------|--------------------|
-| feature_1 | numeric | mm | [...] | 0–150 |
-| feature_2 | categorial | – | [...] | {A, B, C} |
-| feature_3 | numeric | m/s | [...] | 0–2.5 |
-| ... | ... | ... | ... | ... |
-
-**Fișier recomandat:**  `data/README.md`
-
 ---
 
 ##  3. Analiza Exploratorie a Datelor (EDA) – Sintetic
@@ -135,7 +106,7 @@ project-name/
 
 ##  6. Stare Etapă (de completat de student)
 
-- [ ] Structură repository configurată
+- [x] Structură repository configurată
 - [ ] Dataset analizat (EDA realizată)
 - [ ] Date preprocesate
 - [ ] Seturi train/val/test generate
