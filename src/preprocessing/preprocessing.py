@@ -1,4 +1,4 @@
-from data_acquisition.generate_data import generate_data
+from data_acquisition.generate_data import generate_data, generate_edges
 import numpy as np
 
 
@@ -7,7 +7,7 @@ def preprocessing(nr_of_cities):
 
     for i in range(nr_of_cities):
 
-        city = generate_data(f"city_{i+1}")
+        city = generate_data(f"city_{i+1}", i)
         
         city["agglomeration"] = (
             np.log(city["population"]) / 15 * 0.50 +
@@ -17,8 +17,10 @@ def preprocessing(nr_of_cities):
             0.1 *city["location_score"] 
         )
 
-        cities_data.append({"name":city["city_name"], "x":city["x"], "y": city["y"], "agglomeration": city["agglomeration"]})
+        cities_data.append(city)
 
-    return cities_data
+    edges_data = generate_edges(cities_data, nr_of_cities)
+    
+    return cities_data, edges_data
 
         

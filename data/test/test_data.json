@@ -1,0 +1,41 @@
+{
+  "cities": [
+    {
+      "city_name": "city_1",
+      "population": 310543,
+      "area": 321.24351923223975,
+      "gdp_per_capita": 52692.99097981381,
+      "education_score": 0.4812893194050143,
+      "infrastructure_score": 0.6813047017599905,
+      "location_score": 0.49382849013642327,
+      "x": 891.7730007820797,
+      "y": 963.6627605010293,
+      "agglomeration": 0.6961548096321797
+    },
+    {
+      "city_name": "city_4",
+      "population": 322204,
+      "area": 180.90713251082494,
+      "gdp_per_capita": 50649.656311859784,
+      "education_score": 0.9036522589128893,
+      "infrastructure_score": 0.9066637800400943,
+      "location_score": 0.21302677941745263,
+      "x": 207.24287813818677,
+      "y": 51.46720330082988,
+      "agglomeration": 0.7272644750198174
+    },
+    {
+      "city_name": "city_21",
+      "population": 82937,
+      "area": 451.18882826361863,
+      "gdp_per_capita": 68950.24863846104,
+      "education_score": 0.13230062705516799,
+      "infrastructure_score": 0.7225818235829955,
+      "location_score": 0.4408128478048673,
+      "x": 518.5109454480806,
+      "y": 657.951465558813,
+      "agglomeration": 0.6702649107198522
+    }
+  ],
+  "edges": []
+}
