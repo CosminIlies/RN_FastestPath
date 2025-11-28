@@ -39,52 +39,20 @@ project-name/
 
 ### 3.1 Statistici descriptive aplicate
 
-* **Medie, mediană, deviație standard**
-* **Min–max și quartile**
-* **Distribuții pe caracteristici** (histograme)
-* **Identificarea outlierilor** (IQR / percentile)
-
-### 3.2 Analiza calității datelor
-
-* **Detectarea valorilor lipsă** (% pe coloană)
-* **Detectarea valorilor inconsistente sau eronate**
-* **Identificarea caracteristicilor redundante sau puternic corelate**
-
-### 3.3 Probleme identificate
-
-* [exemplu] Feature X are 8% valori lipsă
-* [exemplu] Distribuția feature Y este puternic neuniformă
-* [exemplu] Variabilitate ridicată în clase (class imbalance)
+* **Dependenta fiecarui feture de agglomeratie**
+* **Aglomeratia in fiecare oras si rutele dintre orase**
 
 ---
 
 ##  4. Preprocesarea Datelor
 
-### 4.1 Curățarea datelor
-
-* **Eliminare duplicatelor**
-* **Tratarea valorilor lipsă:**
-  * Feature A: imputare cu mediană
-  * Feature B: eliminare (30% valori lipsă)
-* **Tratarea outlierilor:** IQR / limitare percentile
-
-### 4.2 Transformarea caracteristicilor
-
-* **Normalizare:** Min–Max / Standardizare
-* **Encoding pentru variabile categoriale**
-* **Ajustarea dezechilibrului de clasă** (dacă este cazul)
-
 ### 4.3 Structurarea seturilor de date
 
 **Împărțire recomandată:**
-* 70–80% – train
-* 10–15% – validation
-* 10–15% – test
+* 70% – train
+* 15% – validation
+* 15% – test
 
-**Principii respectate:**
-* Stratificare pentru clasificare
-* Fără scurgere de informație (data leakage)
-* Statistici calculate DOAR pe train și aplicate pe celelalte seturi
 
 ### 4.4 Salvarea rezultatelor preprocesării
 

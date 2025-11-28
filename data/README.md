@@ -1,4 +1,4 @@
-##  2. Descrierea Setului de Date
+  2. Descrierea Setului de Date
 
 ### 2.1 Sursa datelor
 
@@ -9,9 +9,9 @@
 ### 2.2 Caracteristicile dataset-ului
 
 * **Număr total de observații:** 1
-* **Număr de caracteristici (features):** 6
+* **Număr de caracteristici (features):** 11
 * **Tipuri de date:** Numerice
-* **Format fișiere:** CSV
+* **Format fișiere:** JSON
 
 ### 2.3 Descrierea fiecărei caracteristici
 
@@ -24,4 +24,6 @@
 | scor infrastructura | numeric | % | cat de atragator este d.p.d.v. al infrastructurii | 0-1 |
 | scor educatie | numeric | % | cat de atragator este d.p.d.v. al educatiei  | 0-1 |
 | scor locatie | numeric | % | cat de atragator este d.p.d.v. al locatiei | 0-1 |
-
+| x | numeric | km | pozitia orasului pe axa x | 0-1000 |
+| y | numeric | km | positia orasului pe axa y | 0-1000 |
+| aglomerare | numeric | % | aglomeratia  | 0-1 |
