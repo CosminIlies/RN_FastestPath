@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.4">
+  <diagram name="Page-1" id="H6zrAwk6FWEAifWLqi9R">
+    <mxGraphModel dx="1232" dy="530" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-3" edge="1" parent="1" source="HBNAKp0vxLnYPYFJSM2p-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="HBNAKp0vxLnYPYFJSM2p-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="incarcam modelul" vertex="1">
+          <mxGeometry height="60" width="120" x="200" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-7" edge="1" parent="1" source="HBNAKp0vxLnYPYFJSM2p-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="HBNAKp0vxLnYPYFJSM2p-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="pornit webserver" vertex="1">
+          <mxGeometry height="60" width="120" x="200" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-9" edge="1" parent="1" source="HBNAKp0vxLnYPYFJSM2p-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="HBNAKp0vxLnYPYFJSM2p-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-11" edge="1" parent="1" source="HBNAKp0vxLnYPYFJSM2p-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="HBNAKp0vxLnYPYFJSM2p-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="idle" vertex="1">
+          <mxGeometry height="60" width="120" x="200" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-24" edge="1" parent="1" source="HBNAKp0vxLnYPYFJSM2p-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="HBNAKp0vxLnYPYFJSM2p-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="GET /model&lt;div&gt;primim graf-ul retelei neuronale&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="50" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-25" edge="1" parent="1" source="HBNAKp0vxLnYPYFJSM2p-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="HBNAKp0vxLnYPYFJSM2p-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="PATCH /model&lt;div&gt;primim o predictie graf-ul retelei neuronale atunci cand sunt aplicate schimbarile&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="120" x="230" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-13" edge="1" parent="1" source="HBNAKp0vxLnYPYFJSM2p-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="HBNAKp0vxLnYPYFJSM2p-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-17" edge="1" parent="1" source="HBNAKp0vxLnYPYFJSM2p-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="HBNAKp0vxLnYPYFJSM2p-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="start program" vertex="1">
+          <mxGeometry height="60" width="120" x="330" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Atunci cand programul este pronit in modul server" vertex="1">
+          <mxGeometry height="50" width="130" x="210" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Atunci cand programul este pronit in modul train" vertex="1">
+          <mxGeometry height="50" width="130" x="490" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-19" edge="1" parent="1" source="HBNAKp0vxLnYPYFJSM2p-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="HBNAKp0vxLnYPYFJSM2p-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="genereaza datele" vertex="1">
+          <mxGeometry height="60" width="120" x="480" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-21" edge="1" parent="1" source="HBNAKp0vxLnYPYFJSM2p-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="HBNAKp0vxLnYPYFJSM2p-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="realizam modelul GNN" vertex="1">
+          <mxGeometry height="60" width="120" x="480" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-23" edge="1" parent="1" source="HBNAKp0vxLnYPYFJSM2p-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="HBNAKp0vxLnYPYFJSM2p-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="antrenam reteaua neuronala" vertex="1">
+          <mxGeometry height="60" width="120" x="480" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="salvam modeul" vertex="1">
+          <mxGeometry height="60" width="120" x="480" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="HBNAKp0vxLnYPYFJSM2p-27" edge="1" parent="1" source="HBNAKp0vxLnYPYFJSM2p-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.993;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;" target="HBNAKp0vxLnYPYFJSM2p-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
