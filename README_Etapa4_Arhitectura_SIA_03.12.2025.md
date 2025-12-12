@@ -255,10 +255,10 @@ Toate cele 3 module trebuie să **pornească și să ruleze fără erori** la pr
 #### **Modul 2: Neural Network Module**
 
 **Funcționalități obligatorii:**
-- [ ] Arhitectură RN definită și compilată fără erori
+- [x] Arhitectură RN definită și compilată fără erori
 - [ ] Model poate fi salvat și reîncărcat
 - [ ] Include justificare pentru arhitectura aleasă (în docstring sau README)
-- [ ] **NU trebuie antrenat** cu performanță bună (weights pot fi random)
+- [x] **NU trebuie antrenat** cu performanță bună (weights pot fi random)
 
 
 #### **Modul 3: Web Service / UI**

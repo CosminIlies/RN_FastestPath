@@ -1,57 +1,6646 @@
 {
   "cities": [
     {
-      "city_name": "city_8",
-      "population": 278114,
-      "area": 490.0952803984712,
-      "gdp_per_capita": 52309.75222462602,
-      "education_score": 0.5510084172939441,
-      "infrastructure_score": 0.1648460200237854,
-      "location_score": 0.3415950820916841,
-      "x": 499.88250082556,
-      "y": 679.2299961209404,
-      "agglomeration": 0.6313036720416514
+      "city_name": "city_4",
+      "population": 322204,
+      "area": 180.90713251082494,
+      "gdp_per_capita": 50649.656311859784,
+      "education_score": 0.9036522589128893,
+      "infrastructure_score": 0.9066637800400943,
+      "location_score": 0.21302677941745263,
+      "x": 207.24287813818677,
+      "y": 51.46720330082988,
+      "agglomeration": 0.7272644750198174
     },
     {
-      "city_name": "city_9",
-      "population": 25255,
-      "area": 154.72774758978082,
-      "gdp_per_capita": 20683.928256645795,
-      "education_score": 0.4874219364632415,
-      "infrastructure_score": 0.4621162240336284,
-      "location_score": 0.5704072042173127,
-      "x": 478.39179580240244,
-      "y": 555.3564738223305,
-      "agglomeration": 0.492166945156976
+      "city_name": "city_12",
+      "population": 303817,
+      "area": 239.09162206447735,
+      "gdp_per_capita": 49125.62589006695,
+      "education_score": 0.1115027331315478,
+      "infrastructure_score": 0.5386344465878845,
+      "location_score": 0.9476259871090296,
+      "x": 850.7950893767787,
+      "y": 729.9644702208186,
+      "agglomeration": 0.6776677638312442
     },
     {
-      "city_name": "city_24",
-      "population": 59903,
-      "area": 394.4568917286081,
-      "gdp_per_capita": 36943.75063802676,
-      "education_score": 0.29894082693548735,
-      "infrastructure_score": 0.7175998767137202,
-      "location_score": 0.2504252827900506,
-      "x": 392.4424664650307,
-      "y": 618.0523472528092,
-      "agglomeration": 0.5498584963147437
+      "city_name": "city_49",
+      "population": 4961,
+      "area": 406.4154172949432,
+      "gdp_per_capita": 39468.23584869373,
+      "education_score": 0.8782393480212325,
+      "infrastructure_score": 0.5027613689924868,
+      "location_score": 0.5934069157150847,
+      "x": 357.1719948299895,
+      "y": 112.31202539270978,
+      "agglomeration": 0.5459803031785612
+    },
+    {
+      "city_name": "city_58",
+      "population": 18095,
+      "area": 234.97748178751073,
+      "gdp_per_capita": 38646.96191360522,
+      "education_score": 0.6093603016853549,
+      "infrastructure_score": 0.5905573334054655,
+      "location_score": 0.826389498547339,
+      "x": 918.1551072835975,
+      "y": 522.0907528436771,
+      "agglomeration": 0.5915669509424282
+    },
+    {
+      "city_name": "city_66",
+      "population": 6307,
+      "area": 186.51937139528465,
+      "gdp_per_capita": 29777.013350425303,
+      "education_score": 0.7293823779049899,
+      "infrastructure_score": 0.7943597485013739,
+      "location_score": 0.5630972028654402,
+      "x": 235.80688811756312,
+      "y": 230.0396265987742,
+      "agglomeration": 0.5329211576507198
+    },
+    {
+      "city_name": "city_68",
+      "population": 119704,
+      "area": 358.6516639549606,
+      "gdp_per_capita": 39895.50926080605,
+      "education_score": 0.1539981366045561,
+      "infrastructure_score": 0.44765000293843804,
+      "location_score": 0.29183487281592013,
+      "x": 932.5066500813601,
+      "y": 722.8182988558622,
+      "agglomeration": 0.5454259090340201
+    },
+    {
+      "city_name": "city_74",
+      "population": 52324,
+      "area": 280.3540921063835,
+      "gdp_per_capita": 56615.433626779784,
+      "education_score": 0.5436900852500726,
+      "infrastructure_score": 0.29301579801229166,
+      "location_score": 0.3195820173588231,
+      "x": 572.0945259783974,
+      "y": 772.6286637250593,
+      "agglomeration": 0.5998539166783219
+    },
+    {
+      "city_name": "city_94",
+      "population": 254052,
+      "area": 188.25845420460647,
+      "gdp_per_capita": 77720.20910905054,
+      "education_score": 0.5823270165981643,
+      "infrastructure_score": 0.6936712217979729,
+      "location_score": 0.9994388759409443,
+      "x": 750.9839269321911,
+      "y": 538.5222036694672,
+      "agglomeration": 0.8347875501124412
+    },
+    {
+      "city_name": "city_113",
+      "population": 202115,
+      "area": 477.50746073232517,
+      "gdp_per_capita": 24540.63228212369,
+      "education_score": 0.7992366928463084,
+      "infrastructure_score": 0.8494711863056733,
+      "location_score": 0.14932516625416745,
+      "x": 817.6773821752682,
+      "y": 885.3514580727667,
+      "agglomeration": 0.6021584828583715
+    },
+    {
+      "city_name": "city_118",
+      "population": 1419,
+      "area": 153.93276347727982,
+      "gdp_per_capita": 73118.20404561562,
+      "education_score": 0.2677992305960103,
+      "infrastructure_score": 0.93841004108029,
+      "location_score": 0.14086198906930636,
+      "x": 759.7054444841125,
+      "y": 87.80745394924905,
+      "agglomeration": 0.5536913954652809
+    },
+    {
+      "city_name": "city_142",
+      "population": 23577,
+      "area": 69.36488688750545,
+      "gdp_per_capita": 45283.17132786797,
+      "education_score": 0.7427864990993182,
+      "infrastructure_score": 0.2389922977833313,
+      "location_score": 0.14537267291231337,
+      "x": 696.2466451474415,
+      "y": 876.661396344014,
+      "agglomeration": 0.5325932827235325
+    },
+    {
+      "city_name": "city_147",
+      "population": 801882,
+      "area": 184.91927309126285,
+      "gdp_per_capita": 35642.170257623715,
+      "education_score": 0.4004691578028262,
+      "infrastructure_score": 0.9121246431984293,
+      "location_score": 0.4265486350895008,
+      "x": 6.3438478821165045,
+      "y": 944.796028690351,
+      "agglomeration": 0.6792120359296239
+    },
+    {
+      "city_name": "city_157",
+      "population": 52964,
+      "area": 168.09589642095915,
+      "gdp_per_capita": 31248.097665235706,
+      "education_score": 0.5373214903241353,
+      "infrastructure_score": 0.8364675963022254,
+      "location_score": 0.8403240114662822,
+      "x": 784.6096251975742,
+      "y": 276.2474894229247,
+      "agglomeration": 0.6214838925753716
+    },
+    {
+      "city_name": "city_162",
+      "population": 17015,
+      "area": 222.99812120252597,
+      "gdp_per_capita": 25711.136032811148,
+      "education_score": 0.3043356704319192,
+      "infrastructure_score": 0.6545748273515719,
+      "location_score": 0.9314718707471362,
+      "x": 948.034831969864,
+      "y": 715.5152240533259,
+      "agglomeration": 0.5328037098602668
+    },
+    {
+      "city_name": "city_168",
+      "population": 3170,
+      "area": 484.89409243000415,
+      "gdp_per_capita": 78034.62652844409,
+      "education_score": 0.5507194047048029,
+      "infrastructure_score": 0.8421407099919526,
+      "location_score": 0.8493365257950877,
+      "x": 681.775419439214,
+      "y": 743.5230772580065,
+      "agglomeration": 0.6863846480397089
+    },
+    {
+      "city_name": "city_176",
+      "population": 8496,
+      "area": 299.2204545188003,
+      "gdp_per_capita": 57695.693795239524,
+      "education_score": 0.11563440383090012,
+      "infrastructure_score": 0.9644482832697389,
+      "location_score": 0.5365192186150455,
+      "x": 301.6527944593183,
+      "y": 913.2693117854428,
+      "agglomeration": 0.5888908613384242
+    },
+    {
+      "city_name": "city_217",
+      "population": 4687,
+      "area": 158.74784857988715,
+      "gdp_per_capita": 76668.15878336676,
+      "education_score": 0.4733322721578245,
+      "infrastructure_score": 0.7708036561491789,
+      "location_score": 0.22081870357230027,
+      "x": 423.53747122387495,
+      "y": 446.9040995453767,
+      "agglomeration": 0.6171409257299099
+    },
+    {
+      "city_name": "city_218",
+      "population": 27171,
+      "area": 172.2478999946352,
+      "gdp_per_capita": 56457.56532042654,
+      "education_score": 0.5805975523390612,
+      "infrastructure_score": 0.677841692260911,
+      "location_score": 0.5279689938108914,
+      "x": 604.2749325727846,
+      "y": 289.135296481558,
+      "agglomeration": 0.6404962251439434
+    },
+    {
+      "city_name": "city_225",
+      "population": 364,
+      "area": 60.83596169963976,
+      "gdp_per_capita": 41252.69997040687,
+      "education_score": 0.7241435355143572,
+      "infrastructure_score": 0.36014673224864135,
+      "location_score": 0.741105040185395,
+      "x": 302.25567827698166,
+      "y": 528.7999296054827,
+      "agglomeration": 0.4499536596174203
+    },
+    {
+      "city_name": "city_235",
+      "population": 75221,
+      "area": 439.8931936383512,
+      "gdp_per_capita": 58371.310826656256,
+      "education_score": 0.5111592835458656,
+      "infrastructure_score": 0.5489152767220643,
+      "location_score": 0.7484275062390511,
+      "x": 271.25318968838195,
+      "y": 800.6190314201338,
+      "agglomeration": 0.6830274336153046
+    },
+    {
+      "city_name": "city_253",
+      "population": 21649,
+      "area": 161.29905657829028,
+      "gdp_per_capita": 50697.75822366919,
+      "education_score": 0.7767920467407343,
+      "infrastructure_score": 0.41330400713225424,
+      "location_score": 0.3536553595299331,
+      "x": 896.9553455260884,
+      "y": 708.0511590587593,
+      "agglomeration": 0.5894581535187705
+    },
+    {
+      "city_name": "city_258",
+      "population": 168537,
+      "area": 391.5637128030911,
+      "gdp_per_capita": 28434.55734702167,
+      "education_score": 0.3918751983252262,
+      "infrastructure_score": 0.3242994359030218,
+      "location_score": 0.5577363067469996,
+      "x": 486.5653053486563,
+      "y": 115.84161214679789,
+      "agglomeration": 0.5566699715622344
+    },
+    {
+      "city_name": "city_270",
+      "population": 8981,
+      "area": 268.13038454060234,
+      "gdp_per_capita": 69079.06023062451,
+      "education_score": 0.15957173780452466,
+      "infrastructure_score": 0.41212584299845556,
+      "location_score": 0.8487317923872852,
+      "x": 856.4282211690145,
+      "y": 604.471812145785,
+      "agglomeration": 0.6090686885434732
+    },
+    {
+      "city_name": "city_272",
+      "population": 2691,
+      "area": 88.57903490468303,
+      "gdp_per_capita": 58198.10884121783,
+      "education_score": 0.5033946476503754,
+      "infrastructure_score": 0.7088376548617819,
+      "location_score": 0.35908974244064407,
+      "x": 542.4411039325006,
+      "y": 166.31532438322793,
+      "agglomeration": 0.5477148389902363
+    },
+    {
+      "city_name": "city_274",
+      "population": 78796,
+      "area": 397.0804369691992,
+      "gdp_per_capita": 61660.332948134375,
+      "education_score": 0.9596774658999343,
+      "infrastructure_score": 0.5102431191044824,
+      "location_score": 0.12610602643172678,
+      "x": 503.87725468712375,
+      "y": 116.95232040522585,
+      "agglomeration": 0.6742910214086038
+    },
+    {
+      "city_name": "city_275",
+      "population": 64936,
+      "area": 121.69322860659035,
+      "gdp_per_capita": 25660.59915125412,
+      "education_score": 0.577056732417083,
+      "infrastructure_score": 0.12342992922029063,
+      "location_score": 0.960661594509506,
+      "x": 125.30099452854726,
+      "y": 922.2687938896984,
+      "agglomeration": 0.5543554044002355
+    },
+    {
+      "city_name": "city_277",
+      "population": 22284,
+      "area": 102.3130587468045,
+      "gdp_per_capita": 52421.66090463725,
+      "education_score": 0.7068542172766964,
+      "infrastructure_score": 0.7898179591387834,
+      "location_score": 0.9189271021787514,
+      "x": 382.13157271185685,
+      "y": 535.676231932214,
+      "agglomeration": 0.6833529379129042
+    },
+    {
+      "city_name": "city_323",
+      "population": 4412,
+      "area": 174.22018079940023,
+      "gdp_per_capita": 30001.467500608487,
+      "education_score": 0.11567322659122935,
+      "infrastructure_score": 0.6201518553531759,
+      "location_score": 0.2792823599775184,
+      "x": 107.42136239020195,
+      "y": 177.43980022049922,
+      "agglomeration": 0.4145850818733337
+    },
+    {
+      "city_name": "city_324",
+      "population": 24165,
+      "area": 499.54514399779083,
+      "gdp_per_capita": 58643.822015034995,
+      "education_score": 0.2221899641618656,
+      "infrastructure_score": 0.9648676399119781,
+      "location_score": 0.8974312681654965,
+      "x": 194.7575334911852,
+      "y": 87.76852624608311,
+      "agglomeration": 0.6736836467500233
+    },
+    {
+      "city_name": "city_333",
+      "population": 26172,
+      "area": 178.39864059294598,
+      "gdp_per_capita": 75802.36538539527,
+      "education_score": 0.2814341882629538,
+      "infrastructure_score": 0.8169072223800715,
+      "location_score": 0.8348841092782375,
+      "x": 124.61161341906934,
+      "y": 167.09489794142775,
+      "agglomeration": 0.7184119504764315
+    },
+    {
+      "city_name": "city_389",
+      "population": 23838,
+      "area": 333.9136864522425,
+      "gdp_per_capita": 34692.193214490726,
+      "education_score": 0.729797479686326,
+      "infrastructure_score": 0.4839611678962814,
+      "location_score": 0.5312192608600419,
+      "x": 96.32641125618457,
+      "y": 611.9115409161831,
+      "agglomeration": 0.5594396423939891
+    },
+    {
+      "city_name": "city_391",
+      "population": 27467,
+      "area": 487.6468187156407,
+      "gdp_per_capita": 46896.31139092194,
+      "education_score": 0.6116702118128833,
+      "infrastructure_score": 0.8918846806592461,
+      "location_score": 0.4100946943443312,
+      "x": 969.0851396694147,
+      "y": 214.21841452732892,
+      "agglomeration": 0.6217106820873239
+    },
+    {
+      "city_name": "city_395",
+      "population": 2545308,
+      "area": 86.16199149800732,
+      "gdp_per_capita": 59555.0445882289,
+      "education_score": 0.891056505834855,
+      "infrastructure_score": 0.6641374820708729,
+      "location_score": 0.9297400395121777,
+      "x": 249.68664067596225,
+      "y": 574.6437038312921,
+      "agglomeration": 0.8720022921110614
+    },
+    {
+      "city_name": "city_406",
+      "population": 4499,
+      "area": 134.24117162801377,
+      "gdp_per_capita": 36381.23230745061,
+      "education_score": 0.20621370090562874,
+      "infrastructure_score": 0.1755804815232766,
+      "location_score": 0.7740269918205435,
+      "x": 211.92615808617632,
+      "y": 672.9175749630017,
+      "agglomeration": 0.4505732394111526
+    },
+    {
+      "city_name": "city_409",
+      "population": 149975,
+      "area": 494.16214791918134,
+      "gdp_per_capita": 49215.10006722957,
+      "education_score": 0.4650441781969227,
+      "infrastructure_score": 0.3419945892627104,
+      "location_score": 0.9174302322735584,
+      "x": 887.5813444438965,
+      "y": 7.860077709390234,
+      "agglomeration": 0.6671046966147942
+    },
+    {
+      "city_name": "city_411",
+      "population": 34746,
+      "area": 482.3517548683886,
+      "gdp_per_capita": 68966.68527450987,
+      "education_score": 0.9158662113173478,
+      "infrastructure_score": 0.9034375050087995,
+      "location_score": 0.23925001559442824,
+      "x": 990.0539040557405,
+      "y": 481.2898865913422,
+      "agglomeration": 0.7176049819888854
+    },
+    {
+      "city_name": "city_439",
+      "population": 12219,
+      "area": 239.9660748360148,
+      "gdp_per_capita": 54901.54997295895,
+      "education_score": 0.5083278199847066,
+      "infrastructure_score": 0.650952439270568,
+      "location_score": 0.5362303233418392,
+      "x": 268.4463184568059,
+      "y": 776.8619724764247,
+      "agglomeration": 0.5995811380467919
+    },
+    {
+      "city_name": "city_446",
+      "population": 9409,
+      "area": 53.2521887051264,
+      "gdp_per_capita": 38044.088801524034,
+      "education_score": 0.7214645345091127,
+      "infrastructure_score": 0.9666607204784325,
+      "location_score": 0.11404000877206523,
+      "x": 758.1782007548239,
+      "y": 662.9333787846955,
+      "agglomeration": 0.5453442209479333
+    },
+    {
+      "city_name": "city_470",
+      "population": 9692,
+      "area": 291.83452781422653,
+      "gdp_per_capita": 43941.60495220861,
+      "education_score": 0.1954998729384113,
+      "infrastructure_score": 0.30369081318449753,
+      "location_score": 0.7068135828749768,
+      "x": 258.38543822232685,
+      "y": 57.91444928743439,
+      "agglomeration": 0.5063743128050311
+    },
+    {
+      "city_name": "city_474",
+      "population": 24759,
+      "area": 302.0474152207345,
+      "gdp_per_capita": 42331.423988877796,
+      "education_score": 0.25025888832895676,
+      "infrastructure_score": 0.8397640982491754,
+      "location_score": 0.5358964859136041,
+      "x": 6.478907492411423,
+      "y": 937.9959404564444,
+      "agglomeration": 0.5742615051541261
+    },
+    {
+      "city_name": "city_480",
+      "population": 1110,
+      "area": 215.45498826521396,
+      "gdp_per_capita": 30846.12070611586,
+      "education_score": 0.5692664642868166,
+      "infrastructure_score": 0.420285448738702,
+      "location_score": 0.24464294535586673,
+      "x": 633.1689760848052,
+      "y": 629.3320651228876,
+      "agglomeration": 0.39331039800207074
+    },
+    {
+      "city_name": "city_506",
+      "population": 11032,
+      "area": 150.3898369892366,
+      "gdp_per_capita": 31862.879393170944,
+      "education_score": 0.44010110540432346,
+      "infrastructure_score": 0.2246807108501766,
+      "location_score": 0.10974553197739684,
+      "x": 82.56877990896515,
+      "y": 959.5192475257275,
+      "agglomeration": 0.42728084678286404
+    },
+    {
+      "city_name": "city_512",
+      "population": 74840,
+      "area": 157.23942621816232,
+      "gdp_per_capita": 61446.35563811314,
+      "education_score": 0.607581818416668,
+      "infrastructure_score": 0.743339574164098,
+      "location_score": 0.18133808167179452,
+      "x": 326.1736903018092,
+      "y": 981.7934834173578,
+      "agglomeration": 0.6654840588985674
+    },
+    {
+      "city_name": "city_522",
+      "population": 53112,
+      "area": 461.75389020624084,
+      "gdp_per_capita": 74807.77550676055,
+      "education_score": 0.49772202459259074,
+      "infrastructure_score": 0.4596628551886378,
+      "location_score": 0.7620113873751468,
+      "x": 114.74592072585355,
+      "y": 421.9484439950849,
+      "agglomeration": 0.7173041507514725
+    },
+    {
+      "city_name": "city_542",
+      "population": 73498,
+      "area": 482.94537243727876,
+      "gdp_per_capita": 57589.27298874065,
+      "education_score": 0.6991436142811359,
+      "infrastructure_score": 0.41188365180075925,
+      "location_score": 0.5891233969159503,
+      "x": 360.71312149331635,
+      "y": 805.7539557832572,
+      "agglomeration": 0.6688130920604651
+    },
+    {
+      "city_name": "city_547",
+      "population": 19964,
+      "area": 273.3694371750008,
+      "gdp_per_capita": 72738.76255953175,
+      "education_score": 0.5497470292977878,
+      "infrastructure_score": 0.6229104633999758,
+      "location_score": 0.9041199049279128,
+      "x": 485.7383599841324,
+      "y": 150.87265894680579,
+      "agglomeration": 0.7135298126473235
+    },
+    {
+      "city_name": "city_552",
+      "population": 12229,
+      "area": 295.73159268887645,
+      "gdp_per_capita": 66534.29375102045,
+      "education_score": 0.8218491739725292,
+      "infrastructure_score": 0.6638464699326971,
+      "location_score": 0.30527128958373656,
+      "x": 755.8156658760789,
+      "y": 840.5269905988403,
+      "agglomeration": 0.6479298544919434
+    },
+    {
+      "city_name": "city_567",
+      "population": 15456,
+      "area": 316.15482427247093,
+      "gdp_per_capita": 77175.0007782501,
+      "education_score": 0.5648215497377985,
+      "infrastructure_score": 0.3594335397186347,
+      "location_score": 0.5033224947475639,
+      "x": 551.2134187445135,
+      "y": 756.2500524052823,
+      "agglomeration": 0.6548661795629767
+    },
+    {
+      "city_name": "city_571",
+      "population": 96612,
+      "area": 368.82622994072744,
+      "gdp_per_capita": 54087.32267556472,
+      "education_score": 0.9106595973059246,
+      "infrastructure_score": 0.37686698617716385,
+      "location_score": 0.5199078589984912,
+      "x": 735.8814625447551,
+      "y": 170.6706730866625,
+      "agglomeration": 0.676983127702973
+    },
+    {
+      "city_name": "city_581",
+      "population": 14201,
+      "area": 91.81356780144026,
+      "gdp_per_capita": 63741.36839374704,
+      "education_score": 0.5773516375951845,
+      "infrastructure_score": 0.7478777072173215,
+      "location_score": 0.5886269931685502,
+      "x": 687.4456747945145,
+      "y": 449.62242541085726,
+      "agglomeration": 0.6558924505654296
+    },
+    {
+      "city_name": "city_598",
+      "population": 32050,
+      "area": 429.990798472719,
+      "gdp_per_capita": 59871.50878345279,
+      "education_score": 0.380416708708597,
+      "infrastructure_score": 0.6971301979699661,
+      "location_score": 0.7119235472552806,
+      "x": 151.12497783812827,
+      "y": 711.3077110512764,
+      "agglomeration": 0.6576871567498542
+    },
+    {
+      "city_name": "city_599",
+      "population": 56824,
+      "area": 369.09234967818577,
+      "gdp_per_capita": 77604.12057911926,
+      "education_score": 0.7391193751976587,
+      "infrastructure_score": 0.8531808164946393,
+      "location_score": 0.3843719285714591,
+      "x": 3.929837106942724,
+      "y": 963.3452123469823,
+      "agglomeration": 0.7546047489793615
+    },
+    {
+      "city_name": "city_611",
+      "population": 8754,
+      "area": 187.76562339678193,
+      "gdp_per_capita": 62077.03766109581,
+      "education_score": 0.2838336138575284,
+      "infrastructure_score": 0.43536283576684764,
+      "location_score": 0.3932660191719962,
+      "x": 529.85046609333,
+      "y": 863.399411531488,
+      "agglomeration": 0.554078573008318
+    },
+    {
+      "city_name": "city_624",
+      "population": 89621,
+      "area": 131.7159722681534,
+      "gdp_per_capita": 79617.308269653,
+      "education_score": 0.7092748185888719,
+      "infrastructure_score": 0.7818595026044259,
+      "location_score": 0.8789030711530569,
+      "x": 83.25156594375227,
+      "y": 48.83549992891556,
+      "agglomeration": 0.8158395983501953
+    },
+    {
+      "city_name": "city_643",
+      "population": 1604,
+      "area": 68.46572860682504,
+      "gdp_per_capita": 24341.405444215496,
+      "education_score": 0.723890355477931,
+      "infrastructure_score": 0.808092669635988,
+      "location_score": 0.39193991185928256,
+      "x": 692.2285291111924,
+      "y": 945.8192092718149,
+      "agglomeration": 0.45287217145892045
+    },
+    {
+      "city_name": "city_656",
+      "population": 56164,
+      "area": 470.10293767205275,
+      "gdp_per_capita": 28361.994822709603,
+      "education_score": 0.20993901023265923,
+      "infrastructure_score": 0.8451728104269668,
+      "location_score": 0.9364608948548852,
+      "x": 746.6426645063187,
+      "y": 494.3315187574723,
+      "agglomeration": 0.5915649630016342
+    },
+    {
+      "city_name": "city_657",
+      "population": 3628,
+      "area": 272.7343137562216,
+      "gdp_per_capita": 78979.74799920587,
+      "education_score": 0.602536793482335,
+      "infrastructure_score": 0.6568664347966747,
+      "location_score": 0.7639389700374978,
+      "x": 73.06797824699917,
+      "y": 512.6411340277975,
+      "agglomeration": 0.6721479402035045
+    },
+    {
+      "city_name": "city_659",
+      "population": 123730,
+      "area": 370.5314500916539,
+      "gdp_per_capita": 72063.59209645953,
+      "education_score": 0.14918755166965386,
+      "infrastructure_score": 0.39096477812554864,
+      "location_score": 0.837964875548856,
+      "x": 376.6333556205175,
+      "y": 764.865384382192,
+      "agglomeration": 0.7022189292295384
+    },
+    {
+      "city_name": "city_664",
+      "population": 808,
+      "area": 273.06228952282686,
+      "gdp_per_capita": 45661.278825366695,
+      "education_score": 0.41323478405208647,
+      "infrastructure_score": 0.6143353444727897,
+      "location_score": 0.3271629015684159,
+      "x": 672.5121212045428,
+      "y": 694.1252481052925,
+      "agglomeration": 0.4441629677112547
+    },
+    {
+      "city_name": "city_672",
+      "population": 8065,
+      "area": 463.391454580475,
+      "gdp_per_capita": 46591.512410604,
+      "education_score": 0.456313353142599,
+      "infrastructure_score": 0.4666009660483986,
+      "location_score": 0.4446824584051422,
+      "x": 900.8169083192146,
+      "y": 781.6426436395537,
+      "agglomeration": 0.5252410188136043
+    },
+    {
+      "city_name": "city_697",
+      "population": 37637,
+      "area": 101.18150427540749,
+      "gdp_per_capita": 25291.055997140294,
+      "education_score": 0.808294373817399,
+      "infrastructure_score": 0.6095990211744072,
+      "location_score": 0.9116493691021298,
+      "x": 329.2444380231448,
+      "y": 607.0180399164911,
+      "agglomeration": 0.6017825593358179
+    },
+    {
+      "city_name": "city_699",
+      "population": 16402,
+      "area": 340.2603439713833,
+      "gdp_per_capita": 28567.47641550829,
+      "education_score": 0.7423782211525873,
+      "infrastructure_score": 0.8268627381482844,
+      "location_score": 0.6520565810381509,
+      "x": 653.2232706096075,
+      "y": 573.6878045339898,
+      "agglomeration": 0.574193294005475
+    },
+    {
+      "city_name": "city_700",
+      "population": 29669,
+      "area": 370.533613031043,
+      "gdp_per_capita": 55493.04759797506,
+      "education_score": 0.948790267779266,
+      "infrastructure_score": 0.4927436964526831,
+      "location_score": 0.13594983750260567,
+      "x": 742.1211233233408,
+      "y": 302.59164078182397,
+      "agglomeration": 0.6193204724546617
+    },
+    {
+      "city_name": "city_702",
+      "population": 34642,
+      "area": 193.78872715191068,
+      "gdp_per_capita": 61028.01375037088,
+      "education_score": 0.5944702762462689,
+      "infrastructure_score": 0.9224294372304562,
+      "location_score": 0.41946594367752743,
+      "x": 498.86812669139755,
+      "y": 478.61853136184453,
+      "agglomeration": 0.6788240148076691
+    },
+    {
+      "city_name": "city_705",
+      "population": 33357,
+      "area": 191.20610120907872,
+      "gdp_per_capita": 48873.77343888746,
+      "education_score": 0.15484475057933317,
+      "infrastructure_score": 0.5472070178775071,
+      "location_score": 0.35520946216751914,
+      "x": 406.4868983999753,
+      "y": 832.5542621501797,
+      "agglomeration": 0.5491394653377728
+    },
+    {
+      "city_name": "city_736",
+      "population": 19510,
+      "area": 329.364372982116,
+      "gdp_per_capita": 79526.36722212937,
+      "education_score": 0.5074216677766425,
+      "infrastructure_score": 0.7141600746264976,
+      "location_score": 0.628442581328748,
+      "x": 37.32621775603106,
+      "y": 166.08303454883676,
+      "agglomeration": 0.7127130709008587
+    },
+    {
+      "city_name": "city_737",
+      "population": 168536,
+      "area": 106.1817093643651,
+      "gdp_per_capita": 26589.964857765503,
+      "education_score": 0.551348607274239,
+      "infrastructure_score": 0.9031962776892151,
+      "location_score": 0.8483404410310746,
+      "x": 904.141691584975,
+      "y": 49.62773728947445,
+      "agglomeration": 0.6534185706522148
+    },
+    {
+      "city_name": "city_739",
+      "population": 3276,
+      "area": 87.23460778540277,
+      "gdp_per_capita": 54653.91257500429,
+      "education_score": 0.5128676724609015,
+      "infrastructure_score": 0.987109110592898,
+      "location_score": 0.5091871066618451,
+      "x": 560.6159480274072,
+      "y": 643.4291713770182,
+      "agglomeration": 0.5862420457206775
+    },
+    {
+      "city_name": "city_740",
+      "population": 193629,
+      "area": 268.5702460954492,
+      "gdp_per_capita": 33230.9976721436,
+      "education_score": 0.8966199958480493,
+      "infrastructure_score": 0.34038701890011497,
+      "location_score": 0.23533714410388556,
+      "x": 738.7228413627582,
+      "y": 906.4421806394829,
+      "agglomeration": 0.5971277159921881
+    },
+    {
+      "city_name": "city_747",
+      "population": 75305,
+      "area": 490.4817384032872,
+      "gdp_per_capita": 68350.44630513218,
+      "education_score": 0.7492876278983583,
+      "infrastructure_score": 0.9651201570296893,
+      "location_score": 0.7716433410841976,
+      "x": 607.7530366758807,
+      "y": 540.0025572293121,
+      "agglomeration": 0.7840833273731969
+    },
+    {
+      "city_name": "city_763",
+      "population": 5561,
+      "area": 282.07902715713647,
+      "gdp_per_capita": 52323.87999084875,
+      "education_score": 0.5828887078067516,
+      "infrastructure_score": 0.2643843390809735,
+      "location_score": 0.3446219506119567,
+      "x": 777.6088280107941,
+      "y": 624.811056315415,
+      "agglomeration": 0.5143868739590495
+    },
+    {
+      "city_name": "city_765",
+      "population": 3575,
+      "area": 478.17617286229444,
+      "gdp_per_capita": 61186.847708278634,
+      "education_score": 0.277421838366801,
+      "infrastructure_score": 0.705286220386684,
+      "location_score": 0.12653522080924456,
+      "x": 919.4696530508093,
+      "y": 865.1856128918394,
+      "agglomeration": 0.5209378354881387
+    },
+    {
+      "city_name": "city_769",
+      "population": 214304,
+      "area": 132.37497931213443,
+      "gdp_per_capita": 73225.09466777233,
+      "education_score": 0.15088806006284167,
+      "infrastructure_score": 0.5610614872602,
+      "location_score": 0.2460819477478146,
+      "x": 733.7879917955458,
+      "y": 248.38198151391023,
+      "agglomeration": 0.6823918266233193
+    },
+    {
+      "city_name": "city_774",
+      "population": 23279,
+      "area": 439.84618616314316,
+      "gdp_per_capita": 30492.31048570435,
+      "education_score": 0.6170174603671179,
+      "infrastructure_score": 0.6767648345075341,
+      "location_score": 0.7806948544183888,
+      "x": 971.7292053950357,
+      "y": 888.0508178220107,
+      "agglomeration": 0.5775989814015289
+    },
+    {
+      "city_name": "city_787",
+      "population": 6641,
+      "area": 452.2635028058568,
+      "gdp_per_capita": 43201.38821905505,
+      "education_score": 0.8864691485927618,
+      "infrastructure_score": 0.1686122775321692,
+      "location_score": 0.4389149743611026,
+      "x": 326.5540380970211,
+      "y": 940.817868817902,
+      "agglomeration": 0.5201048618968107
+    },
+    {
+      "city_name": "city_788",
+      "population": 246340,
+      "area": 483.8058469319954,
+      "gdp_per_capita": 25825.081708685873,
+      "education_score": 0.8225205370970927,
+      "infrastructure_score": 0.5328473309502276,
+      "location_score": 0.9592551023181176,
+      "x": 943.8706616579394,
+      "y": 618.5106800621957,
+      "agglomeration": 0.6646948352153459
+    },
+    {
+      "city_name": "city_795",
+      "population": 137800,
+      "area": 405.1191345283923,
+      "gdp_per_capita": 64859.92000904919,
+      "education_score": 0.2649090710604489,
+      "infrastructure_score": 0.546429461409536,
+      "location_score": 0.7941207966449979,
+      "x": 810.8806327948164,
+      "y": 3.476175154227268,
+      "agglomeration": 0.7045309541937187
+    },
+    {
+      "city_name": "city_812",
+      "population": 42878,
+      "area": 474.62295280632594,
+      "gdp_per_capita": 38834.19119016716,
+      "education_score": 0.27860488359141056,
+      "infrastructure_score": 0.16692607851419144,
+      "location_score": 0.9634327869786193,
+      "x": 254.94945305864704,
+      "y": 231.24915579533555,
+      "agglomeration": 0.5592141506378419
+    },
+    {
+      "city_name": "city_825",
+      "population": 2186,
+      "area": 423.7326135618681,
+      "gdp_per_capita": 25635.519264004648,
+      "education_score": 0.7577458736078806,
+      "infrastructure_score": 0.4450551599552608,
+      "location_score": 0.12978354378408274,
+      "x": 985.2588684497076,
+      "y": 141.63532302905978,
+      "agglomeration": 0.40837114423928744
+    },
+    {
+      "city_name": "city_831",
+      "population": 45090,
+      "area": 334.3141595186745,
+      "gdp_per_capita": 78435.62117322416,
+      "education_score": 0.9896352546432678,
+      "infrastructure_score": 0.7482533084606823,
+      "location_score": 0.6317196264298927,
+      "x": 347.4547297447618,
+      "y": 548.5711375302672,
+      "agglomeration": 0.7889600819113026
+    },
+    {
+      "city_name": "city_842",
+      "population": 110677,
+      "area": 422.75546197873916,
+      "gdp_per_capita": 54329.687737035274,
+      "education_score": 0.9592456976650878,
+      "infrastructure_score": 0.9595673384328531,
+      "location_score": 0.974788142381841,
+      "x": 567.0719442454724,
+      "y": 834.8491775890835,
+      "agglomeration": 0.7909381212502777
+    },
+    {
+      "city_name": "city_864",
+      "population": 10282,
+      "area": 319.19978654592774,
+      "gdp_per_capita": 41754.105325308046,
+      "education_score": 0.4048906074514437,
+      "infrastructure_score": 0.6055590553360273,
+      "location_score": 0.7744941562014895,
+      "x": 531.74218365019,
+      "y": 949.5873096981958,
+      "agglomeration": 0.558946402070438
+    },
+    {
+      "city_name": "city_882",
+      "population": 376371,
+      "area": 237.8757955371556,
+      "gdp_per_capita": 44154.03697573798,
+      "education_score": 0.40968807405541796,
+      "infrastructure_score": 0.3165121088505635,
+      "location_score": 0.5551289570229689,
+      "x": 110.67506620779155,
+      "y": 78.71476370626407,
+      "agglomeration": 0.6365907251796591
+    },
+    {
+      "city_name": "city_900",
+      "population": 6828,
+      "area": 364.3227766611113,
+      "gdp_per_capita": 63514.6154227202,
+      "education_score": 0.24355526855478823,
+      "infrastructure_score": 0.8096956505130983,
+      "location_score": 0.14873939950437604,
+      "x": 476.0987376002798,
+      "y": 791.356041162111,
+      "agglomeration": 0.5595406527301047
+    },
+    {
+      "city_name": "city_908",
+      "population": 17162,
+      "area": 335.54168550286755,
+      "gdp_per_capita": 40619.39023931623,
+      "education_score": 0.9454122719250386,
+      "infrastructure_score": 0.154706678024146,
+      "location_score": 0.8014584221274863,
+      "x": 310.46441677639604,
+      "y": 111.6222384808494,
+      "agglomeration": 0.5839041352176234
+    },
+    {
+      "city_name": "city_909",
+      "population": 95455,
+      "area": 361.8084399935954,
+      "gdp_per_capita": 46968.643828184984,
+      "education_score": 0.127173504339406,
+      "infrastructure_score": 0.15611437126724237,
+      "location_score": 0.6785583697456836,
+      "x": 721.673477454705,
+      "y": 908.6839830184343,
+      "agglomeration": 0.5682937776701418
+    },
+    {
+      "city_name": "city_926",
+      "population": 65695,
+      "area": 467.9174113512321,
+      "gdp_per_capita": 68100.44945168702,
+      "education_score": 0.6725382713188582,
+      "infrastructure_score": 0.28730559702718655,
+      "location_score": 0.5525015453931826,
+      "x": 603.1938190020534,
+      "y": 438.7143487256316,
+      "agglomeration": 0.6813286428154103
+    },
+    {
+      "city_name": "city_931",
+      "population": 23044,
+      "area": 415.7199498610089,
+      "gdp_per_capita": 24180.349112084095,
+      "education_score": 0.451953277199748,
+      "infrastructure_score": 0.43502289066686994,
+      "location_score": 0.10434702817370207,
+      "x": 648.6688725553203,
+      "y": 906.8761352698108,
+      "agglomeration": 0.4479055070060548
+    },
+    {
+      "city_name": "city_932",
+      "population": 25924,
+      "area": 65.2735310766487,
+      "gdp_per_capita": 56775.819759843966,
+      "education_score": 0.8376137848138858,
+      "infrastructure_score": 0.1168272538821833,
+      "location_score": 0.7143435222666452,
+      "x": 963.9541660327818,
+      "y": 787.6096714335035,
+      "agglomeration": 0.628228670614005
+    },
+    {
+      "city_name": "city_937",
+      "population": 11931,
+      "area": 353.9713503837086,
+      "gdp_per_capita": 55907.64413689932,
+      "education_score": 0.8435288109968193,
+      "infrastructure_score": 0.45402775147479446,
+      "location_score": 0.3587764022141643,
+      "x": 398.58974939676807,
+      "y": 818.9657344635922,
+      "agglomeration": 0.598221954720769
+    },
+    {
+      "city_name": "city_956",
+      "population": 53522,
+      "area": 153.00028943277857,
+      "gdp_per_capita": 55013.675875106645,
+      "education_score": 0.961241447692032,
+      "infrastructure_score": 0.8517794566702215,
+      "location_score": 0.910774000515629,
+      "x": 453.92370741200995,
+      "y": 205.08108235965494,
+      "agglomeration": 0.7520200121818661
+    },
+    {
+      "city_name": "city_957",
+      "population": 49113,
+      "area": 315.18538955525105,
+      "gdp_per_capita": 51751.03530145038,
+      "education_score": 0.17416544461774508,
+      "infrastructure_score": 0.4777197687391028,
+      "location_score": 0.7940983118309534,
+      "x": 569.5458512542255,
+      "y": 177.35951008506856,
+      "agglomeration": 0.610497771674363
+    },
+    {
+      "city_name": "city_959",
+      "population": 20458,
+      "area": 86.68534261488838,
+      "gdp_per_capita": 70509.38148524374,
+      "education_score": 0.9957406151423075,
+      "infrastructure_score": 0.7351569714196986,
+      "location_score": 0.8001007262884968,
+      "x": 592.3218610716397,
+      "y": 579.8911493955978,
+      "agglomeration": 0.7523354123364279
+    },
+    {
+      "city_name": "city_964",
+      "population": 105437,
+      "area": 78.61015495211262,
+      "gdp_per_capita": 29129.011800873093,
+      "education_score": 0.9940119183849757,
+      "infrastructure_score": 0.6571624372891696,
+      "location_score": 0.9358980679498448,
+      "x": 559.3641233259324,
+      "y": 612.8341180464585,
+      "agglomeration": 0.6746662449363514
+    },
+    {
+      "city_name": "city_971",
+      "population": 14784,
+      "area": 434.8325485965161,
+      "gdp_per_capita": 76528.67114164276,
+      "education_score": 0.14245935440947985,
+      "infrastructure_score": 0.317872723044807,
+      "location_score": 0.7960481927529591,
+      "x": 864.0582522808287,
+      "y": 207.02933218557794,
+      "agglomeration": 0.6341102906222494
+    },
+    {
+      "city_name": "city_975",
+      "population": 5674,
+      "area": 211.19708565541913,
+      "gdp_per_capita": 58473.47799423574,
+      "education_score": 0.9540054582311561,
+      "infrastructure_score": 0.5622397962785972,
+      "location_score": 0.34927210916277907,
+      "x": 394.0992204387688,
+      "y": 730.879869635532,
+      "agglomeration": 0.6029183168603323
+    },
+    {
+      "city_name": "city_983",
+      "population": 10933,
+      "area": 329.78157650022484,
+      "gdp_per_capita": 36041.24732360825,
+      "education_score": 0.7340955913123439,
+      "infrastructure_score": 0.11616956717274489,
+      "location_score": 0.4662827505252565,
+      "x": 232.97471827234372,
+      "y": 445.7771993654579,
+      "agglomeration": 0.4951103158942115
+    },
+    {
+      "city_name": "city_993",
+      "population": 26805,
+      "area": 247.01045034066675,
+      "gdp_per_capita": 29886.866650731023,
+      "education_score": 0.8481677219135395,
+      "infrastructure_score": 0.7655048829717456,
+      "location_score": 0.47093054792707567,
+      "x": 472.89344965525623,
+      "y": 962.958603536278,
+      "agglomeration": 0.5812946613257274
+    },
+    {
+      "city_name": "city_995",
+      "population": 227660,
+      "area": 186.18369090170302,
+      "gdp_per_capita": 71471.73721945075,
+      "education_score": 0.8259589880492195,
+      "infrastructure_score": 0.753834661492883,
+      "location_score": 0.8418508771062403,
+      "x": 815.1447781216975,
+      "y": 784.8725657751111,
+      "agglomeration": 0.8249238622923103
+    },
+    {
+      "city_name": "city_999",
+      "population": 26296,
+      "area": 224.09491877574033,
+      "gdp_per_capita": 32734.609117355503,
+      "education_score": 0.7307401037510626,
+      "infrastructure_score": 0.8342426278552788,
+      "location_score": 0.7972092747758373,
+      "x": 717.1012256822528,
+      "y": 761.4607083040155,
+      "agglomeration": 0.6179069682075381
     }
   ],
   "edges": [
     [
       0,
-      1,
-      125.7239035707076
+      2,
+      161.80492083795448
     ],
     [
       0,
-      2,
-      123.63682988666471
+      4,
+      180.8425089092775
+    ],
+    [
+      0,
+      21,
+      286.6445235078038
+    ],
+    [
+      0,
+      27,
+      160.7278139617119
+    ],
+    [
+      0,
+      28,
+      38.3884081270633
+    ],
+    [
+      0,
+      29,
+      142.1185761150885
+    ],
+    [
+      0,
+      38,
+      51.547341665421186
+    ],
+    [
+      0,
+      45,
+      295.70454514733035
+    ],
+    [
+      0,
+      53,
+      124.01923787193448
+    ],
+    [
+      0,
+      65,
+      204.959655171686
+    ],
+    [
+      0,
+      77,
+      186.0039454779876
+    ],
+    [
+      0,
+      82,
+      100.33828705470293
+    ],
+    [
+      0,
+      84,
+      119.47097679498864
+    ],
+    [
+      0,
+      90,
+      290.60050820795277
     ],
     [
       1,
+      3,
+      218.51511249476235
+    ],
+    [
+      1,
+      5,
+      82.0234534627494
+    ],
+    [
+      1,
+      6,
+      281.94722457570396
+    ],
+    [
+      1,
+      7,
+      215.89907264937136
+    ],
+    [
+      1,
+      8,
+      158.87699180179126
+    ],
+    [
+      1,
+      10,
+      213.08498245466004
+    ],
+    [
+      1,
+      13,
+      98.30741708730972
+    ],
+    [
+      1,
+      14,
+      169.56262751736358
+    ],
+    [
+      1,
+      20,
+      51.097577768962005
+    ],
+    [
+      1,
+      22,
+      125.61902485103923
+    ],
+    [
+      1,
+      35,
+      285.0123962375722
+    ],
+    [
+      1,
+      37,
+      114.32871589031986
+    ],
+    [
+      1,
+      40,
+      239.76656593938404
+    ],
+    [
+      1,
+      46,
+      145.75720154032095
+    ],
+    [
+      1,
+      54,
+      267.8369324892172
+    ],
+    [
+      1,
+      55,
+      257.62495108534137
+    ],
+    [
+      1,
+      58,
+      181.84957130042537
+    ],
+    [
+      1,
+      59,
+      71.92229124691939
+    ],
+    [
+      1,
+      61,
+      251.90676808922933
+    ],
+    [
+      1,
+      68,
+      209.05638246542497
+    ],
+    [
+      1,
+      70,
+      128.11506277050847
+    ],
+    [
+      1,
+      71,
+      151.6606511956052
+    ],
+    [
+      1,
+      73,
+      199.03857343490526
+    ],
+    [
+      1,
+      75,
+      145.2067818532865
+    ],
+    [
+      1,
+      85,
+      220.48368402213288
+    ],
+    [
+      1,
+      87,
+      268.61262955595004
+    ],
+    [
+      1,
+      88,
+      126.99584974513976
+    ],
+    [
+      1,
+      92,
+      298.88193550964263
+    ],
+    [
+      1,
+      98,
+      65.4663550992682
+    ],
+    [
+      1,
+      99,
+      137.3537848148492
+    ],
+    [
       2,
-      106.38637017378966
+      4,
+      169.08363969660925
+    ],
+    [
+      2,
+      21,
+      129.4414415464953
+    ],
+    [
+      2,
+      23,
+      192.97927113940878
+    ],
+    [
+      2,
+      24,
+      146.7786278977715
+    ],
+    [
+      2,
+      27,
+      258.1027033141906
+    ],
+    [
+      2,
+      28,
+      164.25845671482008
+    ],
+    [
+      2,
+      29,
+      238.92570838376045
+    ],
+    [
+      2,
+      38,
+      112.7735786987722
+    ],
+    [
+      2,
+      45,
+      134.22456075190442
+    ],
+    [
+      2,
+      53,
+      281.1790722051979
+    ],
+    [
+      2,
+      77,
+      156.8294903218303
+    ],
+    [
+      2,
+      82,
+      248.776027408198
+    ],
+    [
+      2,
+      84,
+      46.71267123186492
+    ],
+    [
+      2,
+      90,
+      134.04100797177784
+    ],
+    [
+      2,
+      91,
+      222.1122017299019
+    ],
+    [
+      3,
+      5,
+      201.23994262757546
+    ],
+    [
+      3,
+      7,
+      167.97677255002492
+    ],
+    [
+      3,
+      12,
+      279.7736691594723
+    ],
+    [
+      3,
+      13,
+      195.7187369928064
+    ],
+    [
+      3,
+      20,
+      187.16490744328516
+    ],
+    [
+      3,
+      22,
+      102.9409898978056
+    ],
+    [
+      3,
+      35,
+      82.66890385279606
+    ],
+    [
+      3,
+      37,
+      213.1413988517425
+    ],
+    [
+      3,
+      49,
+      241.82328407402204
+    ],
+    [
+      3,
+      55,
+      173.74433258233793
+    ],
+    [
+      3,
+      58,
+      299.89388818339296
+    ],
+    [
+      3,
+      59,
+      260.130346478536
+    ],
+    [
+      3,
+      61,
+      269.9094919164321
+    ],
+    [
+      3,
+      62,
+      281.3677730388857
+    ],
+    [
+      3,
+      70,
+      174.0825015983938
+    ],
+    [
+      3,
+      75,
+      99.79024051280838
+    ],
+    [
+      3,
+      88,
+      269.4398818130347
+    ],
+    [
+      3,
+      98,
+      282.2506140322358
+    ],
+    [
+      4,
+      16,
+      286.832654103126
+    ],
+    [
+      4,
+      21,
+      275.53760236493457
+    ],
+    [
+      4,
+      24,
+      290.94752147913545
+    ],
+    [
+      4,
+      27,
+      138.74287351541912
+    ],
+    [
+      4,
+      28,
+      148.07469571404707
+    ],
+    [
+      4,
+      29,
+      127.77491139116654
+    ],
+    [
+      4,
+      38,
+      173.59973383992698
+    ],
+    [
+      4,
+      43,
+      226.9025165578097
+    ],
+    [
+      4,
+      45,
+      262.17007723345836
+    ],
+    [
+      4,
+      53,
+      236.87140360487038
+    ],
+    [
+      4,
+      65,
+      208.53062646480797
+    ],
+    [
+      4,
+      77,
+      19.18073912551207
+    ],
+    [
+      4,
+      82,
+      196.35984055782836
+    ],
+    [
+      4,
+      84,
+      139.98722939652635
+    ],
+    [
+      4,
+      90,
+      219.54014619122046
+    ],
+    [
+      4,
+      96,
+      215.75616211198303
+    ],
+    [
+      5,
+      7,
+      258.6804007273118
+    ],
+    [
+      5,
+      8,
+      199.00449395145998
+    ],
+    [
+      5,
+      10,
+      281.9334825382118
+    ],
+    [
+      5,
+      13,
+      17.159817433000192
+    ],
+    [
+      5,
+      14,
+      251.5846534826935
+    ],
+    [
+      5,
+      20,
+      38.49628129272831
+    ],
+    [
+      5,
+      22,
+      140.69050523183614
+    ],
+    [
+      5,
+      35,
+      248.28946890879556
+    ],
+    [
+      5,
+      37,
+      184.32745833576917
+    ],
+    [
+      5,
+      46,
+      212.3088316845872
+    ],
+    [
+      5,
+      55,
+      294.53629625832053
+    ],
+    [
+      5,
+      58,
+      261.57302270542533
+    ],
+    [
+      5,
+      59,
+      66.81723783711875
+    ],
+    [
+      5,
+      68,
+      266.96421948038807
+    ],
+    [
+      5,
+      70,
+      183.29963140330304
+    ],
+    [
+      5,
+      71,
+      142.96298610966804
+    ],
+    [
+      5,
+      73,
+      169.82400940159482
+    ],
+    [
+      5,
+      75,
+      104.92483070044706
+    ],
+    [
+      5,
+      85,
+      281.0634790025947
+    ],
+    [
+      5,
+      88,
+      72.01991544017292
+    ],
+    [
+      5,
+      98,
+      132.75745189164195
+    ],
+    [
+      5,
+      99,
+      218.8440830100697
+    ],
+    [
+      6,
+      7,
+      294.6307051435198
+    ],
+    [
+      6,
+      8,
+      270.2172600397104
+    ],
+    [
+      6,
+      10,
+      161.97702969968134
+    ],
+    [
+      6,
+      14,
+      113.47701773466768
+    ],
+    [
+      6,
+      37,
+      216.0096978296263
+    ],
+    [
+      6,
+      40,
+      155.76907147040455
+    ],
+    [
+      6,
+      44,
+      213.96117202900712
+    ],
+    [
+      6,
+      46,
+      195.8663831226846
+    ],
+    [
+      6,
+      47,
+      26.538265732283325
+    ],
+    [
+      6,
+      52,
+      100.11937501258909
+    ],
+    [
+      6,
+      54,
+      210.77747454482235
+    ],
+    [
+      6,
+      57,
+      195.61527962771098
+    ],
+    [
+      6,
+      58,
+      127.46167931959715
+    ],
+    [
+      6,
+      60,
+      293.9439469322969
+    ],
+    [
+      6,
+      61,
+      214.84724494653642
+    ],
+    [
+      6,
+      64,
+      176.11633558180276
+    ],
+    [
+      6,
+      67,
+      129.7083905334134
+    ],
+    [
+      6,
+      68,
+      213.70786788706857
+    ],
+    [
+      6,
+      69,
+      235.34322766660026
+    ],
+    [
+      6,
+      70,
+      253.1524706578525
+    ],
+    [
+      6,
+      74,
+      297.62012683752863
+    ],
+    [
+      6,
+      80,
+      62.422901829113556
+    ],
+    [
+      6,
+      81,
+      181.50116780896676
+    ],
+    [
+      6,
+      83,
+      97.80545001177666
+    ],
+    [
+      6,
+      85,
+      202.20017960618583
+    ],
+    [
+      6,
+      87,
+      154.5510083106596
+    ],
+    [
+      6,
+      89,
+      179.5857222088352
+    ],
+    [
+      6,
+      92,
+      193.79601263925338
+    ],
+    [
+      6,
+      93,
+      160.30084210734617
+    ],
+    [
+      6,
+      95,
+      182.8258477406176
+    ],
+    [
+      6,
+      97,
+      214.6307050079551
+    ],
+    [
+      6,
+      98,
+      243.358456200587
+    ],
+    [
+      6,
+      99,
+      145.43612407957835
+    ],
+    [
+      7,
+      12,
+      264.42146909231883
+    ],
+    [
+      7,
+      13,
+      264.8690024158489
+    ],
+    [
+      7,
+      14,
+      216.36814849110704
+    ],
+    [
+      7,
+      17,
+      289.33952115585464
+    ],
+    [
+      7,
+      20,
+      223.71348140355636
+    ],
+    [
+      7,
+      22,
+      124.36981163160686
+    ],
+    [
+      7,
+      35,
+      245.8251249973962
+    ],
+    [
+      7,
+      37,
+      124.61901166911497
+    ],
+    [
+      7,
+      40,
+      148.7507767386825
+    ],
+    [
+      7,
+      47,
+      295.4888695986516
+    ],
+    [
+      7,
+      49,
+      109.27158852666594
+    ],
+    [
+      7,
+      55,
+      44.40341419802658
+    ],
+    [
+      7,
+      58,
+      174.27028355934695
+    ],
+    [
+      7,
+      59,
+      285.58268617437676
+    ],
+    [
+      7,
+      61,
+      103.8930479328873
+    ],
+    [
+      7,
+      62,
+      236.0969711628873
+    ],
+    [
+      7,
+      63,
+      259.1347654927736
+    ],
+    [
+      7,
+      67,
+      217.36016025455405
+    ],
+    [
+      7,
+      69,
+      143.2385401010405
+    ],
+    [
+      7,
+      70,
+      90.3031087416125
+    ],
+    [
+      7,
+      72,
+      290.64935695387265
+    ],
+    [
+      7,
+      75,
+      208.81438836629832
+    ],
+    [
+      7,
+      86,
+      178.33542528194306
+    ],
+    [
+      7,
+      92,
+      163.96658444216467
+    ],
+    [
+      7,
+      93,
+      205.52471810581437
+    ],
+    [
+      7,
+      98,
+      254.56848928126166
+    ],
+    [
+      7,
+      99,
+      225.4985904449983
+    ],
+    [
+      8,
+      10,
+      121.74128744173332
+    ],
+    [
+      8,
+      13,
+      214.09673305040596
+    ],
+    [
+      8,
+      14,
+      196.42971536926
+    ],
+    [
+      8,
+      20,
+      194.21738208386614
+    ],
+    [
+      8,
+      22,
+      283.5401259412605
+    ],
+    [
+      8,
+      37,
+      230.23890762401058
+    ],
+    [
+      8,
+      46,
+      76.39440311830754
+    ],
+    [
+      8,
+      47,
+      296.09156818887453
+    ],
+    [
+      8,
+      52,
+      288.6628240154758
+    ],
+    [
+      8,
+      54,
+      139.26149385297458
+    ],
+    [
+      8,
+      58,
+      240.084186008207
+    ],
+    [
+      8,
+      59,
+      132.91989692511254
+    ],
+    [
+      8,
+      68,
+      81.72293492833269
+    ],
+    [
+      8,
+      70,
+      263.6034711090004
+    ],
+    [
+      8,
+      71,
+      103.7705532502388
+    ],
+    [
+      8,
+      73,
+      154.07547105360516
+    ],
+    [
+      8,
+      75,
+      295.1757859240463
+    ],
+    [
+      8,
+      80,
+      255.64343499107767
+    ],
+    [
+      8,
+      81,
+      293.061738187741
+    ],
+    [
+      8,
+      85,
+      98.79856497912905
+    ],
+    [
+      8,
+      87,
+      170.37367182869832
+    ],
+    [
+      8,
+      88,
+      175.9271279568134
+    ],
+    [
+      8,
+      98,
+      100.51080479558426
+    ],
+    [
+      8,
+      99,
+      159.57594158635212
+    ],
+    [
+      9,
+      12,
+      190.078576347596
+    ],
+    [
+      9,
+      17,
+      254.34532472945443
+    ],
+    [
+      9,
+      21,
+      274.57503461309364
+    ],
+    [
+      9,
+      23,
+      231.01359136510823
+    ],
+    [
+      9,
+      24,
+      257.48298183674353
+    ],
+    [
+      9,
+      31,
+      244.58043198539605
+    ],
+    [
+      9,
+      34,
+      150.8105724349663
+    ],
+    [
+      9,
+      45,
+      281.1319680698072
+    ],
+    [
+      9,
+      48,
+      86.22003944131451
+    ],
+    [
+      9,
+      62,
+      215.50279641808734
+    ],
+    [
+      9,
+      66,
+      149.39718953448246
+    ],
+    [
+      9,
+      72,
+      162.65267675780262
+    ],
+    [
+      9,
+      76,
+      98.64413049867537
+    ],
+    [
+      9,
+      78,
+      231.88744371413634
+    ],
+    [
+      9,
+      91,
+      210.19096473328503
+    ],
+    [
+      9,
+      94,
+      158.4404138635608
+    ],
+    [
+      10,
+      13,
+      298.9404286262786
+    ],
+    [
+      10,
+      14,
+      133.92247153687836
+    ],
+    [
+      10,
+      20,
+      262.13239884660453
+    ],
+    [
+      10,
+      37,
+      222.52007340864023
+    ],
+    [
+      10,
+      40,
+      255.24613692799568
+    ],
+    [
+      10,
+      46,
+      69.67182722683303
+    ],
+    [
+      10,
+      47,
+      188.50339124263652
+    ],
+    [
+      10,
+      52,
+      166.92384085257444
+    ],
+    [
+      10,
+      54,
+      69.27444222393618
+    ],
+    [
+      10,
+      58,
+      184.07273845038688
+    ],
+    [
+      10,
+      59,
+      225.56053719496202
+    ],
+    [
+      10,
+      64,
+      293.09750957991554
+    ],
+    [
+      10,
+      67,
+      269.80169896485427
+    ],
+    [
+      10,
+      68,
+      51.87602874329659
+    ],
+    [
+      10,
+      70,
+      264.66658000739443
+    ],
+    [
+      10,
+      71,
+      223.51779540624537
+    ],
+    [
+      10,
+      73,
+      275.7178991690108
+    ],
+    [
+      10,
+      80,
+      135.77321160789904
+    ],
+    [
+      10,
+      81,
+      179.94417659663887
+    ],
+    [
+      10,
+      83,
+      236.09765949730274
+    ],
+    [
+      10,
+      85,
+      40.889728031651934
+    ],
+    [
+      10,
+      87,
+      56.361111532524525
+    ],
+    [
+      10,
+      88,
+      282.1303359231547
+    ],
+    [
+      10,
+      93,
+      297.2232453125289
+    ],
+    [
+      10,
+      97,
+      239.4448953428636
+    ],
+    [
+      10,
+      98,
+      150.20637616949094
+    ],
+    [
+      10,
+      99,
+      117.07310559719501
+    ],
+    [
+      11,
+      15,
+      296.98704989837324
+    ],
+    [
+      11,
+      25,
+      121.0713799625005
+    ],
+    [
+      11,
+      39,
+      6.801429341487617
+    ],
+    [
+      11,
+      41,
+      77.63384207529651
+    ],
+    [
+      11,
+      50,
+      274.7332707650549
+    ],
+    [
+      11,
+      51,
+      18.70560510515743
+    ],
+    [
+      12,
+      17,
+      180.79462639928747
+    ],
+    [
+      12,
+      23,
+      265.9523897279879
+    ],
+    [
+      12,
+      31,
+      194.62482259992856
+    ],
+    [
+      12,
+      34,
+      287.46300236871116
+    ],
+    [
+      12,
+      35,
+      290.2580513131773
+    ],
+    [
+      12,
+      48,
+      116.27939621111057
+    ],
+    [
+      12,
+      49,
+      198.74531865366785
+    ],
+    [
+      12,
+      55,
+      221.3642562721524
+    ],
+    [
+      12,
+      62,
+      49.99287051507776
+    ],
+    [
+      12,
+      66,
+      256.21168387071737
+    ],
+    [
+      12,
+      72,
+      57.95968385591414
+    ],
+    [
+      12,
+      76,
+      274.0334938069557
+    ],
+    [
+      12,
+      78,
+      241.6206823906086
+    ],
+    [
+      12,
+      86,
+      243.53064511321026
+    ],
+    [
+      12,
+      91,
+      236.709229478447
+    ],
+    [
+      12,
+      94,
+      105.37190155230229
+    ],
+    [
+      13,
+      14,
+      267.72843442993076
+    ],
+    [
+      13,
+      20,
+      51.6219546472522
+    ],
+    [
+      13,
+      22,
+      143.95280640017452
+    ],
+    [
+      13,
+      35,
+      237.96451653164226
+    ],
+    [
+      13,
+      37,
+      197.00353009065066
+    ],
+    [
+      13,
+      46,
+      229.29489656034713
+    ],
+    [
+      13,
+      55,
+      299.13381053312526
+    ],
+    [
+      13,
+      58,
+      276.3517599338355
+    ],
+    [
+      13,
+      59,
+      81.25495637197511
+    ],
+    [
+      13,
+      68,
+      283.3100989431216
+    ],
+    [
+      13,
+      70,
+      193.06027263651097
+    ],
+    [
+      13,
+      71,
+      152.37189616772972
+    ],
+    [
+      13,
+      73,
+      174.1549725076034
+    ],
+    [
+      13,
+      75,
+      97.09388172956031
+    ],
+    [
+      13,
+      85,
+      297.57962339188754
+    ],
+    [
+      13,
+      88,
+      73.83112175810398
+    ],
+    [
+      13,
+      98,
+      149.90065797881292
+    ],
+    [
+      13,
+      99,
+      235.45980131655543
+    ],
+    [
+      14,
+      20,
+      218.08406079190385
+    ],
+    [
+      14,
+      22,
+      223.24617685724948
+    ],
+    [
+      14,
+      37,
+      111.04991892288847
+    ],
+    [
+      14,
+      40,
+      124.1054937865695
+    ],
+    [
+      14,
+      46,
+      122.03162416303269
+    ],
+    [
+      14,
+      47,
+      131.18083671711483
+    ],
+    [
+      14,
+      49,
+      293.95534516652964
+    ],
+    [
+      14,
+      52,
+      193.5239700088764
+    ],
+    [
+      14,
+      54,
+      202.5660201750594
+    ],
+    [
+      14,
+      55,
+      257.49600445544974
+    ],
+    [
+      14,
+      58,
+      50.258872044497664
+    ],
+    [
+      14,
+      59,
+      222.3337023302688
+    ],
+    [
+      14,
+      61,
+      172.2185967427128
+    ],
+    [
+      14,
+      64,
+      289.3273607857987
+    ],
+    [
+      14,
+      67,
+      157.15726997915368
+    ],
+    [
+      14,
+      68,
+      172.58517639230303
+    ],
+    [
+      14,
+      69,
+      216.56388254441612
+    ],
+    [
+      14,
+      70,
+      152.56666121640626
+    ],
+    [
+      14,
+      71,
+      267.0212000367335
+    ],
+    [
+      14,
+      75,
+      290.38253295667687
+    ],
+    [
+      14,
+      80,
+      146.61972521868685
+    ],
+    [
+      14,
+      81,
+      254.89691981757886
+    ],
+    [
+      14,
+      83,
+      211.1655509029007
+    ],
+    [
+      14,
+      85,
+      169.91168242652532
+    ],
+    [
+      14,
+      87,
+      166.67412819146028
+    ],
+    [
+      14,
+      88,
+      285.6019481990834
+    ],
+    [
+      14,
+      89,
+      293.06265242031196
+    ],
+    [
+      14,
+      92,
+      186.4868545517071
+    ],
+    [
+      14,
+      93,
+      179.0645958193054
+    ],
+    [
+      14,
+      95,
+      287.95389591101
+    ],
+    [
+      14,
+      98,
+      139.63225285013164
+    ],
+    [
+      14,
+      99,
+      39.61907614096346
+    ],
+    [
+      15,
+      19,
+      116.6799967287104
+    ],
+    [
+      15,
+      25,
+      176.58127878392855
+    ],
+    [
+      15,
+      33,
+      256.5537500571801
+    ],
+    [
+      15,
+      36,
+      140.39099780922928
+    ],
+    [
+      15,
+      39,
+      296.20774755665303
+    ],
+    [
+      15,
+      41,
+      223.91262132242522
+    ],
+    [
+      15,
+      42,
+      72.77936816679872
+    ],
+    [
+      15,
+      44,
+      122.66896105225445
+    ],
+    [
+      15,
+      47,
+      294.8483559559227
+    ],
+    [
+      15,
+      50,
+      251.8871011938671
+    ],
+    [
+      15,
+      52,
+      233.5833561932949
+    ],
+    [
+      15,
+      57,
+      166.2702926585434
+    ],
+    [
+      15,
+      64,
+      132.3068727869549
+    ],
+    [
+      15,
+      74,
+      37.13482098078418
+    ],
+    [
+      15,
+      80,
+      276.761707106637
+    ],
+    [
+      15,
+      81,
+      232.93802607264269
+    ],
+    [
+      15,
+      83,
+      212.82441737831053
+    ],
+    [
+      15,
+      89,
+      135.240296983715
+    ],
+    [
+      15,
+      95,
+      204.48043985704277
+    ],
+    [
+      15,
+      97,
+      178.30419991305234
+    ],
+    [
+      16,
+      17,
+      239.9104523672085
+    ],
+    [
+      16,
+      18,
+      146.34274933062744
+    ],
+    [
+      16,
+      26,
+      97.9537641956332
+    ],
+    [
+      16,
+      32,
+      215.7348321095166
+    ],
+    [
+      16,
+      40,
+      277.8944592017043
+    ],
+    [
+      16,
+      49,
+      263.9222029450972
+    ],
+    [
+      16,
+      60,
+      185.81617263133685
+    ],
+    [
+      16,
+      61,
+      262.35410095918587
+    ],
+    [
+      16,
+      63,
+      81.7344042530927
+    ],
+    [
+      16,
+      67,
+      239.60929168379167
+    ],
+    [
+      16,
+      69,
+      206.4042087214544
+    ],
+    [
+      16,
+      77,
+      273.73157405150147
+    ],
+    [
+      16,
+      79,
+      126.98334600883189
+    ],
+    [
+      16,
+      86,
+      179.84291844685828
+    ],
+    [
+      16,
+      90,
+      243.72462942937673
+    ],
+    [
+      16,
+      92,
+      214.88072431967325
+    ],
+    [
+      16,
+      93,
+      214.4333240450809
+    ],
+    [
+      16,
+      95,
+      285.4975457120141
+    ],
+    [
+      16,
+      96,
+      190.56608490621255
+    ],
+    [
+      17,
+      21,
+      209.49047083712117
+    ],
+    [
+      17,
+      23,
+      137.50697404332107
+    ],
+    [
+      17,
+      24,
+      199.31550610862084
+    ],
+    [
+      17,
+      45,
+      182.11940033706205
+    ],
+    [
+      17,
+      48,
+      177.07101888044127
+    ],
+    [
+      17,
+      49,
+      180.75810054789517
+    ],
+    [
+      17,
+      55,
+      249.7479944508165
+    ],
+    [
+      17,
+      61,
+      288.7318299659675
+    ],
+    [
+      17,
+      62,
+      138.5014278134563
+    ],
+    [
+      17,
+      63,
+      216.8282523722733
+    ],
+    [
+      17,
+      69,
+      250.89137036421482
+    ],
+    [
+      17,
+      72,
+      135.77358060422054
+    ],
+    [
+      17,
+      86,
+      149.58295917913955
+    ],
+    [
+      17,
+      90,
+      172.25156550521297
+    ],
+    [
+      17,
+      91,
+      117.04672363541289
+    ],
+    [
+      17,
+      92,
+      291.00144659792034
+    ],
+    [
+      17,
+      94,
+      272.44955968308085
+    ],
+    [
+      18,
+      19,
+      273.5813926604108
+    ],
+    [
+      18,
+      26,
+      80.17132932326828
+    ],
+    [
+      18,
+      30,
+      222.06846455627976
+    ],
+    [
+      18,
+      32,
+      69.75066558509945
+    ],
+    [
+      18,
+      33,
+      170.08620732233618
+    ],
+    [
+      18,
+      36,
+      250.35544716413742
+    ],
+    [
+      18,
+      43,
+      215.81739770934107
+    ],
+    [
+      18,
+      44,
+      283.05618750253524
+    ],
+    [
+      18,
+      50,
+      236.95902368005326
+    ],
+    [
+      18,
+      56,
+      229.75662889143078
+    ],
+    [
+      18,
+      57,
+      247.50542989185857
+    ],
+    [
+      18,
+      60,
+      82.74337395381701
+    ],
+    [
+      18,
+      63,
+      202.91532125790295
+    ],
+    [
+      18,
+      67,
+      282.64800026646174
+    ],
+    [
+      18,
+      79,
+      49.334115137418806
+    ],
+    [
+      18,
+      92,
+      294.53132794442394
+    ],
+    [
+      18,
+      93,
+      270.4930633905845
+    ],
+    [
+      18,
+      95,
+      221.97193155751089
+    ],
+    [
+      18,
+      96,
+      108.13244266024962
+    ],
+    [
+      19,
+      25,
+      190.00186309843374
+    ],
+    [
+      19,
+      26,
+      287.2084657916553
+    ],
+    [
+      19,
+      30,
+      257.31283447384766
+    ],
+    [
+      19,
+      32,
+      227.00212491337916
+    ],
+    [
+      19,
+      33,
+      140.80965400142813
+    ],
+    [
+      19,
+      36,
+      23.922298714076657
+    ],
+    [
+      19,
+      39,
+      298.2915279533802
+    ],
+    [
+      19,
+      41,
+      246.68012723405843
+    ],
+    [
+      19,
+      42,
+      189.3157242389652
+    ],
+    [
+      19,
+      44,
+      89.60718077675757
+    ],
+    [
+      19,
+      47,
+      283.4542928797904
+    ],
+    [
+      19,
+      50,
+      149.6906784952493
+    ],
+    [
+      19,
+      52,
+      266.10886398424094
+    ],
+    [
+      19,
+      57,
+      111.2802886786251
+    ],
+    [
+      19,
+      60,
+      202.09979909593585
+    ],
+    [
+      19,
+      64,
+      138.95328327777415
+    ],
+    [
+      19,
+      74,
+      150.71130628589594
+    ],
+    [
+      19,
+      79,
+      263.31504993312006
+    ],
+    [
+      19,
+      80,
+      297.79260980497116
+    ],
+    [
+      19,
+      83,
+      205.05487433330097
+    ],
+    [
+      19,
+      89,
+      128.6514708463616
+    ],
+    [
+      19,
+      95,
+      141.26109852873097
+    ],
+    [
+      19,
+      97,
+      258.8685595323647
+    ],
+    [
+      20,
+      22,
+      111.22557671494455
+    ],
+    [
+      20,
+      35,
+      245.1285709405193
+    ],
+    [
+      20,
+      37,
+      145.9270708529545
+    ],
+    [
+      20,
+      40,
+      275.2815730358604
+    ],
+    [
+      20,
+      46,
+      193.57235110919953
+    ],
+    [
+      20,
+      55,
+      261.2852592969273
+    ],
+    [
+      20,
+      58,
+      224.8748361638881
+    ],
+    [
+      20,
+      59,
+      73.69272874585775
+    ],
+    [
+      20,
+      61,
+      278.31427448523357
+    ],
+    [
+      20,
+      68,
+      253.7646997075075
+    ],
+    [
+      20,
+      70,
+      145.5077521912525
+    ],
+    [
+      20,
+      71,
+      158.73919057604547
+    ],
+    [
+      20,
+      73,
+      194.91281967738274
+    ],
+    [
+      20,
+      75,
+      101.08681549383957
+    ],
+    [
+      20,
+      85,
+      266.415583862183
+    ],
+    [
+      20,
+      88,
+      104.01153224796978
+    ],
+    [
+      20,
+      98,
+      112.22520870511906
+    ],
+    [
+      20,
+      99,
+      187.61685525395163
+    ],
+    [
+      21,
+      23,
+      75.29741359640639
+    ],
+    [
+      21,
+      24,
+      17.34754342069804
+    ],
+    [
+      21,
+      28,
+      293.1550338445697
+    ],
+    [
+      21,
+      38,
+      235.41794315371243
+    ],
+    [
+      21,
+      45,
+      35.04080590597555
+    ],
+    [
+      21,
+      48,
+      255.27391594633644
+    ],
+    [
+      21,
+      72,
+      280.5102604290753
+    ],
+    [
+      21,
+      77,
+      258.7755864895615
+    ],
+    [
+      21,
+      84,
+      176.15142937277724
+    ],
+    [
+      21,
+      90,
+      95.02187621663276
+    ],
+    [
+      21,
+      91,
+      103.29677035381968
+    ],
+    [
+      22,
+      35,
+      181.7405015681539
+    ],
+    [
+      22,
+      37,
+      114.32769255637339
+    ],
+    [
+      22,
+      40,
+      224.63909431275886
+    ],
+    [
+      22,
+      46,
+      256.6026764417663
+    ],
+    [
+      22,
+      49,
+      229.20173112651926
+    ],
+    [
+      22,
+      55,
+      155.51126222689328
+    ],
+    [
+      22,
+      58,
+      204.60417983386128
+    ],
+    [
+      22,
+      59,
+      182.64681513541854
+    ],
+    [
+      22,
+      61,
+      205.52349514470134
+    ],
+    [
+      22,
+      67,
+      298.36651417254626
+    ],
+    [
+      22,
+      69,
+      256.89615063713836
+    ],
+    [
+      22,
+      70,
+      81.40136111406211
+    ],
+    [
+      22,
+      71,
+      268.22734393264295
+    ],
+    [
+      22,
+      75,
+      88.5622391938777
+    ],
+    [
+      22,
+      88,
+      212.37067670310358
+    ],
+    [
+      22,
+      92,
+      265.24776799272536
+    ],
+    [
+      22,
+      93,
+      297.18177330936817
+    ],
+    [
+      22,
+      98,
+      185.0641904309688
+    ],
+    [
+      22,
+      99,
+      209.89884513343043
+    ],
+    [
+      23,
+      24,
+      62.64085432329608
+    ],
+    [
+      23,
+      45,
+      58.76799373005237
+    ],
+    [
+      23,
+      48,
+      193.48938317738813
+    ],
+    [
+      23,
+      62,
+      241.75058336040595
+    ],
+    [
+      23,
+      72,
+      208.2031885141959
+    ],
+    [
+      23,
+      77,
+      294.7335267390355
+    ],
+    [
+      23,
+      84,
+      238.33698208512703
+    ],
+    [
+      23,
+      86,
+      279.09159939169734
+    ],
+    [
+      23,
+      90,
+      96.63391474142338
+    ],
+    [
+      23,
+      91,
+      29.26843632979548
+    ],
+    [
+      24,
+      38,
+      252.4909942499068
+    ],
+    [
+      24,
+      45,
+      38.46568428900754
+    ],
+    [
+      24,
+      48,
+      238.14200359964687
+    ],
+    [
+      24,
+      72,
+      264.8257971891742
+    ],
+    [
+      24,
+      77,
+      273.91388610981386
+    ],
+    [
+      24,
+      84,
+      193.4862673214872
+    ],
+    [
+      24,
+      90,
+      101.3017056568519
+    ],
+    [
+      24,
+      91,
+      89.22663918421033
+    ],
+    [
+      25,
+      33,
+      263.9695992754003
+    ],
+    [
+      25,
+      36,
+      204.04344507000891
+    ],
+    [
+      25,
+      39,
+      119.85838104511069
+    ],
+    [
+      25,
+      41,
+      56.688962438767376
+    ],
+    [
+      25,
+      42,
+      209.50663132841805
+    ],
+    [
+      25,
+      44,
+      262.66818806442234
+    ],
+    [
+      25,
+      50,
+      212.5357771913544
+    ],
+    [
+      25,
+      51,
+      128.13364119987304
+    ],
+    [
+      25,
+      57,
+      296.55318082369683
+    ],
+    [
+      25,
+      64,
+      295.151164221375
+    ],
+    [
+      25,
+      74,
+      202.10605069187346
+    ],
+    [
+      25,
+      89,
+      292.16136915105
+    ],
+    [
+      26,
+      30,
+      295.79792536558494
+    ],
+    [
+      26,
+      32,
+      138.05840752449006
+    ],
+    [
+      26,
+      33,
+      218.64370424229955
+    ],
+    [
+      26,
+      36,
+      266.6362662446632
+    ],
+    [
+      26,
+      40,
+      267.9387858875076
+    ],
+    [
+      26,
+      43,
+      290.566853988979
+    ],
+    [
+      26,
+      44,
+      270.92568533301034
+    ],
+    [
+      26,
+      47,
+      277.92351634199
+    ],
+    [
+      26,
+      50,
+      290.19039152374535
+    ],
+    [
+      26,
+      57,
+      229.25509370987322
+    ],
+    [
+      26,
+      60,
+      88.80710884860194
+    ],
+    [
+      26,
+      61,
+      273.74365439356836
+    ],
+    [
+      26,
+      63,
+      129.9346152085585
+    ],
+    [
+      26,
+      64,
+      297.8753878981506
+    ],
+    [
+      26,
+      67,
+      208.48829269476468
+    ],
+    [
+      26,
+      69,
+      225.6629391190446
+    ],
+    [
+      26,
+      79,
+      36.9967840297947
+    ],
+    [
+      26,
+      83,
+      272.40042754189017
+    ],
+    [
+      26,
+      86,
+      241.39205357640594
+    ],
+    [
+      26,
+      89,
+      283.7671824300116
+    ],
+    [
+      26,
+      92,
+      214.79040073304603
+    ],
+    [
+      26,
+      93,
+      193.2995509223691
+    ],
+    [
+      26,
+      95,
+      195.57015305184913
+    ],
+    [
+      26,
+      96,
+      174.1539643037987
+    ],
+    [
+      27,
+      28,
+      125.17405545389595
+    ],
+    [
+      27,
+      29,
+      20.062944290383072
+    ],
+    [
+      27,
+      38,
+      192.55249078503206
+    ],
+    [
+      27,
+      43,
+      244.61832726780634
+    ],
+    [
+      27,
+      53,
+      130.85581803554106
+    ],
+    [
+      27,
+      65,
+      71.00919255847361
+    ],
+    [
+      27,
+      77,
+      157.0349778987348
+    ],
+    [
+      27,
+      82,
+      98.77863849674009
+    ],
+    [
+      27,
+      84,
+      213.44421605615736
+    ],
+    [
+      27,
+      96,
+      296.2576664883942
+    ],
+    [
+      28,
+      29,
+      105.89203628749256
+    ],
+    [
+      28,
+      38,
+      70.28354125631519
+    ],
+    [
+      28,
+      45,
+      297.74481179430995
+    ],
+    [
+      28,
+      53,
+      118.10741440274792
+    ],
+    [
+      28,
+      65,
+      175.83452842034143
+    ],
+    [
+      28,
+      77,
+      155.59485286173708
+    ],
+    [
+      28,
+      82,
+      84.56850430621553
+    ],
+    [
+      28,
+      84,
+      118.14009660973043
+    ],
+    [
+      28,
+      90,
+      284.48082804761924
+    ],
+    [
+      29,
+      38,
+      172.67254144993615
+    ],
+    [
+      29,
+      43,
+      255.0444310869001
+    ],
+    [
+      29,
+      53,
+      125.28343364324851
+    ],
+    [
+      29,
+      65,
+      87.29126052233642
+    ],
+    [
+      29,
+      77,
+      145.27119894424345
+    ],
+    [
+      29,
+      82,
+      89.47220504490613
+    ],
+    [
+      29,
+      84,
+      193.95484129922212
+    ],
+    [
+      29,
+      96,
+      299.00900926299147
+    ],
+    [
+      30,
+      32,
+      157.82348256413815
+    ],
+    [
+      30,
+      33,
+      130.70974583893803
+    ],
+    [
+      30,
+      36,
+      238.39863113420023
+    ],
+    [
+      30,
+      43,
+      190.85401887557347
+    ],
+    [
+      30,
+      50,
+      113.50101998202547
+    ],
+    [
+      30,
+      56,
+      101.95866020024188
+    ],
+    [
+      30,
+      60,
+      232.96942620234185
+    ],
+    [
+      30,
+      79,
+      258.99312548403833
+    ],
+    [
+      30,
+      96,
+      215.11248046748824
+    ],
+    [
+      31,
+      34,
+      221.87075474345204
+    ],
+    [
+      31,
+      35,
+      267.89337481604184
+    ],
+    [
+      31,
+      48,
+      237.23482208361747
+    ],
+    [
+      31,
+      62,
+      243.56209030669996
+    ],
+    [
+      31,
+      66,
+      176.9399403264054
+    ],
+    [
+      31,
+      72,
+      237.76437308146893
+    ],
+    [
+      31,
+      76,
+      263.51652216023285
+    ],
+    [
+      31,
+      78,
+      74.36326158866746
+    ],
+    [
+      31,
+      94,
+      105.272645922154
+    ],
+    [
+      32,
+      33,
+      105.27871481275497
+    ],
+    [
+      32,
+      36,
+      203.08656697151613
+    ],
+    [
+      32,
+      43,
+      203.77644681635925
+    ],
+    [
+      32,
+      44,
+      256.39584239996384
+    ],
+    [
+      32,
+      50,
+      168.497632775012
+    ],
+    [
+      32,
+      56,
+      187.1856580521949
+    ],
+    [
+      32,
+      57,
+      228.69139945967092
+    ],
+    [
+      32,
+      60,
+      85.89261176430014
+    ],
+    [
+      32,
+      63,
+      267.0435296363642
+    ],
+    [
+      32,
+      79,
+      101.18487018169297
+    ],
+    [
+      32,
+      89,
+      286.12128623891425
+    ],
+    [
+      32,
+      95,
+      212.75510028894467
+    ],
+    [
+      32,
+      96,
+      129.94562064058732
+    ],
+    [
+      33,
+      36,
+      118.31722741321398
+    ],
+    [
+      33,
+      43,
+      269.12729930685225
+    ],
+    [
+      33,
+      44,
+      199.45692404462065
+    ],
+    [
+      33,
+      50,
+      71.90678735996958
+    ],
+    [
+      33,
+      56,
+      212.0616222401056
+    ],
+    [
+      33,
+      57,
+      188.63419779192802
+    ],
+    [
+      33,
+      60,
+      134.5597544837058
+    ],
+    [
+      33,
+      64,
+      251.66992980400036
+    ],
+    [
+      33,
+      74,
+      291.39340816724484
+    ],
+    [
+      33,
+      79,
+      183.92941645650185
+    ],
+    [
+      33,
+      83,
+      289.5078963391722
+    ],
+    [
+      33,
+      89,
+      237.0092006958328
+    ],
+    [
+      33,
+      95,
+      191.17178727685416
+    ],
+    [
+      33,
+      96,
+      228.11355091818632
+    ],
+    [
+      34,
+      48,
+      222.5312205855963
+    ],
+    [
+      34,
+      66,
+      44.93086338176498
+    ],
+    [
+      34,
+      72,
+      285.48762062227974
+    ],
+    [
+      34,
+      76,
+      76.82589256942279
+    ],
+    [
+      34,
+      78,
+      165.64031802747658
+    ],
+    [
+      34,
+      94,
+      200.55355343028106
+    ],
+    [
+      35,
+      37,
+      294.55169331968114
+    ],
+    [
+      35,
+      55,
+      243.76036533559477
+    ],
+    [
+      35,
+      70,
+      256.38103770503227
+    ],
+    [
+      35,
+      75,
+      144.78410837914728
+    ],
+    [
+      36,
+      41,
+      260.6034141469383
+    ],
+    [
+      36,
+      42,
+      212.90696004749364
+    ],
+    [
+      36,
+      44,
+      96.68458844087044
+    ],
+    [
+      36,
+      47,
+      283.517343833032
+    ],
+    [
+      36,
+      50,
+      134.39366858435133
+    ],
+    [
+      36,
+      52,
+      275.355872934983
+    ],
+    [
+      36,
+      57,
+      108.85014072643635
+    ],
+    [
+      36,
+      60,
+      180.39781808610135
+    ],
+    [
+      36,
+      64,
+      148.85171426675603
+    ],
+    [
+      36,
+      74,
+      173.9483918492007
+    ],
+    [
+      36,
+      79,
+      241.57614612097066
+    ],
+    [
+      36,
+      83,
+      208.1576450750785
+    ],
+    [
+      36,
+      89,
+      136.7846460327209
+    ],
+    [
+      36,
+      95,
+      133.80211342934462
+    ],
+    [
+      36,
+      97,
+      276.4608209983894
+    ],
+    [
+      37,
+      40,
+      129.4463384279309
+    ],
+    [
+      37,
+      46,
+      177.6093255666673
+    ],
+    [
+      37,
+      47,
+      227.02956320309127
+    ],
+    [
+      37,
+      49,
+      224.73240322210245
+    ],
+    [
+      37,
+      54,
+      290.47160322532403
+    ],
+    [
+      37,
+      55,
+      168.99602303362036
+    ],
+    [
+      37,
+      58,
+      91.16803111413721
+    ],
+    [
+      37,
+      59,
+      185.57394875903418
+    ],
+    [
+      37,
+      61,
+      137.76904545334367
+    ],
+    [
+      37,
+      67,
+      198.52268839942045
+    ],
+    [
+      37,
+      68,
+      244.28476741260098
+    ],
+    [
+      37,
+      69,
+      194.2671276270345
+    ],
+    [
+      37,
+      70,
+      42.7885585876909
+    ],
+    [
+      37,
+      71,
+      258.6907396585333
+    ],
+    [
+      37,
+      75,
+      190.93209839638033
+    ],
+    [
+      37,
+      80,
+      257.0537748323663
+    ],
+    [
+      37,
+      85,
+      248.44708552218114
+    ],
+    [
+      37,
+      86,
+      272.56986632405994
+    ],
+    [
+      37,
+      87,
+      267.3955149292203
+    ],
+    [
+      37,
+      88,
+      240.59909774296028
+    ],
+    [
+      37,
+      92,
+      185.48406205120514
+    ],
+    [
+      37,
+      93,
+      205.02920111637548
+    ],
+    [
+      37,
+      98,
+      134.58958451819194
+    ],
+    [
+      37,
+      99,
+      106.7471430218219
+    ],
+    [
+      38,
+      45,
+      245.62284050288426
+    ],
+    [
+      38,
+      53,
+      175.3690409985258
+    ],
+    [
+      38,
+      65,
+      246.1048999727954
+    ],
+    [
+      38,
+      77,
+      173.36875864533744
+    ],
+    [
+      38,
+      82,
+      149.16771460538837
+    ],
+    [
+      38,
+      84,
+      74.81140706656642
+    ],
+    [
+      38,
+      90,
+      244.73093921184253
+    ],
+    [
+      39,
+      41,
+      79.0754161011251
+    ],
+    [
+      39,
+      50,
+      268.9052603005529
+    ],
+    [
+      39,
+      51,
+      25.47711414604271
+    ],
+    [
+      40,
+      46,
+      244.22429662822276
+    ],
+    [
+      40,
+      47,
+      151.07908152610653
+    ],
+    [
+      40,
+      49,
+      187.7272346471132
+    ],
+    [
+      40,
+      52,
+      255.8558913951803
+    ],
+    [
+      40,
+      55,
+      176.35596242527038
+    ],
+    [
+      40,
+      57,
+      290.13756253963675
+    ],
+    [
+      40,
+      58,
+      75.80263602873018
+    ],
+    [
+      40,
+      61,
+      59.14776805064309
+    ],
+    [
+      40,
+      63,
+      201.86948111721054
+    ],
+    [
+      40,
+      67,
+      73.90987948195988
+    ],
+    [
+      40,
+      68,
+      296.53268723150416
+    ],
+    [
+      40,
+      69,
+      92.87481335941672
+    ],
+    [
+      40,
+      70,
+      144.51058904121473
+    ],
+    [
+      40,
+      79,
+      296.90900624144007
+    ],
+    [
+      40,
+      80,
+      215.88446246641467
+    ],
+    [
+      40,
+      83,
+      225.660870841944
+    ],
+    [
+      40,
+      85,
+      293.03675672968893
+    ],
+    [
+      40,
+      86,
+      192.9601612940877
+    ],
+    [
+      40,
+      87,
+      277.9765415719768
+    ],
+    [
+      40,
+      92,
+      64.13182480525359
+    ],
+    [
+      40,
+      93,
+      75.62630857377313
+    ],
+    [
+      40,
+      95,
+      259.7427663400731
+    ],
+    [
+      40,
+      98,
+      239.39097700229757
+    ],
+    [
+      40,
+      99,
+      156.5330663833494
+    ],
+    [
+      41,
+      42,
+      244.62112327446616
+    ],
+    [
+      41,
+      50,
+      257.50518269252433
+    ],
+    [
+      41,
+      51,
+      78.73195877045886
+    ],
+    [
+      41,
+      74,
+      244.70093538575983
+    ],
+    [
+      42,
+      44,
+      179.3958962648537
+    ],
+    [
+      42,
+      52,
+      235.58731980848626
+    ],
+    [
+      42,
+      57,
+      222.7195051518541
+    ],
+    [
+      42,
+      64,
+      169.47730396561386
+    ],
+    [
+      42,
+      74,
+      40.977379811896995
+    ],
+    [
+      42,
+      80,
+      282.17830846551453
+    ],
+    [
+      42,
+      81,
+      208.07605120040157
+    ],
+    [
+      42,
+      83,
+      242.37149011418222
+    ],
+    [
+      42,
+      89,
+      178.20483002487646
+    ],
+    [
+      42,
+      95,
+      259.94522350957374
+    ],
+    [
+      42,
+      97,
+      147.92376578788182
+    ],
+    [
+      43,
+      50,
+      291.6371396576138
+    ],
+    [
+      43,
+      56,
+      99.8108957711551
+    ],
+    [
+      43,
+      60,
+      283.3026107490874
+    ],
+    [
+      43,
+      65,
+      267.3217502543176
+    ],
+    [
+      43,
+      77,
+      236.69230870157935
+    ],
+    [
+      43,
+      79,
+      264.9277190350292
+    ],
+    [
+      43,
+      96,
+      120.6062110829705
+    ],
+    [
+      44,
+      47,
+      196.8273347440603
+    ],
+    [
+      44,
+      50,
+      229.8853694883625
+    ],
+    [
+      44,
+      52,
+      178.6909060550229
+    ],
+    [
+      44,
+      57,
+      43.87857251421136
+    ],
+    [
+      44,
+      60,
+      201.21193377816377
+    ],
+    [
+      44,
+      64,
+      53.04238940377303
+    ],
+    [
+      44,
+      67,
+      257.50820509034423
+    ],
+    [
+      44,
+      74,
+      139.3165588962961
+    ],
+    [
+      44,
+      79,
+      257.5243424538904
+    ],
+    [
+      44,
+      80,
+      208.39984563234685
+    ],
+    [
+      44,
+      81,
+      223.47029735667272
+    ],
+    [
+      44,
+      83,
+      116.28043837989843
+    ],
+    [
+      44,
+      89,
+      40.11471098281392
+    ],
+    [
+      44,
+      93,
+      276.91205160031365
+    ],
+    [
+      44,
+      95,
+      81.98024383503936
+    ],
+    [
+      44,
+      97,
+      193.12619527571056
+    ],
+    [
+      45,
+      48,
+      250.92535368618329
+    ],
+    [
+      45,
+      62,
+      297.91067585184516
+    ],
+    [
+      45,
+      72,
+      266.5270864832942
+    ],
+    [
+      45,
+      77,
+      244.3847393056736
+    ],
+    [
+      45,
+      84,
+      179.61500681831447
+    ],
+    [
+      45,
+      90,
+      62.854795260119886
+    ],
+    [
+      45,
+      91,
+      87.89339495210785
+    ],
+    [
+      46,
+      47,
+      221.2796462455753
+    ],
+    [
+      46,
+      52,
+      227.11983434340962
+    ],
+    [
+      46,
+      54,
+      123.00315148415461
+    ],
+    [
+      46,
+      58,
+      168.44272249043496
+    ],
+    [
+      46,
+      59,
+      156.50152276215923
+    ],
+    [
+      46,
+      61,
+      285.8817076804036
+    ],
+    [
+      46,
+      67,
+      277.3994956559927
+    ],
+    [
+      46,
+      68,
+      68.09535173517507
+    ],
+    [
+      46,
+      70,
+      216.8139899074804
+    ],
+    [
+      46,
+      71,
+      165.50128450128594
+    ],
+    [
+      46,
+      73,
+      221.0818190207912
+    ],
+    [
+      46,
+      75,
+      290.95691018228007
+    ],
+    [
+      46,
+      80,
+      188.829102671028
+    ],
+    [
+      46,
+      81,
+      249.2048928871362
+    ],
+    [
+      46,
+      83,
+      284.0058841512935
+    ],
+    [
+      46,
+      85,
+      76.23033940554905
+    ],
+    [
+      46,
+      87,
+      126.02636358116007
+    ],
+    [
+      46,
+      88,
+      214.7600472972753
+    ],
+    [
+      46,
+      98,
+      81.34714845840224
+    ],
+    [
+      46,
+      99,
+      88.0357022772367
+    ],
+    [
+      47,
+      52,
+      109.25823038624279
+    ],
+    [
+      47,
+      54,
+      236.26621973277233
+    ],
+    [
+      47,
+      57,
+      174.79251238382844
+    ],
+    [
+      47,
+      58,
+      136.28230452923356
+    ],
+    [
+      47,
+      60,
+      267.47041323095544
+    ],
+    [
+      47,
+      61,
+      209.1291089861898
+    ],
+    [
+      47,
+      63,
+      282.52308060938816
+    ],
+    [
+      47,
+      64,
+      163.60959053744784
+    ],
+    [
+      47,
+      67,
+      113.21200798903534
+    ],
+    [
+      47,
+      68,
+      240.2445815292117
+    ],
+    [
+      47,
+      69,
+      223.51668296954088
+    ],
+    [
+      47,
+      70,
+      261.7844361874075
+    ],
+    [
+      47,
+      74,
+      290.752671816163
+    ],
+    [
+      47,
+      79,
+      290.94352549345615
+    ],
+    [
+      47,
+      80,
+      80.18301135978506
+    ],
+    [
+      47,
+      81,
+      194.31526973875378
+    ],
+    [
+      47,
+      83,
+      82.91348364406412
+    ],
+    [
+      47,
+      85,
+      228.67604775677134
+    ],
+    [
+      47,
+      87,
+      179.40396404924303
+    ],
+    [
+      47,
+      89,
+      165.00679143965243
+    ],
+    [
+      47,
+      92,
+      181.0866276160168
+    ],
+    [
+      47,
+      93,
+      143.64736062033313
+    ],
+    [
+      47,
+      95,
+      159.14935589887702
+    ],
+    [
+      47,
+      97,
+      221.04850750190033
+    ],
+    [
+      47,
+      98,
+      265.47883293078996
+    ],
+    [
+      47,
+      99,
+      165.96962199603772
+    ],
+    [
+      48,
+      49,
+      283.1256005021893
+    ],
+    [
+      48,
+      62,
+      132.06844848130706
+    ],
+    [
+      48,
+      66,
+      207.27493090836973
+    ],
+    [
+      48,
+      72,
+      77.73950139570371
+    ],
+    [
+      48,
+      76,
+      183.245397423992
+    ],
+    [
+      48,
+      78,
+      251.06202844884962
+    ],
+    [
+      48,
+      86,
+      299.08765069618636
+    ],
+    [
+      48,
+      90,
+      284.0497349863786
+    ],
+    [
+      48,
+      91,
+      166.47004572530585
+    ],
+    [
+      48,
+      94,
+      133.2337851992383
+    ],
+    [
+      49,
+      55,
+      74.18346593962696
+    ],
+    [
+      49,
+      58,
+      244.95844816697175
+    ],
+    [
+      49,
+      61,
+      128.69883933105908
+    ],
+    [
+      49,
+      62,
+      156.86763943037298
+    ],
+    [
+      49,
+      63,
+      190.79377822377822
+    ],
+    [
+      49,
+      67,
+      231.61786281245912
+    ],
+    [
+      49,
+      69,
+      120.496824845424
+    ],
+    [
+      49,
+      70,
+      197.0290602832884
+    ],
+    [
+      49,
+      72,
+      206.50744927208888
+    ],
+    [
+      49,
+      86,
+      84.9550548316251
+    ],
+    [
+      49,
+      91,
+      296.6942255126124
+    ],
+    [
+      49,
+      92,
+      161.30245003035978
+    ],
+    [
+      49,
+      93,
+      207.46792629121498
+    ],
+    [
+      50,
+      51,
+      291.8720807378747
+    ],
+    [
+      50,
+      56,
+      213.45094052590963
+    ],
+    [
+      50,
+      57,
+      231.7810450029636
+    ],
+    [
+      50,
+      60,
+      206.40464530141605
+    ],
+    [
+      50,
+      64,
+      282.68434096428837
+    ],
+    [
+      50,
+      74,
+      288.8775998608746
+    ],
+    [
+      50,
+      79,
+      255.0069878357829
+    ],
+    [
+      50,
+      89,
+      269.86860352330075
+    ],
+    [
+      50,
+      95,
+      243.76126016863745
+    ],
+    [
+      50,
+      96,
+      277.8593756656073
+    ],
+    [
+      52,
+      54,
+      182.0979363117256
+    ],
+    [
+      52,
+      57,
+      182.16596127678807
+    ],
+    [
+      52,
+      58,
+      221.37319224040874
+    ],
+    [
+      52,
+      64,
+      127.16128764049277
+    ],
+    [
+      52,
+      67,
+      222.11128164109797
+    ],
+    [
+      52,
+      68,
+      213.26122273675773
+    ],
+    [
+      52,
+      74,
+      217.53862913208482
+    ],
+    [
+      52,
+      80,
+      46.91006601995393
+    ],
+    [
+      52,
+      81,
+      86.20865609502171
+    ],
+    [
+      52,
+      83,
+      89.88601409657582
+    ],
+    [
+      52,
+      85,
+      197.09581452304494
+    ],
+    [
+      52,
+      87,
+      126.52288022798547
+    ],
+    [
+      52,
+      89,
+      138.57751406873035
+    ],
+    [
+      52,
+      92,
+      290.3095070607378
+    ],
+    [
+      52,
+      93,
+      252.29748762618016
+    ],
+    [
+      52,
+      95,
+      189.70985657334484
+    ],
+    [
+      52,
+      97,
+      114.70019369719328
+    ],
+    [
+      52,
+      98,
+      295.90422433649934
+    ],
+    [
+      52,
+      99,
+      213.20024902032185
+    ],
+    [
+      53,
+      65,
+      125.92109426388038
+    ],
+    [
+      53,
+      77,
+      250.50929381216946
+    ],
+    [
+      53,
+      82,
+      40.55636535253292
+    ],
+    [
+      53,
+      84,
+      235.72834814991202
+    ],
+    [
+      54,
+      58,
+      252.4650209998135
+    ],
+    [
+      54,
+      59,
+      265.44878346572585
+    ],
+    [
+      54,
+      68,
+      60.9284125483144
+    ],
+    [
+      54,
+      71,
+      241.12300859625384
+    ],
+    [
+      54,
+      73,
+      285.408155268597
+    ],
+    [
+      54,
+      80,
+      167.26780523136117
+    ],
+    [
+      54,
+      81,
+      160.53057546851164
+    ],
+    [
+      54,
+      83,
+      265.6519472562496
+    ],
+    [
+      54,
+      85,
+      47.39229907740168
+    ],
+    [
+      54,
+      87,
+      58.429501897509816
+    ],
+    [
+      54,
+      97,
+      220.0037179587985
+    ],
+    [
+      54,
+      98,
+      202.51475581711958
+    ],
+    [
+      54,
+      99,
+      186.0287824875767
+    ],
+    [
+      55,
+      58,
+      213.10296041333285
+    ],
+    [
+      55,
+      61,
+      122.57488832657856
+    ],
+    [
+      55,
+      62,
+      191.7931832490036
+    ],
+    [
+      55,
+      63,
+      248.27226901587898
+    ],
+    [
+      55,
+      67,
+      238.40312342875066
+    ],
+    [
+      55,
+      69,
+      146.20592489353453
+    ],
+    [
+      55,
+      70,
+      134.10373970743882
+    ],
+    [
+      55,
+      72,
+      246.28523601877438
+    ],
+    [
+      55,
+      75,
+      233.0651131396207
+    ],
+    [
+      55,
+      86,
+      153.85330961294682
+    ],
+    [
+      55,
+      92,
+      176.4521486626256
+    ],
+    [
+      55,
+      93,
+      221.62156489136993
+    ],
+    [
+      55,
+      98,
+      298.5073526261624
+    ],
+    [
+      55,
+      99,
+      268.75769852338937
+    ],
+    [
+      56,
+      60,
+      273.00801986125333
+    ],
+    [
+      56,
+      79,
+      276.72920797989934
+    ],
+    [
+      56,
+      96,
+      173.32325655855522
+    ],
+    [
+      57,
+      60,
+      164.80744420663834
+    ],
+    [
+      57,
+      64,
+      73.97984989153804
+    ],
+    [
+      57,
+      67,
+      220.44579410321634
+    ],
+    [
+      57,
+      74,
+      182.94046797446958
+    ],
+    [
+      57,
+      79,
+      218.25350725529873
+    ],
+    [
+      57,
+      80,
+      202.8905797445751
+    ],
+    [
+      57,
+      81,
+      241.2072516015839
+    ],
+    [
+      57,
+      83,
+      102.93258526342126
+    ],
+    [
+      57,
+      89,
+      58.38605232919786
+    ],
+    [
+      57,
+      92,
+      284.1425680756309
+    ],
+    [
+      57,
+      93,
+      237.70578329072487
+    ],
+    [
+      57,
+      95,
+      38.21088387416434
+    ],
+    [
+      57,
+      97,
+      220.2428867827642
+    ],
+    [
+      58,
+      59,
+      244.5043360363491
+    ],
+    [
+      58,
+      61,
+      121.97228197940893
+    ],
+    [
+      58,
+      63,
+      276.75870680436043
+    ],
+    [
+      58,
+      64,
+      299.886663754258
+    ],
+    [
+      58,
+      67,
+      122.8448035829217
+    ],
+    [
+      58,
+      68,
+      222.40130238961615
+    ],
+    [
+      58,
+      69,
+      167.17518617259987
+    ],
+    [
+      58,
+      70,
+      125.89588938882422
+    ],
+    [
+      58,
+      75,
+      281.6966815163817
+    ],
+    [
+      58,
+      80,
+      175.84326898269114
+    ],
+    [
+      58,
+      81,
+      291.67968772671287
+    ],
+    [
+      58,
+      83,
+      219.1621417520217
+    ],
+    [
+      58,
+      85,
+      220.118808092092
+    ],
+    [
+      58,
+      86,
+      264.65024946552177
+    ],
+    [
+      58,
+      87,
+      214.0827888818675
+    ],
+    [
+      58,
+      92,
+      139.57043787349434
+    ],
+    [
+      58,
+      93,
+      139.3223501459127
+    ],
+    [
+      58,
+      95,
+      280.8284984054216
+    ],
+    [
+      58,
+      98,
+      169.05369112655814
+    ],
+    [
+      58,
+      99,
+      80.76046333632532
+    ],
+    [
+      59,
+      68,
+      204.57128580981458
+    ],
+    [
+      59,
+      70,
+      199.44016104058662
+    ],
+    [
+      59,
+      71,
+      85.5999567611478
+    ],
+    [
+      59,
+      73,
+      127.87201965017056
+    ],
+    [
+      59,
+      75,
+      168.7177027379055
+    ],
+    [
+      59,
+      85,
+      219.6175556122216
+    ],
+    [
+      59,
+      87,
+      281.53518317520417
+    ],
+    [
+      59,
+      88,
+      63.41859926144045
+    ],
+    [
+      59,
+      98,
+      85.7329941713345
+    ],
+    [
+      59,
+      99,
+      184.82089319298484
+    ],
+    [
+      60,
+      63,
+      212.7407566840428
+    ],
+    [
+      60,
+      64,
+      238.39669717617733
+    ],
+    [
+      60,
+      67,
+      234.21901318186843
+    ],
+    [
+      60,
+      69,
+      286.4578755127991
+    ],
+    [
+      60,
+      79,
+      61.21809473620677
+    ],
+    [
+      60,
+      83,
+      235.68344024882407
+    ],
+    [
+      60,
+      89,
+      223.0035816603312
+    ],
+    [
+      60,
+      92,
+      264.4723023440626
+    ],
+    [
+      60,
+      93,
+      230.19317176812146
+    ],
+    [
+      60,
+      95,
+      139.8137892467213
+    ],
+    [
+      60,
+      96,
+      187.79368360650878
+    ],
+    [
+      61,
+      62,
+      285.29976904696883
+    ],
+    [
+      61,
+      63,
+      181.28341665880887
+    ],
+    [
+      61,
+      67,
+      115.93090375295783
+    ],
+    [
+      61,
+      69,
+      56.58832087953436
+    ],
+    [
+      61,
+      70,
+      134.48179714262776
+    ],
+    [
+      61,
+      75,
+      294.08331488511715
+    ],
+    [
+      61,
+      80,
+      275.0042068956792
+    ],
+    [
+      61,
+      83,
+      280.62886777836695
+    ],
+    [
+      61,
+      86,
+      143.9471423856807
+    ],
+    [
+      61,
+      92,
+      61.21652694479917
+    ],
+    [
+      61,
+      93,
+      101.69549346178084
+    ],
+    [
+      61,
+      98,
+      266.11572290163014
+    ],
+    [
+      61,
+      99,
+      198.34075863142755
+    ],
+    [
+      62,
+      69,
+      272.7979581260379
+    ],
+    [
+      62,
+      72,
+      54.84640588956432
+    ],
+    [
+      62,
+      78,
+      291.5868641239911
+    ],
+    [
+      62,
+      86,
+      194.4998393416683
+    ],
+    [
+      62,
+      91,
+      213.22596251061555
+    ],
+    [
+      62,
+      94,
+      154.92197469255024
+    ],
+    [
+      63,
+      67,
+      175.9981264160358
+    ],
+    [
+      63,
+      69,
+      124.9956889417668
+    ],
+    [
+      63,
+      79,
+      166.79143828348603
+    ],
+    [
+      63,
+      86,
+      111.69688387758123
+    ],
+    [
+      63,
+      90,
+      277.205225114872
+    ],
+    [
+      63,
+      92,
+      137.8032787455485
+    ],
+    [
+      63,
+      93,
+      147.21952763781292
+    ],
+    [
+      63,
+      95,
+      273.15253340396447
+    ],
+    [
+      63,
+      96,
+      267.91389984097253
+    ],
+    [
+      64,
+      67,
+      243.97553955061144
+    ],
+    [
+      64,
+      74,
+      134.5744057572422
+    ],
+    [
+      64,
+      79,
+      290.0538088097213
+    ],
+    [
+      64,
+      80,
+      160.60144328763715
+    ],
+    [
+      64,
+      81,
+      171.42234598058923
+    ],
+    [
+      64,
+      83,
+      80.88944040745243
+    ],
+    [
+      64,
+      87,
+      253.3295273547691
+    ],
+    [
+      64,
+      89,
+      15.716648722549392
+    ],
+    [
+      64,
+      93,
+      267.6721644587306
+    ],
+    [
+      64,
+      95,
+      102.42624985077414
+    ],
+    [
+      64,
+      97,
+      146.33906621938763
+    ],
+    [
+      65,
+      77,
+      227.17063168880597
+    ],
+    [
+      65,
+      82,
+      114.0757130997675
+    ],
+    [
+      65,
+      84,
+      278.5147286454478
+    ],
+    [
+      66,
+      72,
+      261.7701904900052
+    ],
+    [
+      66,
+      76,
+      104.05571475985832
+    ],
+    [
+      66,
+      78,
+      122.65966010115739
+    ],
+    [
+      66,
+      94,
+      162.4251956510635
+    ],
+    [
+      67,
+      69,
+      113.6616454232145
+    ],
+    [
+      67,
+      70,
+      217.79013791246763
+    ],
+    [
+      67,
+      79,
+      233.31470499094772
+    ],
+    [
+      67,
+      80,
+      191.52884551783526
+    ],
+    [
+      67,
+      83,
+      170.36876962283648
+    ],
+    [
+      67,
+      86,
+      209.0957524913461
+    ],
+    [
+      67,
+      87,
+      277.77260538478004
+    ],
+    [
+      67,
+      89,
+      238.88401793117532
+    ],
+    [
+      67,
+      92,
+      71.00947232081003
+    ],
+    [
+      67,
+      93,
+      30.620652399696123
+    ],
+    [
+      67,
+      95,
+      188.08361223862767
+    ],
+    [
+      67,
+      98,
+      291.1892154047306
+    ],
+    [
+      67,
+      99,
+      196.00787186249244
+    ],
+    [
+      68,
+      70,
+      284.3030252136438
+    ],
+    [
+      68,
+      71,
+      185.39556175300334
+    ],
+    [
+      68,
+      73,
+      233.73105892419628
+    ],
+    [
+      68,
+      80,
+      185.98276416631603
+    ],
+    [
+      68,
+      81,
+      211.42964510356708
+    ],
+    [
+      68,
+      83,
+      286.73374300359234
+    ],
+    [
+      68,
+      85,
+      17.19611838687733
+    ],
+    [
+      68,
+      87,
+      90.05501437783569
+    ],
+    [
+      68,
+      88,
+      254.65724976289746
+    ],
+    [
+      68,
+      97,
+      271.7708070279623
+    ],
+    [
+      68,
+      98,
+      143.59485950499416
+    ],
+    [
+      68,
+      99,
+      146.58486137795873
+    ],
+    [
+      69,
+      70,
+      189.85118215920377
+    ],
+    [
+      69,
+      79,
+      260.4393003361453
+    ],
+    [
+      69,
+      80,
+      297.6398508582321
+    ],
+    [
+      69,
+      83,
+      283.7453582884548
+    ],
+    [
+      69,
+      86,
+      101.39076707315307
+    ],
+    [
+      69,
+      92,
+      42.769392859113616
+    ],
+    [
+      69,
+      93,
+      87.44096972386858
+    ],
+    [
+      69,
+      95,
+      286.4997409843564
+    ],
+    [
+      69,
+      99,
+      246.98327699745067
+    ],
+    [
+      70,
+      71,
+      279.11363479834944
+    ],
+    [
+      70,
+      75,
+      166.38116500566747
+    ],
+    [
+      70,
+      80,
+      297.39164718227187
+    ],
+    [
+      70,
+      85,
+      289.33130137745263
+    ],
+    [
+      70,
+      86,
+      255.05407258712117
+    ],
+    [
+      70,
+      88,
+      247.4428703496958
+    ],
+    [
+      70,
+      92,
+      190.6542896322985
+    ],
+    [
+      70,
+      93,
+      218.57309572150209
+    ],
+    [
+      70,
+      98,
+      164.4038757488539
+    ],
+    [
+      70,
+      99,
+      149.44663705869903
+    ],
+    [
+      71,
+      73,
+      57.04277699864967
+    ],
+    [
+      71,
+      75,
+      247.87886498762754
+    ],
+    [
+      71,
+      85,
+      202.52267844395888
+    ],
+    [
+      71,
+      87,
+      273.9911720714997
+    ],
+    [
+      71,
+      88,
+      89.42538000137563
+    ],
+    [
+      71,
+      98,
+      131.65813710572021
+    ],
+    [
+      71,
+      99,
+      227.40236636274452
+    ],
+    [
+      72,
+      76,
+      256.75305116965785
+    ],
+    [
+      72,
+      78,
+      273.18940481448755
+    ],
+    [
+      72,
+      86,
+      230.82731202358644
+    ],
+    [
+      72,
+      90,
+      283.19425407496465
+    ],
+    [
+      72,
+      91,
+      178.94041515950352
+    ],
+    [
+      72,
+      94,
+      136.67619534277162
+    ],
+    [
+      73,
+      75,
+      270.97598477121875
+    ],
+    [
+      73,
+      85,
+      250.9055491251471
+    ],
+    [
+      73,
+      88,
+      100.74162558209055
+    ],
+    [
+      73,
+      98,
+      187.52182422313643
+    ],
+    [
+      73,
+      99,
+      284.3597437760686
+    ],
+    [
+      74,
+      80,
+      262.8273705282308
+    ],
+    [
+      74,
+      81,
+      205.37545658841856
+    ],
+    [
+      74,
+      83,
+      211.42955109380836
+    ],
+    [
+      74,
+      89,
+      141.552415553961
+    ],
+    [
+      74,
+      95,
+      220.53642592160756
+    ],
+    [
+      74,
+      97,
+      148.0048496133827
+    ],
+    [
+      75,
+      88,
+      170.28745118407278
+    ],
+    [
+      75,
+      98,
+      210.34882959061892
+    ],
+    [
+      75,
+      99,
+      268.06545407244874
+    ],
+    [
+      76,
+      78,
+      222.47633404839405
+    ],
+    [
+      76,
+      91,
+      297.45233390900785
+    ],
+    [
+      76,
+      94,
+      210.38475931404543
+    ],
+    [
+      77,
+      82,
+      209.95675619320494
+    ],
+    [
+      77,
+      84,
+      131.8806678127992
+    ],
+    [
+      77,
+      90,
+      200.68762284409053
+    ],
+    [
+      77,
+      96,
+      215.65057488203612
+    ],
+    [
+      78,
+      94,
+      137.71697714253932
+    ],
+    [
+      79,
+      83,
+      274.7613331396073
+    ],
+    [
+      79,
+      86,
+      278.3361202226819
+    ],
+    [
+      79,
+      89,
+      275.1872603983447
+    ],
+    [
+      79,
+      92,
+      246.86201641301344
+    ],
+    [
+      79,
+      93,
+      221.43920554581985
+    ],
+    [
+      79,
+      95,
+      188.1812485715103
+    ],
+    [
+      79,
+      96,
+      153.85794340935277
+    ],
+    [
+      80,
+      81,
+      120.05428332053825
+    ],
+    [
+      80,
+      83,
+      100.83539677892963
+    ],
+    [
+      80,
+      85,
+      171.32779273496618
+    ],
+    [
+      80,
+      87,
+      108.83906165685059
+    ],
+    [
+      80,
+      89,
+      169.22923431416186
+    ],
+    [
+      80,
+      92,
+      256.2052974472593
+    ],
+    [
+      80,
+      93,
+      222.14881761342565
+    ],
+    [
+      80,
+      95,
+      201.81471744511254
+    ],
+    [
+      80,
+      97,
+      159.00193036500875
+    ],
+    [
+      80,
+      98,
+      253.05689604471496
+    ],
+    [
+      80,
+      99,
+      167.01692343125598
+    ],
+    [
+      81,
+      83,
+      167.72992407691555
+    ],
+    [
+      81,
+      85,
+      194.28581651713097
+    ],
+    [
+      81,
+      87,
+      124.48331213206468
+    ],
+    [
+      81,
+      89,
+      186.52497598011118
+    ],
+    [
+      81,
+      95,
+      258.4154207093383
+    ],
+    [
+      81,
+      97,
+      60.348695029062625
+    ],
+    [
+      81,
+      99,
+      264.10148166030575
+    ],
+    [
+      82,
+      84,
+      202.4813238218891
+    ],
+    [
+      83,
+      85,
+      272.1631841282164
+    ],
+    [
+      83,
+      87,
+      207.6664239135752
+    ],
+    [
+      83,
+      89,
+      82.27963549101305
+    ],
+    [
+      83,
+      92,
+      241.2990154958409
+    ],
+    [
+      83,
+      93,
+      196.98528242727338
+    ],
+    [
+      83,
+      95,
+      101.88860651335423
+    ],
+    [
+      83,
+      97,
+      171.63249483763386
+    ],
+    [
+      83,
+      99,
+      242.84960405238024
+    ],
+    [
+      84,
+      90,
+      171.21659840341556
+    ],
+    [
+      84,
+      91,
+      267.29118685257225
+    ],
+    [
+      85,
+      87,
+      73.02698576552008
+    ],
+    [
+      85,
+      88,
+      270.84852036448706
+    ],
+    [
+      85,
+      97,
+      254.63157043903735
+    ],
+    [
+      85,
+      98,
+      155.13268865129493
+    ],
+    [
+      85,
+      99,
+      147.2942568598923
+    ],
+    [
+      86,
+      90,
+      277.2473072311784
+    ],
+    [
+      86,
+      91,
+      263.5119303075169
+    ],
+    [
+      86,
+      92,
+      141.59480398887544
+    ],
+    [
+      86,
+      93,
+      179.5514864639091
+    ],
+    [
+      87,
+      89,
+      265.0807545063585
+    ],
+    [
+      87,
+      97,
+      184.50539976530675
+    ],
+    [
+      87,
+      98,
+      206.39548954275475
+    ],
+    [
+      87,
+      99,
+      160.7128910639521
+    ],
+    [
+      88,
+      98,
+      148.83455807659982
+    ],
+    [
+      88,
+      99,
+      248.23404768977434
+    ],
+    [
+      89,
+      93,
+      261.41660735128346
+    ],
+    [
+      89,
+      95,
+      88.20025188643122
+    ],
+    [
+      89,
+      97,
+      162.0339045258334
+    ],
+    [
+      90,
+      91,
+      118.89897272914132
+    ],
+    [
+      91,
+      94,
+      296.00312954752803
+    ],
+    [
+      92,
+      93,
+      46.59883754823079
+    ],
+    [
+      92,
+      95,
+      249.17826730909215
+    ],
+    [
+      92,
+      99,
+      220.3120390601151
+    ],
+    [
+      93,
+      95,
+      203.09428252546374
+    ],
+    [
+      93,
+      99,
+      216.7276096655801
+    ],
+    [
+      95,
+      97,
+      245.08992081844906
+    ],
+    [
+      98,
+      99,
+      100.80006570034091
     ]
   ]
 }
