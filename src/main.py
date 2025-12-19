@@ -9,6 +9,12 @@ import torch.nn.functional as F
 from torch.optim import Adam
 import json
 from torch_geometric.data import Data
+from flask import Flask
+import threading
+
+app = Flask(__name__)
+
+
 
 class State(Enum):
     """Define the possible states"""
@@ -106,7 +112,8 @@ class DataProcessingStateMachine:
 
 
     def _init_state(self):
-        print(f"Initializing data processing for {self.nr_of_cities} cities")
+        print(f"Initializing for {self.nr_of_cities} cities")
+
         self.transition_to(State.GENERATE_DATA)
     
     def _generate_data_state(self):
@@ -119,6 +126,7 @@ class DataProcessingStateMachine:
         print("Saving data...")
         # Save complete dataset
         save_to_json(self.cities, self.edges, file_path='data/processed', filename='processed.json')
+        save_to_json(self.cities, self.edges, file_path='data/generated', filename='generated.json')
         
         # Split and save train/validation/test sets
         self.file_paths = split_and_save_data(self.cities, self.edges, train_ratio=0.8, val_ratio=0.1, test_ratio=0.1)
@@ -204,6 +212,7 @@ class DataProcessingStateMachine:
     
     def _idle_state(self):
         print("System is in idle state")
+
         self.transition_to(State.COMPLETE)
     
     def _predict_state(self):
@@ -325,14 +334,49 @@ def statistics(cities, edges):
     plt.show()
 
 
-if __name__ == "__main__":
-    print("=== Using State Machine ===")
-    state_machine = DataProcessingStateMachine(nr_of_cities=1000)
-    state_machine.run_workflow()
+
+state_machine = DataProcessingStateMachine(nr_of_cities=1000)
+
+
+
+@app.route("/")
+def hello_world():
     
-    print(f"\nFinal Status: {state_machine.get_status()}")
+    return state_machine.get_status()
+
+@app.route("/model")
+def get_model():
+    state_machine.transition_to(State.PREDICT)
+    return "model"
+
+@app.route("/model", methods=["PATCH"])
+def patch_model():
+    return "model"
+
+
+
+def start_state_machine():
+    state_machine.run_workflow()
+
+def start_web_server():
+    app.run(host="0.0.0.0", port=5000)
+
+if __name__ == "__main__":
     
 
+    states_thread = threading.Thread(target=start_state_machine)
+    web_thread = threading.Thread(target=start_web_server)
+
+    states_thread.start()
+    web_thread.start()
+
+    states_thread.join()
+    web_thread.join()
+    
+    
+    # print(f"\nFinal Status: {state_machine.get_status()}")
+    
+    
     # nr_of_cities = 30
     # cities, edges = preprocessing(nr_of_cities)
     # save_to_json(cities, edges, file_path='data/processed', filename='processed.json')

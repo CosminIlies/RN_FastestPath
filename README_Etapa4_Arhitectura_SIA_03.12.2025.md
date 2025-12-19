@@ -257,7 +257,7 @@ Toate cele 3 module trebuie să **pornească și să ruleze fără erori** la pr
 **Funcționalități obligatorii:**
 - [x] Arhitectură RN definită și compilată fără erori
 - [ ] Model poate fi salvat și reîncărcat
-- [ ] Include justificare pentru arhitectura aleasă (în docstring sau README)
+- [x] Include justificare pentru arhitectura aleasă (în docstring sau README)
 - [x] **NU trebuie antrenat** cu performanță bună (weights pot fi random)
 
 
@@ -323,9 +323,9 @@ proiect-rn-[nume-prenume]/
 - [ ] Declarație contribuție 40% date originale completată în README_Etapa4_Arhitectura_SIA.md
 - [ ] Cod generare/achiziție date funcțional și documentat
 - [ ] Dovezi contribuție originală: grafice + log + statistici în `docs/`
-- [ ] Diagrama State Machine creată și salvată în `docs/state_machine.*`
+- [x] Diagrama State Machine creată și salvată în `docs/state_machine.*`
 - [ ] Legendă State Machine scrisă în README_Etapa4_Arhitectura_SIA.md (minimum 1-2 paragrafe cu justificare)
-- [ ] Repository structurat conform modelului de mai sus (verificat consistență cu Etapa 3)
+- [x] Repository structurat conform modelului de mai sus (verificat consistență cu Etapa 3)
 
 ### Modul 1: Data Logging / Acquisition
 - [x] Cod rulează fără erori (`python src/data_acquisition/...` sau echivalent LabVIEW)
@@ -335,10 +335,10 @@ proiect-rn-[nume-prenume]/
   - [ ] Metodă de generare/achiziție explicată
   - [ ] Parametri folosiți (frecvență, durată, zgomot, etc.)
   - [ ] Justificare relevanță date pentru problema voastră
-- [ ] Fișiere în `data/generated/` conform structurii
+- [x] Fișiere în `data/generated/` conform structurii
 
 ### Modul 2: Neural Network
-- [ ] Arhitectură RN definită și documentată în cod (docstring detaliat) - versiunea inițială 
+- [x] Arhitectură RN definită și documentată în cod (docstring detaliat) - versiunea inițială 
 - [ ] README în `src/neural_network/` cu detalii arhitectură curentă
 
 ### Modul 3: Web Service / UI
