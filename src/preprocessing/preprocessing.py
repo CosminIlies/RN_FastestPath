@@ -1,5 +1,6 @@
 from data_acquisition.generate_data import generate_data, generate_edges
 import numpy as np
+import json
 
 
 def preprocessing(nr_of_cities):    
@@ -22,5 +23,27 @@ def preprocessing(nr_of_cities):
     edges_data = generate_edges(cities_data, nr_of_cities)
     
     return cities_data, edges_data
+
+
+def preprocessing_read_from_json(nr_of_cites):
+    file_path = "data/aigenerated.json"
+    cities_data = []
+
+    edges_data = []
+
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+
+        for city in data['cities']:
+            cities_data.append(city)
+   
+
+        for edge in data['edges']:
+            edges_data.append(edge)
+   
+    
+    print(cities_data, edges_data)
+    return cities_data, edges_data
+
 
         

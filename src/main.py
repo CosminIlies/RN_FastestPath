@@ -1,4 +1,4 @@
-from preprocessing.preprocessing import preprocessing
+from preprocessing.preprocessing import preprocessing, preprocessing_read_from_json
 import numpy as np
 import matplotlib.pyplot as plt
 from preprocessing.saving_data import save_to_json, split_and_save_data
@@ -9,7 +9,7 @@ import torch.nn.functional as F
 from torch.optim import Adam
 import json
 from torch_geometric.data import Data
-from flask import Flask
+from flask import Flask, request, jsonify
 import threading
 
 app = Flask(__name__)
@@ -43,6 +43,8 @@ class DataProcessingStateMachine:
         self.error_message = None
         self.model = None
         self.optimizer = None
+        self.predictions = None
+        self.predictions = None
         
         # Define valid transitions
         self.transitions = {
@@ -53,7 +55,7 @@ class DataProcessingStateMachine:
             State.CREATE_MODEL : [State.TRAIN_MODEL, State.ERROR],
             State.TRAIN_MODEL : [State.IDLE, State.PREDICT, State.ERROR],
             State.PREDICT : [State.IDLE, State.ERROR],
-            State.IDLE : [State.COMPLETE, State.VISUALIZE, State.ERROR],
+            State.IDLE : [State.COMPLETE, State.PREDICT, State.VISUALIZE, State.ERROR],
 
             State.VISUALIZE: [State.IDLE, State.ERROR],
 
@@ -74,7 +76,7 @@ class DataProcessingStateMachine:
             return False
     
     def execute_current_state(self):
-        print(f"Executing state: {self.current_state.value}")
+        # print(f"Executing state: {self.current_state.value}")
         
         try:
             if self.current_state == State.INIT:
@@ -187,7 +189,7 @@ class DataProcessingStateMachine:
             
             # Training loop
             self.model.train()
-            num_epochs = 100
+            num_epochs = 10000
             
             for epoch in range(num_epochs):
                 self.optimizer.zero_grad()
@@ -211,16 +213,96 @@ class DataProcessingStateMachine:
             self.transition_to(State.ERROR)
     
     def _idle_state(self):
-        print("System is in idle state")
-
-        self.transition_to(State.COMPLETE)
+        pass 
+        # print("System is in idle state")
     
     def _predict_state(self):
         print("Making predictions with trained model...")
-        # TODO: Implement actual prediction logic
-        # Use the trained model to make predictions on test data
-        print("Predictions completed")
-        self.transition_to(State.IDLE)
+        
+        try:
+            # Check if model exists
+            if self.model is None:
+                raise Exception("Model not initialized. Please train the model first.")
+            
+            # Load test data for predictions
+            if self.file_paths and 'test' in self.file_paths:
+                with open(self.file_paths['test'], 'r') as f:
+                    test_data = json.load(f)
+            else:
+                # Use validation data if test data not available
+                if self.file_paths and 'validation' in self.file_paths:
+                    with open(self.file_paths['validation'], 'r') as f:
+                        test_data = json.load(f)
+                else:
+                    # Use current cities and edges as fallback
+                    test_data = {'cities': self.cities, 'edges': self.edges}
+            
+            cities_data = test_data['cities']
+            edges_data = test_data['edges']
+            
+            # Prepare features for prediction
+            feature_keys = ['x', 'y', 'population', 'gdp_per_capita', 'education_score', 'infrastructure_score', 'location_score']
+            
+            node_features = []
+            actual_labels = []
+            
+            for city in cities_data:
+                features = [city.get(key, 0) for key in feature_keys]
+                node_features.append(features)
+                actual_labels.append(city.get('agglomeration', 0))
+            
+            # Convert to tensors
+            x = torch.tensor(node_features, dtype=torch.float)
+            y_actual = torch.tensor(actual_labels, dtype=torch.float).view(-1, 1)
+            
+            # Prepare edge indices
+            edge_indices = []
+            for edge in edges_data:
+                if len(edge) >= 2:
+                    city1_idx, city2_idx = edge[0], edge[1]
+                    edge_indices.extend([[city1_idx, city2_idx], [city2_idx, city1_idx]])
+            
+            if edge_indices:
+                edge_index = torch.tensor(edge_indices, dtype=torch.long).t().contiguous()
+            else:
+                edge_index = torch.empty((2, 0), dtype=torch.long)
+            
+            # Make predictions
+            self.model.eval()
+            with torch.no_grad():
+                predictions = self.model(x, edge_index)
+                
+                # Calculate prediction metrics
+                mse_loss = F.mse_loss(predictions, y_actual)
+                mae_loss = F.l1_loss(predictions, y_actual)
+                
+                # Store predictions and metrics
+                self.predictions = {
+                    'predicted_values': predictions.squeeze().tolist(),
+                    'actual_values': actual_labels,
+                    'mse_loss': mse_loss.item(),
+                    'mae_loss': mae_loss.item(),
+                    'num_predictions': len(actual_labels)
+                }
+                
+                print(f"Predictions completed successfully!")
+                print(f"Number of predictions: {self.predictions['num_predictions']}")
+                print(f"MSE Loss: {self.predictions['mse_loss']:.4f}")
+                print(f"MAE Loss: {self.predictions['mae_loss']:.4f}")
+                
+                # Print some sample predictions
+                print("\nSample predictions (first 5):")
+                for i in range(min(5, len(self.predictions['predicted_values']))):
+                    predicted = self.predictions['predicted_values'][i]
+                    actual = self.predictions['actual_values'][i]
+                    print(f"  City {i}: Predicted={predicted:.3f}, Actual={actual:.3f}")
+            
+            self.transition_to(State.IDLE)
+            
+        except Exception as e:
+            print(f"Prediction failed: {e}")
+            self.error_message = str(e)
+            self.transition_to(State.ERROR)
     
     def _complete_state(self):
         print("Data processing workflow completed successfully!")
@@ -238,6 +320,7 @@ class DataProcessingStateMachine:
         self.error_message = None
         self.model = None
         self.optimizer = None
+        self.predictions = None
     
     def run_workflow(self):
         print("Starting data processing workflow...")
@@ -257,7 +340,13 @@ class DataProcessingStateMachine:
             'edges_loaded': self.edges is not None,
             'files_saved': self.file_paths is not None,
             'model_created': self.model is not None,
-            'error': self.error_message
+            'predictions_available': self.predictions is not None,
+            'error': self.error_message,
+            'predictions_summary': {
+                'num_predictions': len(self.predictions['predicted_values']) if self.predictions else 0,
+                'mse_loss': self.predictions['mse_loss'] if self.predictions else None,
+                'mae_loss': self.predictions['mae_loss'] if self.predictions else None
+            } if self.predictions else None
         }
 
 
@@ -335,7 +424,7 @@ def statistics(cities, edges):
 
 
 
-state_machine = DataProcessingStateMachine(nr_of_cities=1000)
+state_machine = DataProcessingStateMachine(nr_of_cities=5)
 
 
 
@@ -346,12 +435,141 @@ def hello_world():
 
 @app.route("/model")
 def get_model():
-    state_machine.transition_to(State.PREDICT)
-    return "model"
+    """
+    GET /model endpoint that returns the whole graph structure
+    """
+    try:
+        # Check if we have cities and edges data
+        if state_machine.cities is None or state_machine.edges is None:
+            return jsonify({
+                "error": "No graph data available. Please generate data first.",
+                "status": state_machine.current_state.value
+            }), 400
+        
+        # Prepare graph structure for response
+        graph_data = {
+            "nodes": state_machine.cities,
+            "edges": state_machine.edges,
+            "metadata": {
+                "num_nodes": len(state_machine.cities),
+                "num_edges": len(state_machine.edges),
+                "state": state_machine.current_state.value,
+                "model_trained": state_machine.model is not None
+            }
+        }
+        
+        return jsonify(graph_data)
+    
+    except Exception as e:
+        return jsonify({
+            "error": f"Failed to retrieve graph: {str(e)}"
+        }), 500
 
 @app.route("/model", methods=["PATCH"])
 def patch_model():
-    return "model"
+    """
+    PATCH /model endpoint that predicts agglomeration if parameters change
+    """
+    try:
+        # Check if model exists
+        if state_machine.model is None:
+            return jsonify({
+                "error": "Model not available. Please train the model first.",
+                "status": state_machine.current_state.value
+            }), 400
+        
+        # Check if cities data exists
+        if state_machine.cities is None:
+            return jsonify({
+                "error": "No city data available.",
+                "status": state_machine.current_state.value
+            }), 400
+        
+        # Get request body
+        data = request.get_json()
+        if not data:
+            return jsonify({"error": "No parameter changes provided in request body"}), 400
+        
+        # Create modified cities with parameter changes
+        modified_cities = []
+        affected_cities = data.get('affected_cities', list(range(len(state_machine.cities))))
+        parameter_changes = {k: v for k, v in data.items() if k != 'affected_cities'}
+        
+        for i, city in enumerate(state_machine.cities):
+            modified_city = city.copy()
+            
+            # Apply parameter changes only to affected cities
+            if i in affected_cities:
+                for param, new_value in parameter_changes.items():
+                    if param in modified_city:
+                        modified_city[param] = new_value
+                        
+                        # Ensure values stay within reasonable bounds
+                        if param in ['education_score', 'infrastructure_score', 'location_score']:
+                            modified_city[param] = max(0.1, min(1.0, float(modified_city[param])))
+                        elif param == 'population':
+                            modified_city[param] = max(1000, int(modified_city[param]))
+                        elif param == 'gdp_per_capita':
+                            modified_city[param] = max(10000, float(modified_city[param]))
+            
+            modified_cities.append(modified_city)
+        
+        # Prepare features for prediction with modified parameters
+        feature_keys = ['x', 'y', 'population', 'gdp_per_capita', 'education_score', 'infrastructure_score', 'location_score']
+        
+        node_features = []
+        for city in modified_cities:
+            features = [city.get(key, 0) for key in feature_keys]
+            node_features.append(features)
+        
+        # Convert to tensors
+        x = torch.tensor(node_features, dtype=torch.float)
+        
+        # Prepare edge indices
+        edge_indices = []
+        for edge in state_machine.edges:
+            if len(edge) >= 2:
+                city1_idx, city2_idx = edge[0], edge[1]
+                edge_indices.extend([[city1_idx, city2_idx], [city2_idx, city1_idx]])
+        
+        if edge_indices:
+            edge_index = torch.tensor(edge_indices, dtype=torch.long).t().contiguous()
+        else:
+            edge_index = torch.empty((2, 0), dtype=torch.long)
+        
+        # Make predictions with the trained model
+        state_machine.model.eval()
+        with torch.no_grad():
+            predicted_agglomerations = state_machine.model(x, edge_index)
+            predicted_values = predicted_agglomerations.squeeze().tolist()
+        
+        # Update cities with predicted agglomeration values
+        for i, city in enumerate(modified_cities):
+            city['predicted_agglomeration'] = predicted_values[i]
+        
+        # Prepare response in same format as GET /model
+        graph_data = {
+            "nodes": modified_cities,
+            "edges": state_machine.edges,
+            "metadata": {
+                "num_nodes": len(modified_cities),
+                "num_edges": len(state_machine.edges),
+                "state": state_machine.current_state.value,
+                "model_trained": state_machine.model is not None,
+                "prediction_applied": True,
+                "parameter_changes": parameter_changes,
+                "affected_cities": affected_cities,
+                "total_affected": len(affected_cities)
+            }
+        }
+        
+        return jsonify(graph_data)
+    
+    except Exception as e:
+        return jsonify({
+            "error": f"Failed to predict agglomeration: {str(e)}"
+        }), 500
+    
 
 
 

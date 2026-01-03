@@ -213,21 +213,25 @@ predicție batch / control în timp real] pentru că proiectul nostru [explicaț
 din tabelul Secțiunea 1].
 
 Stările principale sunt:
-1. [STARE_1]: [ce se întâmplă aici - ex: "achiziție 1000 samples/sec de la accelerometru"]
-2. [STARE_2]: [ce se întâmplă aici - ex: "calcul FFT și extragere 50 features frecvență"]
-3. [STARE_3]: [ce se întâmplă aici - ex: "inferență RN cu latență < 50ms"]
+1. [GENERATE_DATA]: Se genereaza datele pentru training
+2. [SAVE_DATA]: Se salveaza datele
+3. [CREATE_MODEL]: Se creaza modelul
+4. [TRAIN_MODEL]: Se antreneaza modelul
+5. [PREDICT]: Se genereaza o predictie
+6. [ERROR]: In cazul in care apare o eroare
+
+
 ...
 
 Tranzițiile critice sunt:
-- [STARE_A] → [STARE_B]: [când se întâmplă - ex: "când buffer-ul atinge 1024 samples"]
-- [STARE_X] → [ERROR]: [condiții - ex: "când senzorul nu răspunde > 100ms"]
+- [GENERATE_DATA] → [SAVE_DATA]: Cand datele au fost generate
+- [SAVE_DATA] → [CREATE_MODEL]: Cand datele au fost salvate
+- [CREATE_MODEL] → [TRAIN_MODEL]: Cand modelul este generat
+- [TRAIN_MODEL] → [IDLE]: Cand modelul s a terminat de antrenat
+- [IDLE] → [PREDICT]: Cand utilizatorul face un PATCH /model din frontend
 
-Starea ERROR este esențială pentru că [explicați ce erori pot apărea în contextul 
-aplicației voastre industriale - ex: "senzorul se poate deconecta în mediul industrial 
-cu vibrații și temperatură variabilă, trebuie să gestionăm reconnect automat"].
+Starea ERROR este esențială pentru că se poate cere o predictie inaintea crearii modelului sau din varii motive nu se pot genera datele sau modelul propriu-zis.
 
-Bucla de feedback [dacă există] funcționează astfel: [ex: "rezultatul inferenței 
-actualizează parametrii controlerului PID pentru reglarea vitezei motorului"].
 ```
 
 ---
@@ -320,26 +324,26 @@ proiect-rn-[nume-prenume]/
 
 ### Documentație și Structură
 - [x] Tabelul Nevoie → Soluție → Modul complet (minimum 2 rânduri cu exemple concrete completate in README_Etapa4_Arhitectura_SIA.md)
-- [ ] Declarație contribuție 40% date originale completată în README_Etapa4_Arhitectura_SIA.md
-- [ ] Cod generare/achiziție date funcțional și documentat
-- [ ] Dovezi contribuție originală: grafice + log + statistici în `docs/`
+- [x] Declarație contribuție 40% date originale completată în README_Etapa4_Arhitectura_SIA.md
+- [x] Cod generare/achiziție date funcțional și documentat
+- [x] Dovezi contribuție originală: grafice + log + statistici în `docs/`
 - [x] Diagrama State Machine creată și salvată în `docs/state_machine.*`
-- [ ] Legendă State Machine scrisă în README_Etapa4_Arhitectura_SIA.md (minimum 1-2 paragrafe cu justificare)
+- [x] Legendă State Machine scrisă în README_Etapa4_Arhitectura_SIA.md (minimum 1-2 paragrafe cu justificare)
 - [x] Repository structurat conform modelului de mai sus (verificat consistență cu Etapa 3)
 
 ### Modul 1: Data Logging / Acquisition
 - [x] Cod rulează fără erori (`python src/data_acquisition/...` sau echivalent LabVIEW)
 - [x] Produce minimum 40% date originale din dataset-ul final
 - [x] CSV generat în format compatibil cu preprocesarea din Etapa 3
-- [ ] Documentație în `src/data_acquisition/README.md` cu:
-  - [ ] Metodă de generare/achiziție explicată
-  - [ ] Parametri folosiți (frecvență, durată, zgomot, etc.)
-  - [ ] Justificare relevanță date pentru problema voastră
+- [x] Documentație în `src/data_acquisition/README.md` cu:
+  - [x] Metodă de generare/achiziție explicată
+  - [x] Parametri folosiți (frecvență, durată, zgomot, etc.)
+  - [x] Justificare relevanță date pentru problema voastră
 - [x] Fișiere în `data/generated/` conform structurii
 
 ### Modul 2: Neural Network
 - [x] Arhitectură RN definită și documentată în cod (docstring detaliat) - versiunea inițială 
-- [ ] README în `src/neural_network/` cu detalii arhitectură curentă
+- [x] README în `src/neural_network/` cu detalii arhitectură curentă
 
 ### Modul 3: Web Service / UI
 - [ ] Propunere Interfață ce pornește fără erori (comanda de lansare testată)
