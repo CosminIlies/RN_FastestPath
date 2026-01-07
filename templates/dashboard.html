@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <!-- Left Sidebar - Controls -->
+    <div class="col-lg-3 col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-cogs me-2"></i>Control Panel</h5>
+            </div>
+            <div class="card-body">
+                <!-- State Machine Status -->
+                <div class="mb-3">
+                    <h6>System Status</h6>
+                    <div id="system-status" class="alert alert-info">
+                        <div class="d-flex align-items-center">
+                            <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+                            <span>Loading...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- State Machine Controls -->
+                <div class="mb-3">
+                    <h6>Actions</h6>
+                    <div class="d-grid gap-2">
+                        <button id="btn-predict" class="btn btn-primary btn-sm">
+                            <i class="fas fa-magic me-1"></i>Predict
+                        </button>
+                    </div>
+                </div>
+
+                <!-- City Editor -->
+                <div class="mb-3" id="city-editor">
+                    <h6>City Editor</h6>
+                    <div id="no-city-selected" class="alert alert-light">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Select a single city on the graph to edit its parameters.
+                    </div>
+                    
+                    <div id="city-parameters" class="d-none">
+                        <div class="mb-3">
+                            <h6 id="selected-city-name" class="text-primary">City Name</h6>
+                            <small class="text-muted">Edit the parameters below and click Apply to see the predicted changes.</small>
+                        </div>
+                        
+                        <div class="mb-2">
+                            <label for="population-input" class="form-label">Population</label>
+                            <input type="number" class="form-control form-control-sm" id="population-input" min="1000" step="1000">
+                        </div>
+                        
+                        <div class="mb-2">
+                            <label for="gdp-input" class="form-label">GDP per Capita ($)</label>
+                            <input type="number" class="form-control form-control-sm" id="gdp-input" min="10000" step="1000">
+                        </div>
+                        
+                        <div class="mb-2">
+                            <label for="education-range" class="form-label">Education Score</label>
+                            <input type="range" class="form-range" id="education-range" min="0.1" max="1" step="0.01">
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted">0.1</small>
+                                <span id="education-value" class="badge bg-light text-dark">0.50</span>
+                                <small class="text-muted">1.0</small>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-2">
+                            <label for="infrastructure-range" class="form-label">Infrastructure Score</label>
+                            <input type="range" class="form-range" id="infrastructure-range" min="0.1" max="1" step="0.01">
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted">0.1</small>
+                                <span id="infrastructure-value" class="badge bg-light text-dark">0.50</span>
+                                <small class="text-muted">1.0</small>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="location-range" class="form-label">Location Score</label>
+                            <input type="range" class="form-range" id="location-range" min="0.1" max="1" step="0.01">
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted">0.1</small>
+                                <span id="location-value" class="badge bg-light text-dark">0.50</span>
+                                <small class="text-muted">1.0</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button id="btn-apply-params" class="btn btn-success btn-sm">
+                                <i class="fas fa-magic me-1"></i>Apply & Predict
+                            </button>
+                            <button id="btn-reset-params" class="btn btn-outline-secondary btn-sm">
+                                <i class="fas fa-undo me-1"></i>Reset to Original
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selected City Info -->
+                <div class="mb-3">
+                    <h6>Selection Info</h6>
+                    <div id="selection-info" class="alert alert-light">
+                        No cities selected. Click on a city in the graph to view and edit its parameters.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="col-lg-9 col-md-8">
+        <!-- Graph Visualization -->
+        <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="fas fa-project-diagram me-2"></i>City Network Graph</h5>
+            </div>
+            <div class="card-body p-2">
+                <div id="graph-container" class="border rounded" style="height: 500px; background-color: #f8f9fa;">
+                    <div class="d-flex align-items-center justify-content-center h-100">
+                        <div class="text-muted">
+                            <i class="fas fa-city fa-3x mb-3 d-block text-center"></i>
+                            <p>Generate data to view the city network graph</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Charts -->
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">Population vs Agglomeration</h6>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="population-chart" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">GDP vs Agglomeration</h6>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="gdp-chart" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">Education vs Agglomeration</h6>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="education-chart" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">Infrastructure vs Agglomeration</h6>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="infrastructure-chart" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Model Performance -->
+        <div class="card">
+            <div class="card-header">
+                <h6 class="mb-0"><i class="fas fa-chart-bar me-2"></i>Model Performance</h6>
+            </div>
+            <div class="card-body">
+                <div id="model-metrics" class="row text-center">
+                    <div class="col-md-3">
+                        <div class="metric-card">
+                            <h5 id="mse-value" class="text-primary">-</h5>
+                            <small class="text-muted">MSE Loss</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="metric-card">
+                            <h5 id="mae-value" class="text-success">-</h5>
+                            <small class="text-muted">MAE Loss</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="metric-card">
+                            <h5 id="predictions-count" class="text-info">-</h5>
+                            <small class="text-muted">Predictions</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="metric-card">
+                            <h5 id="model-status" class="text-warning">Not Trained</h5>
+                            <small class="text-muted">Model Status</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+<script src="{{ url_for('static', filename='js/graph.js') }}"></script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+{% endblock %}

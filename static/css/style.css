@@ -1,0 +1,275 @@
+/* Custom Styles for Urban Agglomeration GNN Analysis */
+
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-weight: 600;
+}
+
+#status-indicator {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+}
+
+/* Graph Container */
+#graph-container {
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+}
+
+#graph-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Graph Styles */
+.node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.node:hover {
+    stroke: #333;
+    stroke-width: 3px;
+}
+
+.node.selected {
+    stroke: #ff6b6b;
+    stroke-width: 4px;
+}
+
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+    stroke-width: 1px;
+}
+
+.node-label {
+    font-size: 10px;
+    font-weight: 500;
+    fill: #333;
+    text-anchor: middle;
+    pointer-events: none;
+}
+
+/* Form Controls */
+.form-range {
+    cursor: pointer;
+}
+
+.form-range::-webkit-slider-thumb {
+    background: var(--primary-color);
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.form-range::-moz-range-thumb {
+    background: var(--primary-color);
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Badges */
+.badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+}
+
+/* Metric Cards */
+.metric-card {
+    padding: 1rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin-bottom: 1rem;
+}
+
+.metric-card h5 {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Alert Styling */
+.alert {
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Status Colors */
+.status-init { background: var(--secondary-color) !important; }
+.status-generating { background: var(--warning-color) !important; color: #000 !important; }
+.status-saving { background: var(--info-color) !important; color: #000 !important; }
+.status-training { background: var(--warning-color) !important; color: #000 !important; }
+.status-predicting { background: var(--info-color) !important; color: #000 !important; }
+.status-idle { background: var(--success-color) !important; }
+.status-complete { background: var(--success-color) !important; }
+.status-error { background: var(--danger-color) !important; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 0.5rem;
+    }
+    
+    #graph-container {
+        height: 350px;
+    }
+    
+    .metric-card {
+        margin-bottom: 0.5rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 200px;
+}
+
+/* Selected Cities Display */
+#selected-cities {
+    max-height: 100px;
+    overflow-y: auto;
+    font-size: 0.8rem;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 1000;
+    max-width: 250px;
+    backdrop-filter: blur(5px);
+}
+
+.graph-tooltip {
+    position: absolute;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.98);
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 1000;
+    max-width: 320px;
+    backdrop-filter: blur(8px);
+    transition: all 0.2s ease;
+    line-height: 1.4;
+}
+
+/* Animation for value updates */
+.value-update {
+    animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

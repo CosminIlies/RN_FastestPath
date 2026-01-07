@@ -9,10 +9,15 @@ import torch.nn.functional as F
 from torch.optim import Adam
 import json
 from torch_geometric.data import Data
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import threading
+import os
 
-app = Flask(__name__)
+# Get the parent directory of src
+template_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'templates')
+static_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static')
+
+app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
 
 
 
@@ -38,6 +43,7 @@ class DataProcessingStateMachine:
         self.current_state = State.INIT
         self.nr_of_cities = nr_of_cities
         self.cities = None
+        self.original_cities = None  # Store original city data for comparison
         self.edges = None
         self.file_paths = None
         self.error_message = None
@@ -121,6 +127,15 @@ class DataProcessingStateMachine:
     def _generate_data_state(self):
         print("Generating city and edge data...")
         self.cities, self.edges = preprocessing(self.nr_of_cities)
+        
+        # Store original city data for comparison
+        import copy
+        self.original_cities = copy.deepcopy(self.cities)
+        
+        # Clear any existing predictions when generating new data
+        for city in self.cities:
+            city.pop('predicted_agglomeration', None)
+            
         print(f"Generated {len(self.cities)} cities and {len(self.edges)} edges")
         self.transition_to(State.SAVE_DATA)
     
@@ -189,7 +204,7 @@ class DataProcessingStateMachine:
             
             # Training loop
             self.model.train()
-            num_epochs = 10000
+            num_epochs = 1000
             
             for epoch in range(num_epochs):
                 self.optimizer.zero_grad()
@@ -285,6 +300,12 @@ class DataProcessingStateMachine:
                     'num_predictions': len(actual_labels)
                 }
                 
+                # Update cities with predicted agglomeration values for visualization
+                predicted_values = predictions.squeeze().tolist()
+                for i, city in enumerate(self.cities):
+                    if i < len(predicted_values):
+                        city['predicted_agglomeration'] = predicted_values[i]
+                
                 print(f"Predictions completed successfully!")
                 print(f"Number of predictions: {self.predictions['num_predictions']}")
                 print(f"MSE Loss: {self.predictions['mse_loss']:.4f}")
@@ -314,7 +335,14 @@ class DataProcessingStateMachine:
     def reset(self):
         print("Resetting state machine...")
         self.current_state = State.INIT
+        
+        # Clear predicted agglomeration values from cities if they exist
+        if self.cities:
+            for city in self.cities:
+                city.pop('predicted_agglomeration', None)
+        
         self.cities = None
+        self.original_cities = None
         self.edges = None
         self.file_paths = None
         self.error_message = None
@@ -424,19 +452,52 @@ def statistics(cities, edges):
 
 
 
-state_machine = DataProcessingStateMachine(nr_of_cities=5)
+state_machine = DataProcessingStateMachine(nr_of_cities=30)
 
 
 
 @app.route("/")
 def hello_world():
-    
-    return state_machine.get_status()
+    return render_template('dashboard.html')
 
-@app.route("/model")
+@app.route("/api/status")
+def get_status():
+    """API endpoint to get current status"""
+    return jsonify(state_machine.get_status())
+
+@app.route("/api/control/<action>", methods=["POST"])
+def control_state_machine(action):
+    """Control the state machine"""
+    try:
+        if action == "generate":
+            state_machine.reset()
+            state_machine.transition_to(State.GENERATE_DATA)
+            state_machine.execute_current_state()
+        elif action == "train":
+            if state_machine.current_state == State.IDLE:
+                state_machine.transition_to(State.TRAIN_MODEL)
+                state_machine.execute_current_state()
+        elif action == "predict":
+            if state_machine.current_state == State.IDLE:
+                state_machine.transition_to(State.PREDICT)
+                state_machine.execute_current_state()
+        elif action == "visualize":
+            if state_machine.current_state == State.IDLE:
+                state_machine.transition_to(State.VISUALIZE)
+                state_machine.execute_current_state()
+        elif action == "reset":
+            state_machine.reset()
+        else:
+            return jsonify({"error": "Invalid action"}), 400
+            
+        return jsonify(state_machine.get_status())
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/model")
 def get_model():
     """
-    GET /model endpoint that returns the whole graph structure
+    GET /api/model endpoint that returns the whole graph structure
     """
     try:
         # Check if we have cities and edges data
@@ -465,10 +526,10 @@ def get_model():
             "error": f"Failed to retrieve graph: {str(e)}"
         }), 500
 
-@app.route("/model", methods=["PATCH"])
+@app.route("/api/model", methods=["PATCH"])
 def patch_model():
     """
-    PATCH /model endpoint that predicts agglomeration if parameters change
+    PATCH /api/model endpoint that predicts agglomeration if parameters change
     """
     try:
         # Check if model exists
@@ -490,10 +551,38 @@ def patch_model():
         if not data:
             return jsonify({"error": "No parameter changes provided in request body"}), 400
         
+        # Handle reset request
+        if data.get('reset_to_original', False) and state_machine.original_cities:
+            affected_cities = data.get('affected_cities', [])
+            for city_idx in affected_cities:
+                if city_idx < len(state_machine.cities) and city_idx < len(state_machine.original_cities):
+                    # Restore original values but keep predicted_agglomeration if it exists
+                    predicted_value = state_machine.cities[city_idx].get('predicted_agglomeration')
+                    import copy
+                    state_machine.cities[city_idx] = copy.deepcopy(state_machine.original_cities[city_idx])
+                    if predicted_value is not None:
+                        state_machine.cities[city_idx]['predicted_agglomeration'] = predicted_value
+            
+            # Return current data
+            graph_data = {
+                "nodes": state_machine.cities,
+                "edges": state_machine.edges,
+                "metadata": {
+                    "num_nodes": len(state_machine.cities),
+                    "num_edges": len(state_machine.edges),
+                    "state": state_machine.current_state.value,
+                    "model_trained": state_machine.model is not None,
+                    "reset_applied": True,
+                    "affected_cities": affected_cities
+                }
+            }
+            return jsonify(graph_data)
+        
         # Create modified cities with parameter changes
         modified_cities = []
         affected_cities = data.get('affected_cities', list(range(len(state_machine.cities))))
-        parameter_changes = {k: v for k, v in data.items() if k != 'affected_cities'}
+        parameter_changes = {k: v for k, v in data.items() if k not in ['affected_cities', 'individual_values']}
+        individual_values = data.get('individual_values', False)
         
         for i, city in enumerate(state_machine.cities):
             modified_city = city.copy()
@@ -502,7 +591,15 @@ def patch_model():
             if i in affected_cities:
                 for param, new_value in parameter_changes.items():
                     if param in modified_city:
-                        modified_city[param] = new_value
+                        if individual_values:
+                            # Use absolute values directly
+                            modified_city[param] = new_value
+                        else:
+                            # Use multipliers (old behavior)
+                            if param in ['population', 'gdp_per_capita']:
+                                modified_city[param] *= new_value
+                            else:
+                                modified_city[param] = new_value
                         
                         # Ensure values stay within reasonable bounds
                         if param in ['education_score', 'infrastructure_score', 'location_score']:
@@ -546,6 +643,19 @@ def patch_model():
         # Update cities with predicted agglomeration values
         for i, city in enumerate(modified_cities):
             city['predicted_agglomeration'] = predicted_values[i]
+        
+        # Update the actual state machine cities data with the modifications
+        # This ensures the changes persist and are visible in tooltips
+        if individual_values and affected_cities:
+            for city_idx in affected_cities:
+                if city_idx < len(state_machine.cities):
+                    # Update the actual city data with the new parameter values
+                    for param, new_value in parameter_changes.items():
+                        if param in state_machine.cities[city_idx]:
+                            state_machine.cities[city_idx][param] = modified_cities[city_idx][param]
+                    
+                    # Also update with the predicted agglomeration
+                    state_machine.cities[city_idx]['predicted_agglomeration'] = predicted_values[city_idx]
         
         # Prepare response in same format as GET /model
         graph_data = {
