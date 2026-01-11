@@ -110,49 +110,64 @@ class App {
         const statusIndicator = document.getElementById('status-indicator');
         const systemStatus = document.getElementById('system-status');
         
-        // Update status indicator
-        statusIndicator.textContent = status.current_state.replace('_', ' ').toUpperCase();
-        statusIndicator.className = `badge status-${status.current_state.replace('_', '-')}`;
-        
-        // Update system status card
-        const stateEmoji = {
-            'initialization': '🔄',
-            'generating_data': '⚙️',
-            'saving_data': '💾',
-            'creating_model': '🧠',
-            'train_model': '🏋️',
-            'prediction': '🔮',
-            'idle': '✅',
-            'complete': '🎉',
-            'error': '❌'
-        };
-        
-        systemStatus.innerHTML = `
-            <div class="d-flex align-items-center">
-                <span class="me-2" style="font-size: 1.2em;">${stateEmoji[status.current_state] || '⚪'}</span>
-                <div>
-                    <strong>${status.current_state.replace('_', ' ')}</strong>
-                    ${status.error ? `<br><small class="text-danger">${status.error}</small>` : ''}
-                </div>
-            </div>
-        `;
-        
-        systemStatus.className = `alert alert-${status.error ? 'danger' : 'info'}`;
-        
-        // Update model metrics
-        if (status.predictions_summary) {
-            document.getElementById('mse-value').textContent = 
-                status.predictions_summary.mse_loss ? status.predictions_summary.mse_loss.toFixed(4) : '-';
-            document.getElementById('mae-value').textContent = 
-                status.predictions_summary.mae_loss ? status.predictions_summary.mae_loss.toFixed(4) : '-';
-            document.getElementById('predictions-count').textContent = 
-                status.predictions_summary.num_predictions || '-';
+        // Update status indicator (only if element exists)
+        if (statusIndicator) {
+            statusIndicator.textContent = status.current_state.replace('_', ' ').toUpperCase();
+            statusIndicator.className = `badge status-${status.current_state.replace('_', '-')}`;
         }
         
-        document.getElementById('model-status').textContent = 
-            status.model_created ? 'Trained' : 'Not Trained';
-        document.getElementById('model-status').className = 
-            `text-${status.model_created ? 'success' : 'warning'}`;
+        // Update system status card (only if element exists)
+        if (systemStatus) {
+            const stateEmoji = {
+                'initialization': '🔄',
+                'generating_data': '⚙️',
+                'saving_data': '💾',
+                'creating_model': '🧠',
+                'train_model': '🏋️',
+                'prediction': '🔮',
+                'idle': '✅',
+                'complete': '🎉',
+                'error': '❌'
+            };
+            
+            systemStatus.innerHTML = `
+                <div class="d-flex align-items-center">
+                    <span class="me-2" style="font-size: 1.2em;">${stateEmoji[status.current_state] || '⚪'}</span>
+                    <div>
+                        <strong>${status.current_state.replace('_', ' ')}</strong>
+                        ${status.error ? `<br><small class="text-danger">${status.error}</small>` : ''}
+                    </div>
+                </div>
+            `;
+            
+            systemStatus.className = `alert alert-${status.error ? 'danger' : 'info'}`;
+        }
+        
+        // Update model metrics (only if elements exist)
+        if (status.predictions_summary) {
+            const mseValue = document.getElementById('mse-value');
+            const maeValue = document.getElementById('mae-value');
+            const predictionsCount = document.getElementById('predictions-count');
+            
+            if (mseValue) {
+                mseValue.textContent = status.predictions_summary.mse_loss ? 
+                    status.predictions_summary.mse_loss.toFixed(4) : '-';
+            }
+            if (maeValue) {
+                maeValue.textContent = status.predictions_summary.mae_loss ? 
+                    status.predictions_summary.mae_loss.toFixed(4) : '-';
+            }
+            if (predictionsCount) {
+                predictionsCount.textContent = status.predictions_summary.num_predictions || '-';
+            }
+        }
+        
+        // Update model status (only if element exists)
+        const modelStatus = document.getElementById('model-status');
+        if (modelStatus) {
+            modelStatus.textContent = status.model_created ? 'Trained' : 'Not Trained';
+            modelStatus.className = `text-${status.model_created ? 'success' : 'warning'}`;
+        }
     }
 
     async loadGraphData() {

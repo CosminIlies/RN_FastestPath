@@ -260,7 +260,7 @@ Toate cele 3 module trebuie să **pornească și să ruleze fără erori** la pr
 
 **Funcționalități obligatorii:**
 - [x] Arhitectură RN definită și compilată fără erori
-- [ ] Model poate fi salvat și reîncărcat
+- [x] Model poate fi salvat și reîncărcat
 - [x] Include justificare pentru arhitectura aleasă (în docstring sau README)
 - [x] **NU trebuie antrenat** cu performanță bună (weights pot fi random)
 

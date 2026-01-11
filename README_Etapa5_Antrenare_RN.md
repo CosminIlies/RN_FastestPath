@@ -2,9 +2,9 @@
 
 **Disciplina:** Rețele Neuronale  
 **Instituție:** POLITEHNICA București – FIIR  
-**Student:** [Nume Prenume]  
-**Link Repository GitHub:** [URL complet]  
-**Data predării:** [Data]
+**Student:** Ilies Eduard Cosmin
+**Link Repository GitHub:** https://github.com/CosminIlies/RN_FastestPath
+**Data predării:** 1/11/2026
 
 ---
 
@@ -25,12 +25,12 @@ Această etapă corespunde punctului **6. Configurarea și antrenarea modelului 
 
 **Înainte de a începe Etapa 5, verificați că aveți din Etapa 4:**
 
-- [ ] **State Machine** definit și documentat în `docs/state_machine.*`
-- [ ] **Contribuție ≥40% date originale** în `data/generated/` (verificabil)
-- [ ] **Modul 1 (Data Logging)** funcțional - produce CSV-uri
-- [ ] **Modul 2 (RN)** cu arhitectură definită dar NEANTRENATĂ (`models/untrained_model.h5`)
-- [ ] **Modul 3 (UI/Web Service)** funcțional cu model dummy
-- [ ] **Tabelul "Nevoie → Soluție → Modul"** complet în README Etapa 4
+- [x] **State Machine** definit și documentat în `docs/state_machine.*`
+- [x] **Contribuție ≥40% date originale** în `data/generated/` (verificabil)
+- [x] **Modul 1 (Data Logging)** funcțional - produce CSV-uri
+- [x] **Modul 2 (RN)** cu arhitectură definită dar NEANTRENATĂ (`models/untrained_model.h5`)
+- [x] **Modul 3 (UI/Web Service)** funcțional cu model dummy
+- [x] **Tabelul "Nevoie → Soluție → Modul"** complet în README Etapa 4
 
 ** Dacă oricare din punctele de mai sus lipsește → reveniți la Etapa 4 înainte de a continua.**
 

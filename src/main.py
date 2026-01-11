@@ -12,6 +12,7 @@ from torch_geometric.data import Data
 from flask import Flask, request, jsonify, render_template
 import threading
 import os
+from datetime import datetime
 
 # Get the parent directory of src
 template_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'templates')
@@ -27,6 +28,9 @@ class State(Enum):
     GENERATE_DATA = "generating_data"
     SAVE_DATA = "saving_data"
     VISUALIZE = "visualizing"
+
+    SAVE_MODEL = "saving_model"
+    LOAD_MODEL = "loading_model"
 
     CREATE_MODEL = "creating_model"
     TRAIN_MODEL = "train_model"
@@ -54,12 +58,15 @@ class DataProcessingStateMachine:
         
         # Define valid transitions
         self.transitions = {
-            State.INIT: [State.GENERATE_DATA, State.ERROR],
+            State.INIT: [State.GENERATE_DATA, State.LOAD_MODEL, State.ERROR],
             State.GENERATE_DATA: [State.SAVE_DATA, State.ERROR],
             State.SAVE_DATA: [State.CREATE_MODEL, State.IDLE, State.COMPLETE, State.ERROR],
 
+            State.SAVE_MODEL: [State.IDLE, State.ERROR],
+            State.LOAD_MODEL: [State.IDLE, State.ERROR],
+
             State.CREATE_MODEL : [State.TRAIN_MODEL, State.ERROR],
-            State.TRAIN_MODEL : [State.IDLE, State.PREDICT, State.ERROR],
+            State.TRAIN_MODEL : [State.IDLE, State.SAVE_MODEL, State.PREDICT, State.ERROR],
             State.PREDICT : [State.IDLE, State.ERROR],
             State.IDLE : [State.COMPLETE, State.PREDICT, State.VISUALIZE, State.ERROR],
 
@@ -93,6 +100,11 @@ class DataProcessingStateMachine:
                 self._save_data_state()
 
 
+            elif self.current_state == State.SAVE_MODEL:
+                self._save_model()
+            elif self.current_state == State.LOAD_MODEL:
+                self._load_model()
+
             elif self.current_state == State.CREATE_MODEL:
                 self._create_model_state()
             elif self.current_state == State.TRAIN_MODEL:
@@ -122,7 +134,13 @@ class DataProcessingStateMachine:
     def _init_state(self):
         print(f"Initializing for {self.nr_of_cities} cities")
 
-        self.transition_to(State.GENERATE_DATA)
+        models_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models')
+        model_path = os.path.join(models_dir, 'city_agglomeration_gnn.pt')
+        
+        if os.path.exists(model_path):
+            self.transition_to(State.LOAD_MODEL)
+        else:
+            self.transition_to(State.GENERATE_DATA)
     
     def _generate_data_state(self):
         print("Generating city and edge data...")
@@ -220,12 +238,120 @@ class DataProcessingStateMachine:
                     print(f"Epoch {epoch + 1}/{num_epochs}, Loss: {loss.item():.4f}")
             
             print("Model training completed")
-            self.transition_to(State.IDLE)
+            
+            # Save the trained model
+            # self._save_model()
+            
+            self.transition_to(State.SAVE_MODEL)
             
         except Exception as e:
             print(f"Training failed: {e}")
             self.error_message = str(e)
             self.transition_to(State.ERROR)
+
+
+    def _save_model(self):
+        try:
+            # Create models directory if it doesn't exist
+            models_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models')
+            os.makedirs(models_dir, exist_ok=True)
+            
+            # Create filename with timestamp
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            model_filename = f"city_agglomeration_gnn.pt"
+            model_path = os.path.join(models_dir, model_filename)
+            
+            # Save model state dict, optimizer state dict, and model configuration
+            torch.save({
+                'model_state_dict': self.model.state_dict(),
+                'optimizer_state_dict': self.optimizer.state_dict(),
+                'model_config': {
+                    'input_dim': 7,
+                    'hidden_dim': 64,
+                    'output_dim': 1
+                },
+                'nr_of_cities': self.nr_of_cities,
+                'timestamp': timestamp
+            }, model_path)
+            
+            print(f"Model saved successfully to: {model_path}")
+            self.transition_to(State.IDLE)
+            
+        except Exception as e:
+            print(f"Failed to save model: {e}")
+            self.transition_to(State.ERROR)
+
+    def _load_model(self):
+        models_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models')
+        model_path = os.path.join(models_dir, 'city_agglomeration_gnn.pt')
+        try:
+            # Load the saved model
+            checkpoint = torch.load(model_path)
+            
+            # Extract model configuration
+            model_config = checkpoint['model_config']
+            
+            # Initialize model with saved configuration
+            self.model = CityAgglomerationGNN(
+                input_dim=model_config['input_dim'],
+                hidden_dim=model_config['hidden_dim'],
+                output_dim=model_config['output_dim']
+            )
+            
+            # Load model state
+            self.model.load_state_dict(checkpoint['model_state_dict'])
+            
+            # Initialize optimizer
+            self.optimizer = Adam(self.model.parameters(), lr=0.01)
+            self.optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+            
+            # Set model to evaluation mode
+            self.model.eval()
+            
+            print(f"Model loaded successfully from: {model_path}")
+            print(f"Model was trained on {checkpoint.get('nr_of_cities', 'unknown')} cities")
+            print(f"Model timestamp: {checkpoint.get('timestamp', 'unknown')}")
+            
+            # Try to load existing processed data to display in the UI
+            self._load_existing_processed_data()
+            
+            self.transition_to(State.IDLE)
+
+            
+        except Exception as e:
+            print(f"Failed to load model: {e}")
+            self.transition_to(State.ERROR)
+
+    def _load_existing_processed_data(self):
+        """Try to load existing processed data to display in the UI when model is loaded"""
+        try:
+            # Try multiple possible file locations
+            possible_files = [
+                'data/processed/processed.json',
+                'data/generated/generated.json',
+                'data/aigenerated.json'
+            ]
+            
+            for processed_file in possible_files:
+                if os.path.exists(processed_file):
+                    print(f"Loading existing data from: {processed_file}")
+                    self.cities, self.edges = preprocessing_read_from_json(processed_file)
+                    
+                    # Store original city data for comparison
+                    import copy
+                    self.original_cities = copy.deepcopy(self.cities)
+                    
+                    print(f"Loaded {len(self.cities)} cities and {len(self.edges)} edges from processed data")
+                    return True
+            
+            print("No existing processed data found - you can generate new data or make predictions with existing model")
+            return False
+                
+        except Exception as e:
+            print(f"Warning: Could not load existing processed data: {e}")
+            print("You can generate new data or the model is still ready for predictions")
+            return False
+
     
     def _idle_state(self):
         pass 
@@ -353,11 +479,13 @@ class DataProcessingStateMachine:
     def run_workflow(self):
         print("Starting data processing workflow...")
         
-        while self.current_state not in [State.COMPLETE, State.ERROR]:
+        while self.current_state not in [State.COMPLETE, State.ERROR, State.IDLE]:
             self.execute_current_state()
         
         if self.current_state == State.COMPLETE:
             print("Workflow completed successfully!")
+        elif self.current_state == State.IDLE:
+            print("Workflow is ready - model and data loaded")
         else:
             print("Workflow ended with error")
     

@@ -25,8 +25,8 @@ def preprocessing(nr_of_cities):
     return cities_data, edges_data
 
 
-def preprocessing_read_from_json(nr_of_cites):
-    file_path = "data/aigenerated.json"
+def preprocessing_read_from_json(file_path):
+    # file_path = "data/aigenerated.json"
     cities_data = []
 
     edges_data = []
