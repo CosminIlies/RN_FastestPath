@@ -10,6 +10,7 @@ class ChartsManager {
         this.createChart('gdp-chart', 'GDP per Capita vs Agglomeration', 'rgba(75, 192, 192, 0.6)');
         this.createChart('education-chart', 'Education vs Agglomeration', 'rgba(255, 99, 132, 0.6)');
         this.createChart('infrastructure-chart', 'Infrastructure vs Agglomeration', 'rgba(153, 102, 255, 0.6)');
+        this.createComparisonChart();
     }
 
     createChart(canvasId, title, color) {
@@ -115,6 +116,15 @@ class ChartsManager {
         this.updateChart('gdp-chart', nodes, (node) => node.gdp_per_capita, (node) => `$${node.gdp_per_capita?.toLocaleString()}`);
         this.updateChart('education-chart', nodes, (node) => node.education_score, (node) => `${(node.education_score * 100).toFixed(0)}%`);
         this.updateChart('infrastructure-chart', nodes, (node) => node.infrastructure_score, (node) => `${(node.infrastructure_score * 100).toFixed(0)}%`);
+        
+        // Update comparison chart if predictions are available
+        if (data.predictions && this.hasPredictions(nodes)) {
+            this.updateComparisonChart(nodes, data.predictions);
+        }
+    }
+
+    hasPredictions(nodes) {
+        return nodes.some(node => node.predicted_agglomeration !== undefined);
     }
 
     updateChart(chartId, nodes, valueExtractor, labelFormatter) {
@@ -172,6 +182,142 @@ class ChartsManager {
                 chart.update('none');
             }
         });
+    }
+
+    createComparisonChart() {
+        const ctx = document.getElementById('comparison-chart');
+        if (!ctx) return;
+
+        this.charts['comparison-chart'] = new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Perfect Prediction',
+                    data: [],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    showLine: true,
+                    tension: 0
+                }, {
+                    label: 'Actual vs Predicted',
+                    data: [],
+                    backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Actual vs Predicted Agglomeration Values'
+                    },
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => {
+                                if (context.datasetIndex === 0) return 'Perfect Prediction Line';
+                                const point = context.parsed;
+                                const cityData = context.dataset.data[context.dataIndex];
+                                const difference = Math.abs(point.y - point.x);
+                                return [
+                                    `City: ${cityData.cityName || 'Unknown'}`,
+                                    `Actual: ${point.x.toFixed(3)}`,
+                                    `Predicted: ${point.y.toFixed(3)}`,
+                                    `Difference: ${difference.toFixed(3)}`
+                                ];
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Actual Agglomeration'
+                        },
+                        min: 0.1,
+                        max: 1.0
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Predicted Agglomeration'
+                        },
+                        min: 0.1,
+                        max: 1.0
+                    }
+                },
+                interaction: {
+                    intersect: false
+                },
+                animation: {
+                    duration: 500
+                }
+            }
+        });
+    }
+
+    updateComparisonChart(cities, predictions) {
+        const chart = this.charts['comparison-chart'];
+        if (!chart || !predictions) return;
+
+        // Create perfect prediction line (diagonal)
+        const perfectLine = [
+            { x: 0.1, y: 0.1 },
+            { x: 1.0, y: 1.0 }
+        ];
+
+        // Create actual vs predicted points
+        const comparisonData = [];
+        cities.forEach((city, index) => {
+            if (index < predictions.predicted_values.length) {
+                comparisonData.push({
+                    x: city.agglomeration,
+                    y: predictions.predicted_values[index],
+                    cityName: city.city_name,
+                    cityIndex: index
+                });
+            }
+        });
+
+        chart.data.datasets[0].data = perfectLine;
+        chart.data.datasets[1].data = comparisonData;
+        chart.update();
+
+        // Update metrics
+        this.updateMetrics(predictions);
+    }
+
+    updateMetrics(predictions) {
+        if (!predictions) return;
+
+        document.getElementById('r2-score').textContent = 
+            predictions.r2_score ? predictions.r2_score.toFixed(4) : '--';
+        document.getElementById('mae-loss').textContent = 
+            predictions.mae_loss ? predictions.mae_loss.toFixed(4) : '--';
+        document.getElementById('num-predictions').textContent = 
+            predictions.num_predictions || '--';
+
+        // Add color coding based on R² score
+        const r2Element = document.getElementById('r2-score');
+        if (predictions.r2_score !== undefined) {
+            r2Element.className = 'metric-value';
+            if (predictions.r2_score > 0.7) {
+                r2Element.classList.add('positive');
+            } else if (predictions.r2_score < 0.3) {
+                r2Element.classList.add('negative');
+            }
+        }
     }
 
     destroy() {

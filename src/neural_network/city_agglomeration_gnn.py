@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
 from torch_geometric.nn import GCNConv
-
+import torch
 class CityAgglomerationGNN(nn.Module):
     """
     O retea neuronala de grafuri (GNN) pentru analiza aglomerarilor urbane.
@@ -38,17 +38,22 @@ class CityAgglomerationGNN(nn.Module):
     def forward(self, x, edge_index, batch=None):
 
         x = self.conv1(x, edge_index)
-        x = F.relu(x)
+        # x = F.leaky_relu(x, negative_slope=0.01)
+        x = F.silu(x)
+
         x = self.dropout(x)
         
         x = self.conv2(x, edge_index)
-        x = F.relu(x)
+        x = F.silu(x)
         x = self.dropout(x)
 
         x = self.conv3(x, edge_index)
-        x = F.relu(x)
+        x = F.silu(x)
         
         x = self.classifier(x)
+        
+        x = torch.sigmoid(x) * 0.9 + 0.1
+        
         
         return x
  
