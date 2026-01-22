@@ -34,26 +34,46 @@ class CityAgglomerationGNN(nn.Module):
         self.conv3 = GCNConv(hidden_dim, hidden_dim // 2)
         self.classifier = nn.Linear(hidden_dim // 2, output_dim)
         self.dropout = nn.Dropout(0.3)
+
+
+    # def forward(self, x, edge_index, batch=None):
+
+    #     # In your forward pass, add skip connections:
+    #     x = self.conv1(x, edge_index)
+    #     x = F.leaky_relu(x)
+    #     x = self.dropout(x)
+
+    #     x = self.conv2(x, edge_index)
+    #     x = F.leaky_relu(x)
+    #     x = self.dropout(x)
+
+    #     x = self.conv3(x, edge_index)
+    #     x = F.leaky_relu(x)
+        
+    #     output = self.classifier(x)
+        
+    #     return output
         
     def forward(self, x, edge_index, batch=None):
 
-        x = self.conv1(x, edge_index)
-        # x = F.leaky_relu(x, negative_slope=0.01)
-        x = F.silu(x)
+        # In your forward pass, add skip connections:
+        x1 = self.conv1(x, edge_index)
+        x1 = F.leaky_relu(x1)
+        x1 = self.dropout(x1)
 
-        x = self.dropout(x)
-        
-        x = self.conv2(x, edge_index)
-        x = F.silu(x)
-        x = self.dropout(x)
+        x2 = self.conv2(x1, edge_index)
+        x2 = F.leaky_relu(x2)
+        x2 = self.dropout(x2)
+        x2 = x2 + x1  # Residual connection
 
-        x = self.conv3(x, edge_index)
-        x = F.silu(x)
+        x3 = self.conv3(x2, edge_index)
+        x3 = F.leaky_relu(x3)
         
-        x = self.classifier(x)
+        # Add a simple skip connection from input
+        skip_pred = torch.mean(x, dim=1, keepdim=True) * 0.5
+        main_pred = self.classifier(x3)
+        output = 0.9 * main_pred + 0.1 * skip_pred
         
-        x = torch.sigmoid(x) * 0.9 + 0.1
         
-        
-        return x
+        return output
  

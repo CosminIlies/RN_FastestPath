@@ -15,6 +15,7 @@ import os
 from datetime import datetime
 from sklearn.metrics import accuracy_score, r2_score
 import csv
+import time
 
 # Get the parent directory of src
 template_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'templates')
@@ -196,8 +197,8 @@ class DataProcessingStateMachine:
     def _create_model_state(self):
         print("Creating neural network model...")
         # Initialize model with 7 input features
-        self.model = CityAgglomerationGNN(input_dim=5, hidden_dim=128, output_dim=1)  # Increased from 64
-        self.optimizer = Adam(self.model.parameters(), lr=learning_rate, weight_decay=1e-5)  # Increased LR from 0.001
+        self.model = CityAgglomerationGNN(input_dim=5, hidden_dim=128, output_dim=1)  # Increased from 64 to 128
+        self.optimizer = Adam(self.model.parameters(), lr=learning_rate, weight_decay=1e-5) 
         
         # Conditionally add learning rate scheduler
         if self.use_lr_scheduler:
@@ -212,6 +213,9 @@ class DataProcessingStateMachine:
     
     def _train_model_state(self):
         print("Training neural network model...")
+        
+        # Record training start time
+        training_start_time = time.time()
         
         # Load training data
         try:
@@ -269,6 +273,9 @@ class DataProcessingStateMachine:
             
             # Training loop
             self.model.train()
+            
+            # Record epoch timing
+            epoch_start_time = time.time()
             
             # Setup CSV logging
             results_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
@@ -360,10 +367,15 @@ class DataProcessingStateMachine:
                 abs_diff_max = abs_diffs.max().item()
                 
             
+            # Calculate total training time
+            training_end_time = time.time()
+            total_training_time = training_end_time - training_start_time
+            epoch_time = total_training_time / num_epochs
+            
             print("\n" + "="*60)
-            print("🎉 MODEL TRAINING COMPLETED!")
+            print("MODEL TRAINING COMPLETED!")
             print("="*60)
-            print(f"📊 FINAL TRAINING METRICS:")
+            print(f"FINAL TRAINING METRICS:")
             print(f"   Final Loss: {final_loss.item():.4f}")
             print(f"   MAE: {mae.item():.4f}")
             print(f"   MSE: {mse.item():.4f}")
@@ -371,6 +383,21 @@ class DataProcessingStateMachine:
             print(f"   Worst acc: {(1-abs_diff_max) * 100}%")
             print(f"   Total Epochs: {num_epochs}")
             print(f"   Training Samples: {len(y)}")
+            
+            print("\n" + "="*60)
+            print("TRAINING TIMING")
+            print("="*60)
+            print(f"Total Training Time: {total_training_time:.2f} seconds ({total_training_time/60:.2f} minutes)")
+            print(f"Average Time per Epoch: {epoch_time:.4f} seconds")
+            print(f"Training Speed: {len(y)} samples × {num_epochs} epochs / {total_training_time:.2f}s = {(len(y) * num_epochs) / total_training_time:.2f} samples/sec")
+            if total_training_time > 60:
+                hours = int(total_training_time // 3600)
+                minutes = int((total_training_time % 3600) // 60)
+                seconds = int(total_training_time % 60)
+                if hours > 0:
+                    print(f"📅 Training Duration: {hours}h {minutes}m {seconds}s")
+                else:
+                    print(f"📅 Training Duration: {minutes}m {seconds}s")
             
             print("Model training completed")
             
@@ -505,6 +532,9 @@ class DataProcessingStateMachine:
     def _predict_state(self):
         print("Making predictions with trained model...")
         
+        # Record start time for prediction
+        prediction_start_time = time.time()
+        
         try:
             # Check if model exists
             if self.model is None:
@@ -543,10 +573,10 @@ class DataProcessingStateMachine:
             # Apply same normalization as training (CRITICAL for consistent predictions)
             if hasattr(self, 'feature_mean') and self.feature_mean is not None:
                 x = (x - self.feature_mean) / self.feature_std
-                print(f"✅ Applied training normalization to features")
+                print(f"Applied training normalization to features")
             else:
                 # Fallback: calculate new normalization (warning - may cause inconsistent predictions)
-                print(f"⚠️ No training normalization found - calculating new normalization")
+                print(f"No training normalization found - calculating new normalization")
                 x_mean = x.mean(dim=0, keepdim=True)
                 x_std = x.std(dim=0, keepdim=True) + 1e-8
                 x = (x - x_mean) / x_std
@@ -565,8 +595,16 @@ class DataProcessingStateMachine:
             
             # Make predictions
             self.model.eval()
+            
+            # Record time for model inference only
+            inference_start_time = time.time()
+            
             with torch.no_grad():
                 predictions = self.model(x, edge_index)
+                
+                # Record inference end time
+                inference_end_time = time.time()
+                inference_time = inference_end_time - inference_start_time
                 
                 # Validate prediction range
                 pred_min, pred_max = predictions.min().item(), predictions.max().item()
@@ -638,6 +676,18 @@ class DataProcessingStateMachine:
                 print(f"MAE Loss: {self.predictions['mae_loss']:.4f}")
                 print(f"R² Score: {self.predictions['r2_score']:.4f} ({self.predictions['r2_score']*100:.1f}%)")
                 print(f"Prediction range: [{pred_min:.3f}, {pred_max:.3f}]")
+                
+                # Record total prediction time
+                prediction_end_time = time.time()
+                total_prediction_time = prediction_end_time - prediction_start_time
+                
+                # Print timing information
+                print("\n" + "="*50)
+                print("⏱️  PREDICTION TIMING")
+                print("="*50)
+                print(f"🚀 Model Inference Time: {inference_time:.4f} seconds")
+                print(f"📊 Total Prediction Time: {total_prediction_time:.4f} seconds")
+                print(f"⚡ Predictions per second: {len(predictions):.0f} / {inference_time:.4f} = {len(predictions)/inference_time:.2f} predictions/sec")
                 
                 # Print detailed evaluation summary
                 print("\n" + "="*50)
@@ -798,8 +848,8 @@ def statistics(cities, edges):
 
 
 # state_machine = DataProcessingStateMachine(nr_of_cities=1, split_data=False, use_lr_scheduler=False)
-state_machine = DataProcessingStateMachine(nr_of_cities=302, split_data=True, use_lr_scheduler=dynamic_learing_rate)
-# state_machine = DataProcessingStateMachine(nr_of_cities=1000, split_data=True, use_lr_scheduler=True)
+# state_machine = DataProcessingStateMachine(nr_of_cities=75, split_data=True, use_lr_scheduler=dynamic_learing_rate)
+state_machine = DataProcessingStateMachine(nr_of_cities=302, split_data=True, use_lr_scheduler=True)
 
 
 

@@ -37,7 +37,7 @@ def generate_edges(cities, num_cities):
             geo_dist = np.sqrt((city1['x'] - city2['x'])**2 + (city1['y'] - city2['y'])**2)
             econ_similarity = 1 - abs(city1['gdp_per_capita'] - city2['gdp_per_capita']) / 60000
 
-            if geo_dist < 150 or (geo_dist < 100 and econ_similarity > 0.7):
+            if geo_dist < 75 or (geo_dist < 25 and econ_similarity > 0.7):
                 weight = geo_dist 
                 edges.append((i, j, weight))
                 # edges.append((j, i))

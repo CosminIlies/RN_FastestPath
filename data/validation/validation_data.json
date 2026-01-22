@@ -4,361 +4,361 @@
       "city_name": "city_12",
       "population": 10329,
       "area": 376.22026813646653,
-      "gdp_per_capita": 48838.64436945445,
-      "education_score": 0.49612219410007724,
-      "infrastructure_score": 0.4290207806770047,
-      "location_score": 0.39841914732796335,
+      "gdp_per_capita": 52723.1421302365,
+      "education_score": 0.43672424287029765,
+      "infrastructure_score": 0.32112067645671166,
+      "location_score": 0.4446626584663286,
       "x": 941.8066523433662,
       "y": 850.7950893767787,
-      "agglomeration": 0.47052371794832554
+      "agglomeration": 0.4657352978898943
     },
     {
       "city_name": "city_21",
       "population": 7803,
       "area": 283.3299254516363,
-      "gdp_per_capita": 55989.860564812974,
-      "education_score": 0.5122327336404524,
-      "infrastructure_score": 0.5085437993708407,
-      "location_score": 0.6225804223120248,
+      "gdp_per_capita": 56436.141689983124,
+      "education_score": 0.5131467260448321,
+      "infrastructure_score": 0.49716805530917424,
+      "location_score": 0.6407892006528444,
       "x": 783.0036094590105,
       "y": 850.3276397749954,
-      "agglomeration": 0.5683691175828403
+      "agglomeration": 0.5721499285453975
     },
     {
       "city_name": "city_23",
       "population": 227,
       "area": 436.63189933460484,
-      "gdp_per_capita": 40454.2551953037,
-      "education_score": 0.41331195222630523,
-      "infrastructure_score": 0.43533598067637785,
-      "location_score": 0.4278315743009315,
+      "gdp_per_capita": 39888.605426100796,
+      "education_score": 0.4037421561619817,
+      "infrastructure_score": 0.41891348310554266,
+      "location_score": 0.4417295109972148,
       "x": 220.40451663772564,
       "y": 811.9509205386867,
-      "agglomeration": 0.3937335108671174
+      "agglomeration": 0.3884863906333279
     },
     {
       "city_name": "city_26",
       "population": 6080,
       "area": 133.66005444058067,
-      "gdp_per_capita": 48982.146954696844,
-      "education_score": 0.5366810399648994,
-      "infrastructure_score": 0.6522803337765593,
-      "location_score": 0.664446680743433,
+      "gdp_per_capita": 52848.327972774816,
+      "education_score": 0.4454770959996448,
+      "infrastructure_score": 0.5946819591205157,
+      "location_score": 0.5834097773711011,
       "x": 556.2293251719702,
       "y": 367.0803216193239,
-      "agglomeration": 0.5736774121701973
+      "agglomeration": 0.5470404728618612
     },
     {
       "city_name": "city_36",
       "population": 4732,
       "area": 174.84104829025665,
-      "gdp_per_capita": 59888.95381237889,
-      "education_score": 0.5642147807480316,
-      "infrastructure_score": 0.5846184639266314,
-      "location_score": 0.5201262605354693,
+      "gdp_per_capita": 59112.53275634794,
+      "education_score": 0.5633907842862869,
+      "infrastructure_score": 0.5884705152490293,
+      "location_score": 0.5223582319803197,
       "x": 682.1746741884953,
       "y": 678.970783910743,
-      "agglomeration": 0.5896506916045761
+      "agglomeration": 0.5868205915855221
     },
     {
       "city_name": "city_41",
       "population": 10722,
       "area": 186.76053740334447,
-      "gdp_per_capita": 51427.10473548695,
-      "education_score": 0.5208289211913242,
-      "infrastructure_score": 0.5591882800821689,
-      "location_score": 0.5057302036446879,
+      "gdp_per_capita": 49275.10027733649,
+      "education_score": 0.4888717742421932,
+      "infrastructure_score": 0.5468272105707068,
+      "location_score": 0.5041677457095506,
       "x": 980.938863187805,
       "y": 600.8160922159132,
-      "agglomeration": 0.5361520245569875
+      "agglomeration": 0.5162158673870891
     },
     {
       "city_name": "city_50",
       "population": 18992,
       "area": 451.2215472249938,
-      "gdp_per_capita": 58030.96253213378,
-      "education_score": 0.4844533928232407,
-      "infrastructure_score": 0.4628357261563286,
-      "location_score": 0.38272699214572303,
+      "gdp_per_capita": 57923.32323521249,
+      "education_score": 0.5192848094262499,
+      "infrastructure_score": 0.5080521019086255,
+      "location_score": 0.49182710358269666,
       "x": 769.7544681854357,
       "y": 896.2301009569733,
-      "agglomeration": 0.5218365223313904
+      "agglomeration": 0.5591279066052398
     },
     {
       "city_name": "city_59",
       "population": 12304,
       "area": 84.02992996781163,
-      "gdp_per_capita": 55516.01183677053,
-      "education_score": 0.5438343822745577,
-      "infrastructure_score": 0.5112389369830435,
-      "location_score": 0.5004455053059264,
+      "gdp_per_capita": 53392.06604440742,
+      "education_score": 0.6345168177818232,
+      "infrastructure_score": 0.6068069765815737,
+      "location_score": 0.5943440964571727,
       "x": 815.8566744310144,
       "y": 968.834693707313,
-      "agglomeration": 0.551468355374861
+      "agglomeration": 0.5968784396644539
     },
     {
       "city_name": "city_60",
       "population": 99676,
       "area": 176.87289508831077,
-      "gdp_per_capita": 43025.03557026286,
-      "education_score": 0.6173623097214792,
-      "infrastructure_score": 0.6338464330189308,
-      "location_score": 0.7646916228595365,
+      "gdp_per_capita": 44836.15623487517,
+      "education_score": 0.6907413165130172,
+      "infrastructure_score": 0.6409721332600735,
+      "location_score": 0.7720111578734361,
       "x": 627.7522424096827,
       "y": 410.9744103613022,
-      "agglomeration": 0.5950364523366716
+      "agglomeration": 0.6216569040690493
     },
     {
       "city_name": "city_64",
       "population": 13254,
       "area": 286.55265249178376,
-      "gdp_per_capita": 35301.289639707844,
-      "education_score": 0.5082140570399463,
-      "infrastructure_score": 0.4875439520416924,
-      "location_score": 0.4844121051110659,
+      "gdp_per_capita": 34152.09540049352,
+      "education_score": 0.5097461413715192,
+      "infrastructure_score": 0.48479818820445686,
+      "location_score": 0.4751926688244619,
       "x": 548.2661195184717,
       "y": 225.78871385664922,
-      "agglomeration": 0.4358208355214013
+      "agglomeration": 0.4279882411668764
     },
     {
       "city_name": "city_75",
       "population": 22746,
       "area": 197.18834048664561,
-      "gdp_per_capita": 40037.61189270763,
-      "education_score": 0.5118208899306517,
-      "infrastructure_score": 0.48140369014483386,
-      "location_score": 0.4392969786109924,
+      "gdp_per_capita": 31853.958571442898,
+      "education_score": 0.4908656238213472,
+      "infrastructure_score": 0.4546146620833458,
+      "location_score": 0.4106201650547048,
       "x": 710.4912570295667,
       "y": 112.90087517011737,
-      "agglomeration": 0.45357333509912967
+      "agglomeration": 0.39737084694738994
     },
     {
       "city_name": "city_98",
       "population": 58753,
       "area": 178.06145406288422,
-      "gdp_per_capita": 57765.859567010295,
-      "education_score": 0.5748139771652996,
-      "infrastructure_score": 0.6235536540713419,
-      "location_score": 0.7498639276036995,
+      "gdp_per_capita": 52621.63530256437,
+      "education_score": 0.5482154620267364,
+      "infrastructure_score": 0.6385266594544826,
+      "location_score": 0.750088583318466,
       "x": 204.67406573892444,
       "y": 345.1435172216195,
-      "agglomeration": 0.6516829262333362
+      "agglomeration": 0.6236816341029754
     },
     {
       "city_name": "city_99",
       "population": 3390,
       "area": 401.2623164649522,
-      "gdp_per_capita": 50765.47677098272,
-      "education_score": 0.5429724545576144,
-      "infrastructure_score": 0.566512358901162,
-      "location_score": 0.5859548936676042,
+      "gdp_per_capita": 44201.352505289164,
+      "education_score": 0.5674128180639042,
+      "infrastructure_score": 0.6224986844963607,
+      "location_score": 0.5685984496755735,
       "x": 337.52557823327646,
       "y": 82.55075564144188,
-      "agglomeration": 0.5471058932826864
+      "agglomeration": 0.5268993209761101
     },
     {
       "city_name": "city_117",
       "population": 43746,
       "area": 63.11202040540843,
-      "gdp_per_capita": 36901.3586794834,
-      "education_score": 0.5112290343918383,
-      "infrastructure_score": 0.4349821227049445,
-      "location_score": 0.4343100361705968,
+      "gdp_per_capita": 37517.711104787406,
+      "education_score": 0.38282545636671983,
+      "infrastructure_score": 0.28894907322544,
+      "location_score": 0.40736529377897945,
       "x": 361.72368946617405,
       "y": 992.8521941221426,
-      "agglomeration": 0.43185206844445617
+      "agglomeration": 0.37465755659172817
     },
     {
       "city_name": "city_136",
       "population": 8315,
       "area": 438.3420410250055,
-      "gdp_per_capita": 57522.275952144235,
-      "education_score": 0.5026802946245102,
-      "infrastructure_score": 0.5616093427354005,
-      "location_score": 0.6606597433459845,
+      "gdp_per_capita": 57282.0260987143,
+      "education_score": 0.5132065641924748,
+      "infrastructure_score": 0.57921424954354,
+      "location_score": 0.6698825435445307,
       "x": 52.555949057988435,
       "y": 930.2635698297679,
-      "agglomeration": 0.5927733651794137
+      "agglomeration": 0.5990429112271942
     },
     {
       "city_name": "city_151",
       "population": 177275,
       "area": 382.53446450148766,
-      "gdp_per_capita": 55836.74222186472,
-      "education_score": 0.4988728543243865,
-      "infrastructure_score": 0.5795941997129641,
-      "location_score": 0.7294745453267601,
+      "gdp_per_capita": 57016.71485613627,
+      "education_score": 0.49510003151073495,
+      "infrastructure_score": 0.58040602711968,
+      "location_score": 0.7219112419347335,
       "x": 78.17447098310981,
       "y": 782.320528651598,
-      "agglomeration": 0.6213417475032937
+      "agglomeration": 0.6251367509148591
     },
     {
       "city_name": "city_163",
       "population": 33427,
       "area": 361.9600094902453,
-      "gdp_per_capita": 56861.7700556018,
-      "education_score": 0.5880741904685713,
-      "infrastructure_score": 0.5732422621877438,
-      "location_score": 0.44531827468475715,
+      "gdp_per_capita": 59739.25251995622,
+      "education_score": 0.6127643658028201,
+      "infrastructure_score": 0.5914180158704009,
+      "location_score": 0.4999169236291012,
       "x": 275.0704087517225,
       "y": 712.224337609647,
-      "agglomeration": 0.5750832573171073
+      "agglomeration": 0.6089635852311295
     },
     {
       "city_name": "city_170",
       "population": 60690,
       "area": 85.27891028683376,
-      "gdp_per_capita": 49617.66463677089,
-      "education_score": 0.6765082422031043,
-      "infrastructure_score": 0.5811769732785719,
-      "location_score": 0.5597943028199821,
+      "gdp_per_capita": 47766.32902720595,
+      "education_score": 0.6441658603398193,
+      "infrastructure_score": 0.5730281991883569,
+      "location_score": 0.570244174086803,
       "x": 191.79741193240463,
       "y": 91.30120040770618,
-      "agglomeration": 0.5850077883030521
+      "agglomeration": 0.5697428533178917
     },
     {
       "city_name": "city_177",
       "population": 6685,
       "area": 403.9993268977473,
-      "gdp_per_capita": 63300.15717978326,
-      "education_score": 0.5185372157933186,
-      "infrastructure_score": 0.47135511410531383,
-      "location_score": 0.47696277158042655,
+      "gdp_per_capita": 61403.83441960771,
+      "education_score": 0.52485509039689,
+      "infrastructure_score": 0.5224201079393445,
+      "location_score": 0.4925534794223948,
       "x": 362.7309005858056,
       "y": 197.00060050005263,
-      "agglomeration": 0.568589282791635
+      "agglomeration": 0.5737023842466713
     },
     {
       "city_name": "city_184",
       "population": 10417,
       "area": 319.06595511678813,
-      "gdp_per_capita": 44666.0644443912,
-      "education_score": 0.5284959608754913,
-      "infrastructure_score": 0.47211258785243937,
-      "location_score": 0.6615429886273069,
+      "gdp_per_capita": 47076.61099299618,
+      "education_score": 0.5068684832819594,
+      "infrastructure_score": 0.4268246831901781,
+      "location_score": 0.6295213174446272,
       "x": 76.572032270387,
       "y": 462.290741722421,
-      "agglomeration": 0.5174352587995665
+      "agglomeration": 0.5097005808548969
     },
     {
       "city_name": "city_186",
       "population": 235,
       "area": 344.42434574130954,
-      "gdp_per_capita": 46605.90936575676,
-      "education_score": 0.47691090178554013,
-      "infrastructure_score": 0.5347111613238567,
-      "location_score": 0.4849764879647457,
+      "gdp_per_capita": 46376.4299132359,
+      "education_score": 0.5011499675103903,
+      "infrastructure_score": 0.5824286208950965,
+      "location_score": 0.5100905991786296,
       "x": 787.443309708964,
       "y": 692.6569791546455,
-      "agglomeration": 0.46874649380457334
+      "agglomeration": 0.4870132238439639
     },
     {
       "city_name": "city_194",
       "population": 4156,
       "area": 90.9879044921648,
-      "gdp_per_capita": 63896.91968461916,
-      "education_score": 0.48677006958385294,
-      "infrastructure_score": 0.48562035508140783,
-      "location_score": 0.42870098889416586,
+      "gdp_per_capita": 64925.52608750888,
+      "education_score": 0.4503751389393071,
+      "infrastructure_score": 0.44501330817156376,
+      "location_score": 0.41735916497405323,
       "x": 281.74524669187474,
       "y": 284.7033482472072,
-      "agglomeration": 0.5552516034831086
+      "agglomeration": 0.5427258752026567
     },
     {
       "city_name": "city_195",
       "population": 208186,
       "area": 296.8278686907408,
-      "gdp_per_capita": 56246.12975180962,
-      "education_score": 0.6707931096325014,
-      "infrastructure_score": 0.6382787696688739,
-      "location_score": 0.7855705914902849,
+      "gdp_per_capita": 54760.83788027364,
+      "education_score": 0.6423317897047898,
+      "infrastructure_score": 0.6253749428665367,
+      "location_score": 0.7498672417103136,
       "x": 700.573320981757,
       "y": 663.9198795224025,
-      "agglomeration": 0.6818003908498238
+      "agglomeration": 0.6589602321901399
     },
     {
       "city_name": "city_198",
       "population": 217359,
       "area": 174.65124862027955,
-      "gdp_per_capita": 53047.43290280504,
-      "education_score": 0.6250313128848776,
-      "infrastructure_score": 0.6112715530287766,
-      "location_score": 0.736827771157395,
+      "gdp_per_capita": 46845.83520084289,
+      "education_score": 0.622886684225215,
+      "infrastructure_score": 0.726274790774316,
+      "location_score": 0.77367225673163,
       "x": 390.8244744911511,
       "y": 767.2492369566322,
-      "agglomeration": 0.6417919962177494
+      "agglomeration": 0.640724626639961
     },
     {
       "city_name": "city_219",
       "population": 30485,
       "area": 408.9504531858476,
-      "gdp_per_capita": 66533.68531019901,
-      "education_score": 0.6360449964926225,
-      "infrastructure_score": 0.5771787115645209,
-      "location_score": 0.5815999344685041,
+      "gdp_per_capita": 68049.61558042123,
+      "education_score": 0.6600381182090693,
+      "infrastructure_score": 0.5888269914861922,
+      "location_score": 0.6085547793567677,
       "x": 41.683086663508064,
       "y": 198.40848936167077,
-      "agglomeration": 0.660466421978404
+      "agglomeration": 0.6805653226347914
     },
     {
       "city_name": "city_222",
       "population": 50444,
       "area": 104.19481540931335,
-      "gdp_per_capita": 55397.8562994457,
-      "education_score": 0.5701683990414745,
-      "infrastructure_score": 0.5759698042865098,
-      "location_score": 0.4686783394855111,
+      "gdp_per_capita": 57236.21430397029,
+      "education_score": 0.5683614438553138,
+      "infrastructure_score": 0.5587873583988594,
+      "location_score": 0.44687347158050733,
       "x": 356.93928825346075,
       "y": 403.1741332869131,
-      "agglomeration": 0.5721433839870994
+      "agglomeration": 0.5731763202139594
     },
     {
       "city_name": "city_236",
       "population": 24025,
       "area": 467.4683174272791,
-      "gdp_per_capita": 47290.167040049964,
-      "education_score": 0.5803023051169369,
-      "infrastructure_score": 0.6151931880438508,
-      "location_score": 0.6037129426325546,
+      "gdp_per_capita": 48544.217141279434,
+      "education_score": 0.5964364194666198,
+      "infrastructure_score": 0.635976479442039,
+      "location_score": 0.6222836924135724,
       "x": 90.93517785461557,
       "y": 953.4604451386804,
-      "agglomeration": 0.5635381905845083
+      "agglomeration": 0.5809060721964334
     },
     {
       "city_name": "city_290",
       "population": 6540,
       "area": 372.34717566015985,
-      "gdp_per_capita": 59496.96112049129,
-      "education_score": 0.5477307373836058,
-      "infrastructure_score": 0.5469884625295938,
-      "location_score": 0.6308615583051107,
+      "gdp_per_capita": 55036.230774820855,
+      "education_score": 0.598349750052464,
+      "infrastructure_score": 0.6258581636372793,
+      "location_score": 0.6696570763690899,
       "x": 138.35837217909275,
       "y": 559.7355022570075,
-      "agglomeration": 0.6011722402091267
+      "agglomeration": 0.6125254348488793
     },
     {
       "city_name": "city_296",
       "population": 217894,
       "area": 261.5393672437049,
-      "gdp_per_capita": 56220.92379145845,
-      "education_score": 0.5666094207012228,
-      "infrastructure_score": 0.6630155016406053,
-      "location_score": 0.6860667520478176,
+      "gdp_per_capita": 55815.51870502732,
+      "education_score": 0.5573688798191347,
+      "infrastructure_score": 0.6944378661535922,
+      "location_score": 0.6933450330193249,
       "x": 491.1993254141819,
       "y": 413.002832830746,
-      "agglomeration": 0.6461880470684669
+      "agglomeration": 0.6500530425567925
     },
     {
       "city_name": "city_297",
       "population": 28424,
       "area": 105.86419905884043,
-      "gdp_per_capita": 53796.39115635452,
-      "education_score": 0.39305743369652324,
-      "infrastructure_score": 0.41616218551611883,
-      "location_score": 0.4326759626139004,
+      "gdp_per_capita": 54701.10490703933,
+      "education_score": 0.3099848173897385,
+      "infrastructure_score": 0.3683290384007213,
+      "location_score": 0.3944463180014811,
       "x": 696.8143228417523,
       "y": 488.81787385202625,
-      "agglomeration": 0.4857276663984202
+      "agglomeration": 0.4564241535449239
     }
   ],
   "edges": [
@@ -368,109 +368,14 @@
       47.77630884706484
     ],
     [
-      1,
-      7,
-      122.97660635166326
-    ],
-    [
-      2,
-      15,
-      145.2836742731149
-    ],
-    [
-      2,
-      16,
-      113.72665080499716
-    ],
-    [
-      3,
-      8,
-      83.917928457996
-    ],
-    [
-      3,
-      9,
-      141.51583327826404
-    ],
-    [
-      3,
-      28,
-      79.61016206779848
-    ],
-    [
-      4,
-      20,
-      106.15459276260968
-    ],
-    [
       4,
       22,
       23.770568498253567
     ],
     [
-      6,
-      7,
-      86.00488537956763
-    ],
-    [
-      8,
-      28,
-      136.56798174423858
-    ],
-    [
-      8,
-      29,
-      104.06332572927572
-    ],
-    [
-      11,
-      21,
-      97.94376426877783
-    ],
-    [
-      12,
-      17,
-      145.99064606001988
-    ],
-    [
-      12,
-      18,
-      117.19247101693425
-    ],
-    [
       14,
       26,
       44.84484616007827
-    ],
-    [
-      16,
-      23,
-      128.16685719543025
-    ],
-    [
-      18,
-      21,
-      119.37524072867284
-    ],
-    [
-      19,
-      27,
-      115.38211800342823
-    ],
-    [
-      20,
-      22,
-      91.49981331532062
-    ],
-    [
-      21,
-      25,
-      140.31917472066934
-    ],
-    [
-      25,
-      28,
-      134.61931849894785
     ]
   ]
 }
