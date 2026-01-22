@@ -273,21 +273,20 @@ Generați și salvați în `docs/optimization/`:
 
 **Model baseline (Etapa 5):**
 - Accuracy: 0.72
-- F1-score: 0.68
-- Latență: 48ms
+- R2-score: 0.07
+- Latență: 13ms
 
 **Model optimizat (Etapa 6):**
-- Accuracy: 0.81 (+9%)
-- F1-score: 0.77 (+9%)
-- Latență: 35ms (-27%)
+- Accuracy: 0.90 (+25%)
+- R2-score: 0.93 
+- Latență: 48ms
 
 **Configurație finală aleasă:**
-- Arhitectură: [descrieți]
-- Learning rate: [valoare] cu [scheduler]
-- Batch size: [valoare]
-- Regularizare: [Dropout/L2/altele]
+- Arhitectură: 3 layere de GCN uri
+- Learning rate: 0.001 cu ReduceLROnPlateau
+- Regularizare: Dropout
 - Augmentări: [lista]
-- Epoci: [număr] (early stopping la epoca [X])
+- Epoci: 3500 (early stopping la epoca [X])
 
 **Îmbunătățiri cheie:**
 1. Imbunatatire alg generare date -> R2 0.07 - 0.617
