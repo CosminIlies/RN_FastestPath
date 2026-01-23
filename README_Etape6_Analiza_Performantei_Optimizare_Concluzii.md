@@ -315,6 +315,9 @@ Generați și salvați în `docs/optimization/`:
 
 Salvați în `docs/results/`:
 
+Din cauza naturii datelor si a retelei neuronale, nu am posibilitatea sa generez un confusion matrix
+
+
 - [ ] `confusion_matrix_optimized.png` - Confusion matrix model final
 - [ ] `learning_curves_final.png` - Loss și accuracy vs. epochs
 - [ ] `metrics_evolution.png` - Evoluție metrici Etapa 4 → 5 → 6
@@ -340,7 +343,7 @@ Salvați în `docs/results/`:
 - [x] Documentație completă pe toate etapele
 
 **Obiective parțial atinse:**
-- [ ] [Descrieți ce nu a funcționat perfect - ex: accuracy sub target pentru clasa X]
+- [ ] refresh constant la pagina
 
 **Obiective neatinse:**
 - [ ] deployment în cloud
@@ -353,19 +356,18 @@ Salvați în `docs/results/`:
 ### Limitări tehnice ale sistemului
 
 1. **Limitări date:**
-   - [ex: Dataset dezechilibrat - clasa 'defect_mare' are doar 8% din total]
-   - [ex: Date colectate doar în condiții de iluminare ideală]
+   - Setul de date este generat artificial, pe niste date reale ar trebui sa mai aducem modificari
 
 2. **Limitări model:**
    - [ex: Performanță scăzută pe imagini cu reflexii metalice]
    - [ex: Generalizare slabă pe tipuri de defecte nevăzute în training]
 
 3. **Limitări infrastructură:**
-   - [ex: Latență de 35ms insuficientă pentru linie producție 60 piese/min]
-   - [ex: Model prea mare pentru deployment pe edge device]
+   - pot aparea probleme de concurenta
+   - daca 2 persoane vor sa foloseasca aplicatia web, se pastreaza predictia de la una la alta
 
 4. **Limitări validare:**
-   - [ex: Test set nu acoperă toate condițiile din producție reală]
+   - 
 ```
 
 ### 5.3 Direcții de Cercetare și Dezvoltare
