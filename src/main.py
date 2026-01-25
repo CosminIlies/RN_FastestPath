@@ -379,7 +379,7 @@ class DataProcessingStateMachine:
             print(f"   Final Loss: {final_loss.item():.4f}")
             print(f"   MAE: {mae.item():.4f}")
             print(f"   MSE: {mse.item():.4f}")
-            print(f"   R² Score: {r2:.4f}")
+            print(f"   R2 Score: {r2:.4f}")
             print(f"   Worst acc: {(1-abs_diff_max) * 100}%")
             print(f"   Total Epochs: {num_epochs}")
             print(f"   Training Samples: {len(y)}")
@@ -395,9 +395,9 @@ class DataProcessingStateMachine:
                 minutes = int((total_training_time % 3600) // 60)
                 seconds = int(total_training_time % 60)
                 if hours > 0:
-                    print(f"📅 Training Duration: {hours}h {minutes}m {seconds}s")
+                    print(f"Training Duration: {hours}h {minutes}m {seconds}s")
                 else:
-                    print(f"📅 Training Duration: {minutes}m {seconds}s")
+                    print(f"Training Duration: {minutes}m {seconds}s")
             
             print("Model training completed")
             
@@ -467,9 +467,9 @@ class DataProcessingStateMachine:
             if 'feature_mean' in checkpoint and checkpoint['feature_mean'] is not None:
                 self.feature_mean = checkpoint['feature_mean']
                 self.feature_std = checkpoint['feature_std']
-                print(f"✅ Loaded normalization parameters")
+                print(f"Loaded normalization parameters")
             else:
-                print(f"⚠️ No normalization parameters in saved model")
+                print(f"No normalization parameters in saved model")
                 self.feature_mean = None
                 self.feature_std = None
             
@@ -683,18 +683,18 @@ class DataProcessingStateMachine:
                 
                 # Print timing information
                 print("\n" + "="*50)
-                print("⏱️  PREDICTION TIMING")
+                print("PREDICTION TIMING")
                 print("="*50)
-                print(f"🚀 Model Inference Time: {inference_time:.4f} seconds")
-                print(f"📊 Total Prediction Time: {total_prediction_time:.4f} seconds")
-                print(f"⚡ Predictions per second: {len(predictions):.0f} / {inference_time:.4f} = {len(predictions)/inference_time:.2f} predictions/sec")
+                print(f"Model Inference Time: {inference_time:.4f} seconds")
+                print(f"Total Prediction Time: {total_prediction_time:.4f} seconds")
+                print(f"Predictions per second: {len(predictions):.0f} / {inference_time:.4f} = {len(predictions)/inference_time:.2f} predictions/sec")
                 
                 # Print detailed evaluation summary
                 print("\n" + "="*50)
-                print("🎯 FINAL EVALUATION METRICS")
+                print("FINAL EVALUATION METRICS")
                 print("="*50)
-                print(f"📈 R² Score: {self.predictions['r2_score']:.6f} ({self.predictions['r2_score']*100:.2f}%)")
-                print(f"📈 Individual Absolute Differences:")
+                print(f"R2Init Score: {self.predictions['r2_score']:.6f} ({self.predictions['r2_score']*100:.2f}%)")
+                print(f"Individual Absolute Differences:")
                 abs_diffs = self.predictions['absolute_differences']
                 print(f"   Min Difference: {min(abs_diffs):.6f}")
                 print(f"   Max Difference: {max(abs_diffs):.6f}")

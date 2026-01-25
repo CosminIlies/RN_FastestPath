@@ -1,0 +1,7 @@
+Experiment,Modificare_fata_de_Baseline,Accuracy,R2_Score,Timp_Antrenare,Observatii
+Baseline,Configuratia din Etapa 5,0.72,0.07,,Referinta
+Exp 1,Imbunatatire alg generare date,0.80,0.617,23.43s,"in viata reala un oras are estimativ 3 - 6 vecini, reducerea numarului de vecini a ajutat"
+Exp 2,neuroni hidden layer 64 - 128,0.82,0.65,29.79s,Imbunatatire semnificativa
+Exp 3,silu -> leaky_relu,0.86,0.81,31.2s,"imbunatatire masiva. leaky_relu este mai folosit pentru GNN uri iar silu pentru CNN uri. Posibil din cauza faptului ca silu converge la 0 spre -x, iar leaky_relu contine si valori negative"
+Exp 4,residual connections,0.90,0.93,28.92s,
+FINAL,Configuratia aleasa,0.90,0.93,28.92s,

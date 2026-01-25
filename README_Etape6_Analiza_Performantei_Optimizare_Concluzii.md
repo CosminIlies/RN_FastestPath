@@ -587,8 +587,8 @@ python src/neural_network/visualize.py --all
 - [x] Justificare alegere configurație finală
 - [x] Model optimizat salvat în `models/optimized_model.h5`
 - [x] Metrici finale: **Accuracy ≥70%**, **F1 ≥0.65**
-- [ ] `results/optimization_experiments.csv` cu toate experimentele
-- [ ] `results/final_metrics.json` cu metrici model optimizat
+- [x] `results/optimization_experiments.csv` cu toate experimentele
+- [x] `results/final_metrics.json` cu metrici model optimizat
 
 ### Analiză Performanță
 - [ ] Confusion matrix generată în `docs/confusion_matrix_optimized.png`
@@ -597,7 +597,7 @@ python src/neural_network/visualize.py --all
 - [ ] Implicații industriale documentate (cost FN vs FP)
 
 ### Actualizare Aplicație Software
-- [ ] Tabel modificări aplicație completat
+- [x] Tabel modificări aplicație completat
 - [x] UI încarcă modelul OPTIMIZAT (nu cel din Etapa 5)
 - [x] Screenshot `docs/screenshots/inference_optimized.png`
 - [x] Pipeline end-to-end re-testat și funcțional
