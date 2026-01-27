@@ -119,23 +119,68 @@ class GraphVisualization {
             this.renderGraph();
             this.setupSimulation();
         } else {
-            // Just update node colors and properties without re-rendering
-            this.updateNodeProperties();
+            // Just update node properties without disrupting the simulation
+            this.updateNodePropertiesGently();
         }
+    }
+
+    updateNodePropertiesGently() {
+        if (!this.nodeElements) return;
+        
+        // Update node colors and sizes based on new data without disrupting simulation
+        this.nodeElements
+            .each((d, i) => {
+                // Update the data properties in place without changing object reference
+                const newData = this.nodes[i];
+                if (newData) {
+                    Object.assign(d, {
+                        city_name: newData.city_name,
+                        population: newData.population,
+                        gdp_per_capita: newData.gdp_per_capita,
+                        education_score: newData.education_score,
+                        infrastructure_score: newData.infrastructure_score,
+                        location_score: newData.location_score,
+                        agglomeration: newData.agglomeration,
+                        predicted_agglomeration: newData.predicted_agglomeration
+                    });
+                }
+            })
+            .style('fill', d => this.getNodeColor(d))
+            .attr('r', d => Math.max(5, Math.min(20, Math.sqrt(d.population / 1000))));
+        
+        // Update labels in case city names changed
+        this.labelElements
+            .text(d => d.city_name || `City ${d.id}`);
+        
+        console.log('Node properties updated gently without disrupting simulation');
     }
 
     updateNodeProperties() {
         if (!this.nodeElements) return;
+        
+        // Update the data bound to existing elements with new data
+        this.nodeElements = this.nodeElements.data(this.nodes, d => d.id);
+        this.labelElements = this.labelElements.data(this.nodes, d => d.id);
         
         // Update node colors and sizes based on new data
         this.nodeElements
             .style('fill', d => this.getNodeColor(d))
             .attr('r', d => Math.max(5, Math.min(20, Math.sqrt(d.population / 1000))));
         
-        // Gently restart simulation with low alpha to settle any changes
+        // Update labels in case city names changed
+        this.labelElements
+            .text(d => d.city_name || `City ${d.id}`);
+        
+        // Update simulation nodes reference to new data
         if (this.simulation) {
+            this.simulation.nodes(this.nodes);
+            // Update the link force with new node references
+            this.simulation.force('link').links(this.links);
+            // Gently restart simulation with low alpha to settle any changes
             this.simulation.alpha(0.1).restart();
         }
+        
+        console.log('Node properties and data updated for tooltip consistency');
     }
 
     renderGraph() {
@@ -251,6 +296,13 @@ class GraphVisualization {
     }
 
     showTooltip(event, node) {
+        // Debug log to verify we have the latest data
+        console.log('Tooltip data for node', node.id, ':', {
+            agglomeration: node.agglomeration,
+            predicted_agglomeration: node.predicted_agglomeration,
+            population: node.population
+        });
+        
         const tooltip = d3.select('body').selectAll('.graph-tooltip')
             .data([0]);
         

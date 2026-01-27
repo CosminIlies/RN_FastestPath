@@ -176,12 +176,17 @@ class App {
             if (response.ok) {
                 const data = await response.json();
                 
-                // Create a simple checksum to detect data changes
+                // Create a simple checksum to detect data changes including predictions
                 const newChecksum = JSON.stringify({
                     nodeCount: data.nodes ? data.nodes.length : 0,
                     edgeCount: data.edges ? data.edges.length : 0,
                     firstNodeData: data.nodes && data.nodes[0] ? 
-                        JSON.stringify(data.nodes[0]) : null
+                        JSON.stringify(data.nodes[0]) : null,
+                    predictionsData: data.predictions ? 
+                        (Array.isArray(data.predictions) ? 
+                            JSON.stringify(data.predictions.slice(0, 3)) : 
+                            JSON.stringify(data.predictions)) : null,
+                    hasPredictions: data.metadata ? data.metadata.has_predictions : false
                 });
                 
                 // Only update if data has actually changed
@@ -202,6 +207,10 @@ class App {
                     // Update city editor if a city is selected
                     if (this.selectedCityId !== null) {
                         this.updateCityEditor();
+                        // Update the original city data reference for tooltip consistency
+                        if (data.nodes && data.nodes[this.selectedCityId]) {
+                            this.originalCityData = {...data.nodes[this.selectedCityId]};
+                        }
                     }
                     this.updateSelectionInfo();
                 }
@@ -349,6 +358,7 @@ class App {
                 
                 // Update visualizations with new predictions
                 if (window.graphVisualization) {
+                    console.log("Updating graph visualization with new predictions");
                     window.graphVisualization.updateGraph(result);
                 }
                 
@@ -358,6 +368,12 @@ class App {
                 
                 // Update the city info display
                 this.updateCityInfoDisplay();
+                
+                // Force update the selected city data to reflect new values
+                if (this.selectedCityId !== null && result.nodes && result.nodes[this.selectedCityId]) {
+                    // Update the original city data reference to the new data for tooltip consistency
+                    this.originalCityData = {...result.nodes[this.selectedCityId]};
+                }
                 
                 this.showMessage(isReset ? 'Parameters reset to original values' : 'Parameter changes applied successfully', 'success');
             } else {

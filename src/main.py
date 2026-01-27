@@ -493,38 +493,7 @@ class DataProcessingStateMachine:
         except Exception as e:
             print(f"Failed to load model: {e}")
             self.transition_to(State.ERROR)
-
-    def _load_existing_processed_data(self):
-        """Try to load existing processed data to display in the UI when model is loaded"""
-        try:
-            # Try multiple possible file locations
-            possible_files = [
-                'data/processed/processed.json',
-                'data/generated/generated.json',
-                'data/aigenerated.json'
-            ]
-            
-            for processed_file in possible_files:
-                if os.path.exists(processed_file):
-                    print(f"Loading existing data from: {processed_file}")
-                    self.cities, self.edges = preprocessing_read_from_json(processed_file)
-                    
-                    # Store original city data for comparison
-                    import copy
-                    self.original_cities = copy.deepcopy(self.cities)
-                    
-                    print(f"Loaded {len(self.cities)} cities and {len(self.edges)} edges from processed data")
-                    return True
-            
-            print("No existing processed data found - you can generate new data or make predictions with existing model")
-            return False
-                
-        except Exception as e:
-            print(f"Warning: Could not load existing processed data: {e}")
-            print("You can generate new data or the model is still ready for predictions")
-            return False
-
-    
+  
     def _idle_state(self):
         pass 
         # print("System is in idle state")
@@ -721,6 +690,36 @@ class DataProcessingStateMachine:
     def _error_state(self):
         print(f"In error state: {self.error_message}")
         print("Use reset() to restart the workflow")
+
+
+    def _load_existing_processed_data(self):
+        try:
+            # Try multiple possible file locations
+            possible_files = [
+                'data/processed/processed.json',
+                'data/generated/generated.json',
+                'data/aigenerated.json'
+            ]
+            
+            for processed_file in possible_files:
+                if os.path.exists(processed_file):
+                    print(f"Loading existing data from: {processed_file}")
+                    self.cities, self.edges = preprocessing_read_from_json(processed_file)
+                    
+                    # Store original city data for comparison
+                    import copy
+                    self.original_cities = copy.deepcopy(self.cities)
+                    
+                    print(f"Loaded {len(self.cities)} cities and {len(self.edges)} edges from processed data")
+                    return True
+            
+            print("No existing processed data found - you can generate new data or make predictions with existing model")
+            return False
+                
+        except Exception as e:
+            print(f"Warning: Could not load existing processed data: {e}")
+            print("You can generate new data or the model is still ready for predictions")
+            return False
 
     def reset(self):
         print("Resetting state machine...")

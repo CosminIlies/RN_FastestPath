@@ -206,7 +206,7 @@ In urma mai multor iteratii aceasta arhitectura a dar cele mai bune rezultate. I
 | Number of epochs | 3000 |  |
 | Optimizer | Adam | Adaptive learning rate|
 | Loss function | smooth_l1_loss (Huber loss) |  Combina avantajele MSE si MAE |
-| Activation functions | leaky_relu (hidden), Sigmoid (output) |  |
+| Activation functions | leaky_relu (hidden) |  |
 
 ### 5.3 Experimente de Optimizare (minim 4 experimente)
 
@@ -238,17 +238,21 @@ Am ales Exp 4 ca model final pentru că:
 
 | Metric | Valoare | Target Minim | Status |
 |--------|---------|--------------|--------|
-| **Accuracy** | [X.XX%] | ≥70% | [✓/✗] |
-| **F1-Score (Macro)** | [X.XX] | ≥0.65 | [✓/✗] |
+| **Accuracy** | 90% | ≥70% | ✓ |
+| **R2-Score** | 0.9513 | ≥0.65 | ✓ |
+| **MSE** | 0.0005 | - | - |
+| **MAE** | 0.0161 | - | - |
+
 | **Precision (Macro)** | [X.XX] | - | - |
 | **Recall (Macro)** | [X.XX] | - | - |
+Din moment ce nu realizez o clasificare, nu pot sa calculez Precision si Recall ul
 
 **Îmbunătățire față de Baseline (Etapa 5):**
 
 | Metric | Etapa 5 (Baseline) | Etapa 6 (Optimizat) | Îmbunătățire |
 |--------|-------------------|---------------------|--------------|
-| Accuracy | [X.XX%] | [X.XX%] | [+X.XX%] |
-| F1-Score | [X.XX] | [X.XX] | [+X.XX] |
+| Accuracy | 0.72 | 0.90 | [+18%] |
+| R2-Score | 0.07 | 0.93 | [+0.86] |
 
 **Referință fișier:** `results/final_metrics.json`
 
@@ -295,11 +299,9 @@ Am ales Exp 4 ca model final pentru că:
 
 | Componentă | Stare Etapa 5 | Modificare Etapa 6 | Justificare |
 |------------|---------------|-------------------|-------------|
-| **Model încărcat** | `trained_model.h5` | `optimized_model.h5` | [ex: +8% accuracy, -12% FN] |
-| **Threshold decizie** | [ex: 0.5 default] | [ex: 0.35 pentru clasa 'defect'] | [ex: Minimizare FN în context producție] |
-| **UI - feedback vizual** | [ex: Da/Nu text] | [ex: Bară confidence + valoare %] | [ex: Informare operator pentru decizii] |
-| **Logging** | [ex: Doar predicție] | [ex: Predicție + confidence + timestamp] | [ex: Audit trail pentru QA] |
-| [Alte modificări] | [Completați] | [Completați] | [Completați] |
+| **Model încărcat** | `city_agglomeration_gnn_old.pt` | `city_agglomeration_gnn.pt` | +18% accuracy, +0.86 R2 |
+| **Residual Connections** | N/A |  | Minimizare FN în context industrial |
+| **Stari noi in State Machine** | N/A | `SAVE_MODEL` `LOAD_MODEL` | pentru salvare si incarcare model |
 
 ### 7.2 Screenshot UI cu Model Optimizat
 
@@ -307,7 +309,7 @@ Am ales Exp 4 ca model final pentru că:
 
 *[Descriere scurtă: Ce se vede în screenshot? Ce demonstrează?]*
 
-[Completați aici]
+In partea din dreaptea avem state ul in care se afla programul si parea de editor a unui oras. In partea din dreapta avem graful retelei de orase si diverse charturi care au ajutat la debug. Atunci cand tinem cursorul pe un oras putem sa vedem aglomeratia curenta, aglomeratia prezisa si restul parametrilor orasului respectiv. Cand dam click pe un oras in partea din stanga putem sa i ajustam parametrii.
 
 ### 7.3 Demonstrație Funcțională End-to-End
 
@@ -317,13 +319,11 @@ Am ales Exp 4 ca model final pentru că:
 
 | Pas | Acțiune | Rezultat Vizibil |
 |-----|---------|------------------|
-| 1 | Input | [ex: Upload imagine nouă (NU din train/test)] |
-| 2 | Procesare | [ex: Bară de progres + preprocesare vizibilă] |
-| 3 | Inferență | [ex: Predicție afișată: "Clasa: Defect, Confidence: 87%"] |
-| 4 | Decizie | [ex: Alertă roșie + sunet pentru operator] |
+| 1 | Input | Schimbam parametrii unui oras |
+| 2 | Inferență | Predicție afișată: "Predicted Agglomeration: +0.05" |
 
-**Latență măsurată end-to-end:** [X] ms  
-**Data și ora demonstrației:** [DD.MM.YYYY, HH:MM]
+**Latență măsurată end-to-end:** 62.87ms  
+**Data și ora demonstrației:** 27/1/2026 8:08PM
 
 ---
 

@@ -624,12 +624,12 @@ python src/neural_network/visualize.py --all
 - [x] Toate fișierele de configurare sincronizate cu modelul optimizat
 
 ### Pre-Predare
-- [ ] `etapa6_optimizare_concluzii.md` completat cu TOATE secțiunile
-- [ ] Structură repository conformă modelului de mai sus
-- [ ] Commit: `"Etapa 6 completă – Accuracy=X.XX, F1=X.XX (optimizat)"`
-- [ ] Tag: `git tag -a v0.6-optimized-final -m "Etapa 6 - Model optimizat + Concluzii"`
-- [ ] Push: `git push origin main --tags`
-- [ ] Repository accesibil (public sau privat cu acces profesori)
+- [x] `etapa6_optimizare_concluzii.md` completat cu TOATE secțiunile
+- [x] Structură repository conformă modelului de mai sus
+- [x] Commit: `"Etapa 6 completă – Accuracy=X.XX, F1=X.XX (optimizat)"`
+- [x] Tag: `git tag -a v0.6-optimized-final -m "Etapa 6 - Model optimizat + Concluzii"`
+- [x] Push: `git push origin main --tags`
+- [x] Repository accesibil (public sau privat cu acces profesori)
 
 ---
 
