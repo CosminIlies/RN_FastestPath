@@ -1,7 +1,23 @@
 {
-  "test_accuracy": "90%",
-   "Final Loss": 0.0002,
-   "MAE": 0.0161,
-   "MSE": 0.0005,
-   "R2": 0.9513
+  "training_samples": 241,
+  "validation_samples": 30,
+  "total_epochs": 1400,
+  "early_stopped": true,
+  "best_val_loss": 0.00015279307262971997,
+  "final_metrics": {
+    "train": {
+      "loss": 0.00032696197740733624,
+      "mae": 0.01949426904320717,
+      "mse": 0.0006539239548146725,
+      "r2_score": 0.933052122592926,
+      "worst_accuracy": 90.44361114501953
+    },
+    "validation": {
+      "loss": 0.00015560038445983082,
+      "mae": 0.014505770057439804,
+      "mse": 0.00031120076891966164,
+      "r2_score": 0.9527885913848877,
+      "worst_accuracy": 94.99817192554474
+    }
+  }
 }

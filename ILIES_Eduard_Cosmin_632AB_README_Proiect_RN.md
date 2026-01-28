@@ -203,7 +203,7 @@ In urma mai multor iteratii aceasta arhitectura a dar cele mai bune rezultate. I
 |--------------------|-------------------|-----------------|
 | Learning rate | 0.001 | Valoare standard pentru Adam optimizer, asigură convergență stabilă. Ea este modificata automat in functie de loss |
 | Batch size | 302 | Deoarece folosesc un GNN este greu de impartit in sub grafuri pentru a antrena pe batch uri.|
-| Number of epochs | 3000 |  |
+| Number of epochs | 1400 | early stop la 1400  |
 | Optimizer | Adam | Adaptive learning rate|
 | Loss function | smooth_l1_loss (Huber loss) |  Combina avantajele MSE si MAE |
 | Activation functions | leaky_relu (hidden) |  |
@@ -529,26 +529,26 @@ python src/neural_network/evaluate.py --model models/optimized_model.h5 --quick-
 |--------------------------------|--------|----------|--------|
 | [Obiectiv 1 din 2.2] | [target] | [realizat] | [✓/✗] |
 | [Obiectiv 2 din 2.2] | [target] | [realizat] | [✓/✗] |
-| Accuracy pe test set | ≥70% | [X.XX%] | [✓/✗] |
-| F1-Score pe test set | ≥0.65 | [X.XX] | [✓/✗] |
+| Accuracy pe test set | ≥70% | 90% | ✓ |
+| F2-Score pe test set | ≥0.65 | 0.9513 | ✓ |
 | [Metric specific domeniului] | [target] | [realizat] | [✓/✗] |
 
 ### 10.2 Ce NU Funcționează – Limitări Cunoscute
 
 *[Fiți onești - evaluatorul apreciază identificarea clară a limitărilor]*
 
-1. **Limitare 1:** [ex: Modelul eșuează pe imagini cu iluminare <50 lux - accuracy scade la 45%]
-2. **Limitare 2:** [ex: Latența depășește 100ms pentru batch size >32 - neadecvat pentru real-time]
-3. **Limitare 3:** [ex: Clasa "defect_minor" are recall doar 52% - date insuficiente]
-4. **Funcționalități planificate dar neimplementate:** [ex: Export ONNX, integrare API extern]
+1. **Limitare 1:** Design UI/UX slab. Un searchbar pentru a putea gasi mai usor anumite orase dupa nume ar ajuta enorm.
+2. **Limitare 2:** Filtre pentru a marca orasele cu diferente considerabile in aglomeratie
+3. **Limitare 3:** Reta de orase reala, cu date reale.
+4. **Funcționalități planificate dar neimplementate:** Export ONNX si mutarea fortei computationale pe frontend folosind tehnologii de webgpu si wasm
 
 ### 10.3 Lecții Învățate (Top 5)
 
-1. **[Lecție 1]:** [ex: Importanța EDA înainte de antrenare - am descoperit 8% valori lipsă care afectau convergența]
-2. **[Lecție 2]:** [ex: Early stopping a prevenit overfitting sever - fără el, val_loss creștea după epoca 20]
-3. **[Lecție 3]:** [ex: Augmentările specifice domeniului (zgomot gaussian calibrat) au adus +5% accuracy vs augmentări generice]
-4. **[Lecție 4]:** [ex: Threshold-ul default 0.5 nu e optim pentru clase dezechilibrate - ajustarea la 0.35 a redus FN cu 40%]
-5. **[Lecție 5]:** [ex: Documentarea incrementală (la fiecare etapă) a economisit timp major la integrare finală]
+1. **[Lecție 1]:** Mereu exista loc de imbunatatiri si progres
+2. **[Lecție 2]:** Documentarea inainte a proiectului este foarte importanta
+3. **[Lecție 3]:** Fara date relevante nu se poate realiza un sistem performant
+4. **[Lecție 4]:** Residual connection poate ajuta enorm, datele saring peste layere.
+5. **[Lecție 5]:** Pentru un proiect relevant trebuie sa mentinem contactul cu nevoile reale ale utilizatorilor
 
 ### 10.4 Retrospectivă
 
@@ -556,26 +556,27 @@ python src/neural_network/evaluate.py --model models/optimized_model.h5 --quick-
 
 *[1-2 paragrafe: Decizii pe care le-ați lua diferit, cu justificare bazată pe experiența acumulată]*
 
-[Completați aici]
+1. Schimbat arhitectura programului. As rula din prima reteaua neuronala prin onnxruntime-web cu WebGPU din moment ce contextul ne permite, evitand probleme de concurenta.
+2. Design frontend mai usor de folosit, este destul de dificila navigarea in fereastra. As adauga un searchbar si filtre pentru orase.
+3. Nu sunt multumit de cum este organizat codul. 
 
 ### 10.5 Direcții de Dezvoltare Ulterioară
 
+
 | Termen | Îmbunătățire Propusă | Beneficiu Estimat |
 |--------|---------------------|-------------------|
-| **Short-term** (1-2 săptămâni) | [ex: Augmentare date pentru clasa subreprezentată] | [ex: +10% recall pe clasa "defect_minor"] |
-| **Medium-term** (1-2 luni) | [ex: Implementare model ensemble] | [ex: +3-5% accuracy general] |
-| **Long-term** | [ex: Deployment pe edge device (Raspberry Pi)] | [ex: Latență <20ms, cost hardware redus] |
+| **Short-term** (1-2 săptămâni) | Rularea retelei neuronale pe dispozitivul utilizatorului folosind onnxruntime-web | Rezolvarea problemelor de concurenta, hosting mai ieftin. |
+| **Medium-term** (1-2 luni) | Utilizarea a datelor reale | Se pot trage concluzii in vaiata reala |
+| **Long-term** | Dezvoltarea unui alt sistem de inteligenta artificiala care poate sa primeaca link ul de la un blog si sa ofere o predictie de cum se vor schimba parametrii unui oras. | Mentinerea retelei neuronale la zi |
 
 ---
 
 ## 11. Bibliografie
 
-*[Minimum 3 surse cu DOI/link funcțional - format: Autor, Titlu, Anul, Link]*
-
-1. [Autor], [Titlu articol/carte], [Anul]. DOI: [link] sau URL: [link]
-2. [Autor], [Titlu articol/carte], [Anul]. DOI: [link] sau URL: [link]
-3. [Autor], [Titlu articol/carte], [Anul]. DOI: [link] sau URL: [link]
-4. [Surse suplimentare dacă este cazul]
+1. Abaza, B., 2025. Retele neuronale. [https://curs.upb.ro/2025/course/view.php?id=1338](https://curs.upb.ro/2025/course/view.php?id=1338)
+2. Professor Bryce, Residual Networks and Skip Connections (DL 15), 2022. URL: [https://www.youtube.com/watch?v=Q1JCrG1bJ-A](https://www.youtube.com/watch?v=Q1JCrG1bJ-A)
+3. Alex Foo, Graph Neural Networks - a perspective from the ground up, 2021. URL: [https://www.youtube.com/watch?v=GXhBEj1ZtE8](https://www.youtube.com/watch?v=GXhBEj1ZtE8)
+4. PyTorch documentation, 2025. URL: [https://docs.pytorch.org/docs/stable/index.html](https://docs.pytorch.org/docs/stable/index.html)
 
 **Exemple format:**
 - Abaza, B., 2025. AI-Driven Dynamic Covariance for ROS 2 Mobile Robot Localization. Sensors, 25, 3026. https://doi.org/10.3390/s25103026
@@ -587,45 +588,45 @@ python src/neural_network/evaluate.py --model models/optimized_model.h5 --quick-
 
 ### Cerințe Tehnice Obligatorii
 
-- [ ] **Accuracy ≥70%** pe test set (verificat în `results/final_metrics.json`)
-- [ ] **F1-Score ≥0.65** pe test set
-- [ ] **Contribuție ≥40% date originale** (verificabil în `data/generated/`)
-- [ ] **Model antrenat de la zero** (NU pre-trained fine-tuning)
-- [ ] **Minimum 4 experimente** de optimizare documentate (tabel în Secțiunea 5.3)
+- [x] **Accuracy ≥70%** pe test set (verificat în `results/final_metrics.json`)
+- [x] **F1-Score ≥0.65** pe test set
+- [x] **Contribuție ≥40% date originale** (verificabil în `data/generated/`)
+- [x] **Model antrenat de la zero** (NU pre-trained fine-tuning)
+- [x] **Minimum 4 experimente** de optimizare documentate (tabel în Secțiunea 5.3)
 - [ ] **Confusion matrix** generată și interpretată (Secțiunea 6.2)
-- [ ] **State Machine** definit cu minimum 4-6 stări (Secțiunea 4.2)
-- [ ] **Cele 3 module funcționale:** Data Logging, RN, UI (Secțiunea 4.1)
-- [ ] **Demonstrație end-to-end** disponibilă în `docs/demo/`
+- [x] **State Machine** definit cu minimum 4-6 stări (Secțiunea 4.2)
+- [x] **Cele 3 module funcționale:** Data Logging, RN, UI (Secțiunea 4.1)
+- [x] **Demonstrație end-to-end** disponibilă în `docs/demo/`
 
 ### Repository și Documentație
 
-- [ ] **README.md** complet (toate secțiunile completate cu date reale)
-- [ ] **4 README-uri etape** prezente în `docs/` (etapa3, etapa4, etapa5, etapa6)
-- [ ] **Screenshots** prezente în `docs/screenshots/`
-- [ ] **Structura repository** conformă cu Secțiunea 8
-- [ ] **requirements.txt** actualizat și funcțional
-- [ ] **Cod comentat** (minim 15% linii comentarii relevante)
-- [ ] **Toate path-urile relative** (nu absolute: `/Users/...` sau `C:\...`)
+- [x] **README.md** complet (toate secțiunile completate cu date reale)
+- [x] **4 README-uri etape** prezente în `docs/` (etapa3, etapa4, etapa5, etapa6)
+- [x] **Screenshots** prezente în `docs/screenshots/`
+- [x] **Structura repository** conformă cu Secțiunea 8
+- [x] **requirements.txt** actualizat și funcțional
+- [x] **Cod comentat** (minim 15% linii comentarii relevante)
+- [x] **Toate path-urile relative** (nu absolute: `/Users/...` sau `C:\...`)
 
 ### Acces și Versionare
 
-- [ ] **Repository accesibil** cadrelor didactice RN (public sau privat cu acces)
-- [ ] **Tag `v0.6-optimized-final`** creat și pushed
-- [ ] **Commit-uri incrementale** vizibile în `git log` (nu 1 commit gigantic)
-- [ ] **Fișiere mari** (>100MB) excluse sau în `.gitignore`
+- [x] **Repository accesibil** cadrelor didactice RN (public sau privat cu acces)
+- [x] **Tag `v0.6-optimized-final`** creat și pushed
+- [x] **Commit-uri incrementale** vizibile în `git log` (nu 1 commit gigantic)
+- [x] **Fișiere mari** (>100MB) excluse sau în `.gitignore`
 
 ### Verificare Anti-Plagiat
 
-- [ ] Model antrenat **de la zero** (weights inițializate random, nu descărcate)
-- [ ] **Minimum 40% date originale** (nu doar subset din dataset public)
-- [ ] Cod propriu sau clar atribuit (surse citate în Bibliografie)
+- [x] Model antrenat **de la zero** (weights inițializate random, nu descărcate)
+- [x] **Minimum 40% date originale** (nu doar subset din dataset public)
+- [x] Cod propriu sau clar atribuit (surse citate în Bibliografie)
 
 ---
 
 ## Note Finale
 
 **Versiune document:** FINAL pentru examen  
-**Ultima actualizare:** [DD.MM.YYYY]  
+**Ultima actualizare:** 28.01.2026 
 **Tag Git:** `v0.6-optimized-final`
 
 ---

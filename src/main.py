@@ -217,15 +217,20 @@ class DataProcessingStateMachine:
         # Record training start time
         training_start_time = time.time()
         
-        # Load training data
+        # Load training and validation data
         try:
             with open(self.file_paths['train'], 'r') as f:
                 train_data = json.load(f)
             
+            with open(self.file_paths['validation'], 'r') as f:
+                val_data = json.load(f)
+            
             cities_data = train_data['cities']
             edges_data = train_data['edges']
+            val_cities_data = val_data['cities']
+            val_edges_data = val_data['edges']
             
-            # Prepare features and labels
+            # Prepare features and labels for training
             feature_keys = [ 'population', 'gdp_per_capita', 'education_score', 'infrastructure_score', 'location_score']
             
             node_features = []
@@ -236,13 +241,26 @@ class DataProcessingStateMachine:
                 node_features.append(features)
                 node_labels.append(city.get('agglomeration', 0))
             
+            # Prepare features and labels for validation
+            val_node_features = []
+            val_node_labels = []
+            
+            for city in val_cities_data:
+                features = [city.get(key, 0) for key in feature_keys]
+                val_node_features.append(features)
+                val_node_labels.append(city.get('agglomeration', 0))
+            
             # Convert to tensors
             x = torch.tensor(node_features, dtype=torch.float)
             y = torch.tensor(node_labels, dtype=torch.float).view(-1, 1)
+            x_val = torch.tensor(val_node_features, dtype=torch.float)
+            y_val = torch.tensor(val_node_labels, dtype=torch.float).view(-1, 1)
             
             # CRITICAL: Clamp target labels to [0,1] range for binary_cross_entropy
             y = torch.clamp(y, min=0.0, max=1.0)
-            print(f"Target agglomeration stats: Min: {y.min():.3f}, Max: {y.max():.3f}, Mean: {y.mean():.3f}")
+            y_val = torch.clamp(y_val, min=0.0, max=1.0)
+            print(f"Training agglomeration stats: Min: {y.min():.3f}, Max: {y.max():.3f}, Mean: {y.mean():.3f}")
+            print(f"Validation agglomeration stats: Min: {y_val.min():.3f}, Max: {y_val.max():.3f}, Mean: {y_val.mean():.3f}")
             
             # CRITICAL: Normalize features to prevent prediction collapse
             print(f"Feature stats before normalization:")
@@ -254,12 +272,13 @@ class DataProcessingStateMachine:
             x_mean = x.mean(dim=0, keepdim=True)
             x_std = x.std(dim=0, keepdim=True) + 1e-8  # Add small value to avoid division by zero
             x = (x - x_mean) / x_std
+            x_val = (x_val - x_mean) / x_std  # Apply same normalization to validation data
             
             # Store normalization parameters for consistent predictions
             self.feature_mean = x_mean
             self.feature_std = x_std
             
-            # Prepare edge indices
+            # Prepare edge indices for training
             edge_indices = []
             for edge in edges_data:
                 if len(edge) >= 2:
@@ -271,8 +290,26 @@ class DataProcessingStateMachine:
             else:
                 edge_index = torch.empty((2, 0), dtype=torch.long)
             
+            # Prepare edge indices for validation
+            val_edge_indices = []
+            for edge in val_edges_data:
+                if len(edge) >= 2:
+                    city1_idx, city2_idx = edge[0], edge[1]
+                    val_edge_indices.extend([[city1_idx, city2_idx], [city2_idx, city1_idx]])
+            
+            if val_edge_indices:
+                val_edge_index = torch.tensor(val_edge_indices, dtype=torch.long).t().contiguous()
+            else:
+                val_edge_index = torch.empty((2, 0), dtype=torch.long)
+            
             # Training loop
             self.model.train()
+            
+            # Early stopping variables
+            best_val_loss = float('inf')
+            patience = 300  # Number of epochs to wait for improvement
+            patience_counter = 0
+            best_model_state = None
             
             # Record epoch timing
             epoch_start_time = time.time()
@@ -285,7 +322,7 @@ class DataProcessingStateMachine:
             
             # Create CSV file with headers
             with open(csv_path, 'w', newline='', encoding='utf-8') as csvfile:
-                fieldnames = ['epoch', 'loss', 'mae', 'learning_rate']
+                fieldnames = ['epoch', 'train_loss', 'train_mae', 'val_loss', 'val_mae', 'val_r2', 'learning_rate']
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 writer.writeheader()
             
@@ -324,72 +361,149 @@ class DataProcessingStateMachine:
                 if (epoch + 1) % 50 == 0:
                     with torch.no_grad():
                         self.model.eval()
-                        predictions = self.model(x, edge_index)
                         
-                        # Calculate metrics
-                        mae = F.l1_loss(predictions, y).item()
-                        r2 = r2_score(y.cpu().numpy(), predictions.detach().cpu().numpy())
+                        # Training metrics
+                        train_predictions = self.model(x, edge_index)
+                        train_mae = F.l1_loss(train_predictions, y).item()
+                        train_r2 = r2_score(y.cpu().numpy(), train_predictions.detach().cpu().numpy())
+                        
+                        # Validation metrics
+                        val_predictions = self.model(x_val, val_edge_index)
+                        val_predictions = torch.clamp(val_predictions, min=1e-7, max=1-1e-7)
+                        val_loss = F.smooth_l1_loss(val_predictions, y_val).item()
+                        val_mae = F.l1_loss(val_predictions, y_val).item()
+                        val_r2 = r2_score(y_val.cpu().numpy(), val_predictions.detach().cpu().numpy())
                         
                         # Get current learning rate
                         current_lr = self.optimizer.param_groups[0]['lr']
                         
+                        # Early stopping check
+                        if val_loss < best_val_loss:
+                            best_val_loss = val_loss
+                            patience_counter = 0
+                            best_model_state = self.model.state_dict().copy()
+                            print(f"✓ New best validation loss: {val_loss:.4f}")
+                        else:
+                            patience_counter += 50
                         
                         # Log to CSV
                         with open(csv_path, 'a', newline='', encoding='utf-8') as csvfile:
-                            fieldnames = ['epoch', 'loss', 'mae', 'learning_rate',]
+                            fieldnames = ['epoch', 'train_loss', 'train_mae', 'val_loss', 'val_mae', 'val_r2', 'learning_rate']
                             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                             writer.writerow({
                                 'epoch': epoch + 1,
-                                'loss': loss.item(),
-                                'mae': mae,
+                                'train_loss': loss.item(),
+                                'train_mae': train_mae,
+                                'val_loss': val_loss,
+                                'val_mae': val_mae,
+                                'val_r2': val_r2,
                                 'learning_rate': current_lr,
-
                             })
                         
-                        print(f"Epoch {epoch + 1}/{num_epochs}, Loss: {loss.item():.4f}, MAE: {mae:.4f}, R²: {r2:.4f}, LR: {current_lr:.6f}")
+                        print(f"Epoch {epoch + 1}/{num_epochs}")
+                        print(f"  Train - Loss: {loss.item():.4f}, MAE: {train_mae:.4f}, R²: {train_r2:.4f}")
+                        print(f"  Val   - Loss: {val_loss:.4f}, MAE: {val_mae:.4f}, R²: {val_r2:.4f}")
+                        print(f"  LR: {current_lr:.6f}, Patience: {patience_counter}/{patience}")
                         
                         self.model.train()
+                        
+                        # Early stopping
+                        if patience_counter >= patience:
+                            print(f"\nEarly stopping triggered after {epoch + 1} epochs")
+                            print(f"Best validation loss: {best_val_loss:.4f}")
+                            if best_model_state is not None:
+                                self.model.load_state_dict(best_model_state)
+                                print("Restored best model weights")
+                            break
             
-            # Final evaluation
+            # Final evaluation on both training and validation sets
             self.model.eval()
             with torch.no_grad():
-                final_predictions = self.model(x, edge_index)
-                final_loss = F.smooth_l1_loss(final_predictions, y)
-
-                mae = F.l1_loss(final_predictions, y)
-                mse = F.mse_loss(final_predictions, y)
-            
+                # Training set evaluation
+                final_train_predictions = self.model(x, edge_index)
+                final_train_loss = F.smooth_l1_loss(final_train_predictions, y)
+                train_mae = F.l1_loss(final_train_predictions, y)
+                train_mse = F.mse_loss(final_train_predictions, y)
+                train_r2 = r2_score(y.cpu().numpy(), final_train_predictions.detach().cpu().numpy())
                 
-                # Calculate R² score
-                r2 = r2_score(y.cpu().numpy(), final_predictions.detach().cpu().numpy())
+                # Validation set evaluation  
+                final_val_predictions = self.model(x_val, val_edge_index)
+                final_val_loss = F.smooth_l1_loss(final_val_predictions, y_val)
+                val_mae = F.l1_loss(final_val_predictions, y_val)
+                val_mse = F.mse_loss(final_val_predictions, y_val)
+                val_r2 = r2_score(y_val.cpu().numpy(), final_val_predictions.detach().cpu().numpy())
+                
                 # Calculate absolute differences for detailed analysis
-                abs_diffs = torch.abs(final_predictions - y).squeeze()
-                abs_diff_max = abs_diffs.max().item()
+                train_abs_diffs = torch.abs(final_train_predictions - y).squeeze()
+                val_abs_diffs = torch.abs(final_val_predictions - y_val).squeeze()
+                train_abs_diff_max = train_abs_diffs.max().item()
+                val_abs_diff_max = val_abs_diffs.max().item()
+                
+            # Save final metrics to JSON
+            results_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+            final_metrics = {
+                'training_samples': len(y),
+                'validation_samples': len(y_val),
+                'total_epochs': epoch + 1 if 'epoch' in locals() else num_epochs,
+                'early_stopped': best_model_state is not None,
+                'best_val_loss': best_val_loss,
+                'final_metrics': {
+                    'train': {
+                        'loss': final_train_loss.item(),
+                        'mae': train_mae.item(),
+                        'mse': train_mse.item(),
+                        'r2_score': train_r2,
+                        'worst_accuracy': (1 - train_abs_diff_max) * 100
+                    },
+                    'validation': {
+                        'loss': final_val_loss.item(),
+                        'mae': val_mae.item(),
+                        'mse': val_mse.item(),
+                        'r2_score': val_r2,
+                        'worst_accuracy': (1 - val_abs_diff_max) * 100
+                    }
+                }
+            }
+            
+            with open(os.path.join(results_dir, 'final_metrics.json'), 'w') as f:
+                json.dump(final_metrics, f, indent=2)
                 
             
             # Calculate total training time
             training_end_time = time.time()
             total_training_time = training_end_time - training_start_time
-            epoch_time = total_training_time / num_epochs
+            actual_epochs = epoch + 1 if 'epoch' in locals() else num_epochs
+            epoch_time = total_training_time / actual_epochs
             
             print("\n" + "="*60)
             print("MODEL TRAINING COMPLETED!")
             print("="*60)
             print(f"FINAL TRAINING METRICS:")
-            print(f"   Final Loss: {final_loss.item():.4f}")
-            print(f"   MAE: {mae.item():.4f}")
-            print(f"   MSE: {mse.item():.4f}")
-            print(f"   R2 Score: {r2:.4f}")
-            print(f"   Worst acc: {(1-abs_diff_max) * 100}%")
-            print(f"   Total Epochs: {num_epochs}")
+            print(f"   Training Loss: {final_train_loss.item():.4f}")
+            print(f"   Training MAE: {train_mae.item():.4f}")
+            print(f"   Training MSE: {train_mse.item():.4f}")
+            print(f"   Training R² Score: {train_r2:.4f}")
+            print(f"   Training Worst Acc: {(1-train_abs_diff_max) * 100:.1f}%")
+            print(f"\nFINAL VALIDATION METRICS:")
+            print(f"   Validation Loss: {final_val_loss.item():.4f}")
+            print(f"   Validation MAE: {val_mae.item():.4f}")
+            print(f"   Validation MSE: {val_mse.item():.4f}")
+            print(f"   Validation R² Score: {val_r2:.4f}")
+            print(f"   Validation Worst Acc: {(1-val_abs_diff_max) * 100:.1f}%")
+            print(f"\nTRAINING SUMMARY:")
+            print(f"   Actual Epochs: {actual_epochs}")
             print(f"   Training Samples: {len(y)}")
+            print(f"   Validation Samples: {len(y_val)}")
+            print(f"   Early Stopped: {'Yes' if best_model_state is not None else 'No'}")
+            if best_model_state is not None:
+                print(f"   Best Val Loss: {best_val_loss:.4f}")
             
             print("\n" + "="*60)
             print("TRAINING TIMING")
             print("="*60)
             print(f"Total Training Time: {total_training_time:.2f} seconds ({total_training_time/60:.2f} minutes)")
             print(f"Average Time per Epoch: {epoch_time:.4f} seconds")
-            print(f"Training Speed: {len(y)} samples × {num_epochs} epochs / {total_training_time:.2f}s = {(len(y) * num_epochs) / total_training_time:.2f} samples/sec")
+            print(f"Training Speed: {len(y)} samples × {actual_epochs} epochs / {total_training_time:.2f}s = {(len(y) * actual_epochs) / total_training_time:.2f} samples/sec")
             if total_training_time > 60:
                 hours = int(total_training_time // 3600)
                 minutes = int((total_training_time % 3600) // 60)
