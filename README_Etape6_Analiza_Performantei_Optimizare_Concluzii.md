@@ -319,7 +319,7 @@ Din cauza naturii datelor si a retelei neuronale, nu am posibilitatea sa generez
 
 
 - [ ] `confusion_matrix_optimized.png` - Confusion matrix model final
-- [ ] `learning_curves_final.png` - Loss și accuracy vs. epochs
+- [x] `learning_curves_final.png` - Loss și accuracy vs. epochs
 - [ ] `metrics_evolution.png` - Evoluție metrici Etapa 4 → 5 → 6
 - [ ] `example_predictions.png` - Grid cu 9+ exemple (correct + greșite)
 
@@ -343,7 +343,7 @@ Din cauza naturii datelor si a retelei neuronale, nu am posibilitatea sa generez
 - [x] Documentație completă pe toate etapele
 
 **Obiective parțial atinse:**
-- [ ] refresh constant la pagina
+- [x] refresh constant la pagina
 
 **Obiective neatinse:**
 - [ ] deployment în cloud
@@ -359,8 +359,7 @@ Din cauza naturii datelor si a retelei neuronale, nu am posibilitatea sa generez
    - Setul de date este generat artificial, pe niste date reale ar trebui sa mai aducem modificari
 
 2. **Limitări model:**
-   - [ex: Performanță scăzută pe imagini cu reflexii metalice]
-   - [ex: Generalizare slabă pe tipuri de defecte nevăzute în training]
+   - 
 
 3. **Limitări infrastructură:**
    - pot aparea probleme de concurenta
@@ -604,10 +603,10 @@ python src/neural_network/visualize.py --all
 - [x] (Dacă aplicabil) State Machine actualizat și documentat
 
 ### Concluzii
-- [ ] Secțiune evaluare performanță finală completată
-- [ ] Limitări identificate și documentate
-- [ ] Lecții învățate (minimum 5)
-- [ ] Plan post-feedback scris
+- [x] Secțiune evaluare performanță finală completată
+- [x] Limitări identificate și documentate
+- [x] Lecții învățate (minimum 5)
+- [x] Plan post-feedback scris
 
 ### Verificări Tehnice
 - [x] `requirements.txt` actualizat

@@ -1124,7 +1124,7 @@ def patch_model():
         data = request.get_json()
         if not data:
             return jsonify({"error": "No parameter changes provided in request body"}), 400
-        
+
         # Handle reset request
         if data.get('reset_to_original', False) and state_machine.original_cities:
             affected_cities = data.get('affected_cities', [])
@@ -1174,7 +1174,7 @@ def patch_model():
                             # Use absolute values directly
                             city[param] = new_value
                         else:
-                            # Use multipliers (old behavior)
+                            # Use multipliers 
                             if param in ['population', 'gdp_per_capita']:
                                 city[param] *= new_value
                             else:
